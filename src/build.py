@@ -8,7 +8,7 @@ js  = (src/'shared.js').read_text()
 def data_uri(name):
     p = img/name
     return 'data:image/webp;base64,' + base64.b64encode(p.read_bytes()).decode()
-THANKS_ARTIFACT = 'THANKS_ARTIFACT_URL'
+THANKS_ARTIFACT = 'https://claude.ai/code/artifact/b1b17ccb-f42e-4e98-a0fe-0fb5042047bb'
 PAGES = ['nashville-home-show','post-nashville-home-show','thank-you']
 for page in PAGES:
     html = (src/f'{page}.html').read_text()
