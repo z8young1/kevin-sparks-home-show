@@ -681,7 +681,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
         e.preventDefault();
         if(!f.checkValidity()){ f.reportValidity(); return; }
         var code='KS-1238-'+Math.random().toString(36).slice(2,6).toUpperCase();
-        var g=function(n){ var el=f.querySelector('[name="'+n+'"]:checked, select[name="'+n+'"], input[name="'+n+'"]'); return el? el.value : ''; };
+        var g=function(n){ var el=f.querySelector('[name="'+n+'"]:checked') || f.querySelector('[name="'+n+'"]'); return el? el.value : ''; };
         var p=new URLSearchParams({ from: f.querySelector('[name="page"]').value==='post-nashville-home-show'?'post':'event',
           name:g('first_name'), interest:g('interest'), day:g('visit_day'), model:g('model'), code:code });
         location.href = f.dataset.thanks + '?' + p.toString();
