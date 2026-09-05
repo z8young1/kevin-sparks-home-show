@@ -44,6 +44,9 @@ LIVE = {
     'silent.webp':        f'{KSSP}/2026/07/Silent-1024x1024.png',
     'genx.webp':          f'{KSSP}/2026/07/GenX-1024x1024.png',
     'genz.webp':          f'{KSSP}/2026/07/GenZ-2-1024x1024.png',
+    'pool-twilight.webp': f'{KSSP}/2025/07/KevinSparksSignaturePools_LeisureFiberglassPool_Allure_WEB-NIGHT-17-of-24-1024x683.jpg',
+    'pool-day.webp':      f'{KSSP}/2025/05/ms2308152-2036-1024x684.jpg',
+    # swimspa.webp is a rotated, background-removed edit of gh-1200.webp and has no live URL yet, so it is inlined.
 }
 GHL_RESET = """
 /* GoHighLevel container reset: GHL wraps a Custom HTML element in section/row/column
@@ -56,7 +59,7 @@ GHL_RESET = """
 for page in PAGES:
     html = (src/f'{page}.html').read_text()
     html = html.replace('/*SHARED_CSS*/', css + GHL_RESET).replace('/*SHARED_JS*/', js)
-    html = re.sub(r'\{\{img:([^}]+)\}\}', lambda m: LIVE[m.group(1)], html)
+    html = re.sub(r'\{\{img:([^}]+)\}\}', lambda m: LIVE.get(m.group(1)) or data_uri(m.group(1)), html)
     (out/'dist'/f'{page}.ghl-embed.html').write_text(html)
     print(page, 'ghl-embed', f'{len(html)/1024:.0f} KB')
 

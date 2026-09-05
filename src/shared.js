@@ -38,44 +38,6 @@
     tick();
   }
 
-  /* Water art for the option cards that have no photography yet (swim spa, pool) */
-  document.querySelectorAll('canvas.water').forEach(function(c){
-    var ctx=c.getContext('2d'), W,H, t=0, kind=c.dataset.kind||'pool';
-    function size(){ W=c.width=c.offsetWidth*1; H=c.height=c.offsetHeight*1; }
-    size(); window.addEventListener('resize',size);
-    function frame(){
-      t+=reduce?0:.012;
-      var g=ctx.createLinearGradient(0,0,0,H);
-      g.addColorStop(0,'#0B4F86'); g.addColorStop(1,'#1FA8E0');
-      ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
-      /* caustic ripples */
-      ctx.globalAlpha=.22; ctx.strokeStyle='#CFF1FF'; ctx.lineWidth=1.2;
-      for(var r=0;r<9;r++){
-        ctx.beginPath();
-        for(var x=0;x<=W;x+=6){
-          var y = H*(0.12+r*0.1) + Math.sin(x*0.02 + t*1.6 + r)*6 + Math.cos(x*0.011 - t + r*2)*5;
-          x? ctx.lineTo(x,y):ctx.moveTo(x,y);
-        }
-        ctx.stroke();
-      }
-      ctx.globalAlpha=1;
-      if(kind==='swimspa'){
-        /* the shell edge and a current line, the thing that makes a swim spa a swim spa */
-        ctx.fillStyle='rgba(8,14,31,.55)'; ctx.fillRect(0,0,W,H*.14); ctx.fillRect(0,H*.86,W,H*.14);
-        ctx.fillStyle='rgba(255,255,255,.75)';
-        for(var i=0;i<W;i+=28){ var o=(t*40)%28; ctx.fillRect(i-o,H*.5-1.5,14,3); }
-        ctx.fillStyle='#F2A33C'; ctx.beginPath(); ctx.arc(W*.16, H*.5, 7,0,Math.PI*2); ctx.fill();
-      } else {
-        /* pool coping and tile line */
-        ctx.fillStyle='#E6DFD2'; ctx.fillRect(0,0,W,H*.11); ctx.fillRect(0,0,W*.09,H); 
-        ctx.fillStyle='#1B3A6B'; ctx.fillRect(W*.09,H*.11,W,4);
-        for(var k=0;k<W;k+=18){ ctx.fillStyle=(k/18)%2?'#1B3A6B':'#CFF1FF'; ctx.fillRect(W*.09+k,H*.11,18,4); }
-      }
-      if(!reduce) requestAnimationFrame(frame);
-    }
-    frame();
-  });
-
   /* Sticky bar appears once the hero CTA has scrolled away */
   var bar=document.querySelector('.bar'), hero=document.querySelector('.hero');
   if(bar && hero){

@@ -44,7 +44,7 @@ python3 src/build.py
 - **Credit window.** The post page says the credit is held through **October 13, 2026** (30 days after the show closes). Change the date in `src/post-nashville-home-show.html` if the real window differs.
 - **Credit tiers.** The brief says $1,000 to $2,500. The pool card on the post page says "up to $2,500 toward your pool" and the other cards say "applies to your swim spa / hot tub" without an amount. If there is a fixed tier per product, those lines can be made specific.
 - **Booth inventory.** The pages say hot tubs, a swim spa and a pool display are all at Booth 1238, matching the brief. The models rail shows all nine Generation tubs; if only certain models will be on the show floor, tell me which and I will tag them.
-- **Swim spa and pool imagery.** No swim spa or pool photography exists on the live site, so those cards use an animated water treatment. Real photos of a Kevin Sparks pool and swim spa would be a clear upgrade.
+- **Swim spa and pool imagery.** Pool cards use Kevin Sparks' own photos from kevinsparkssignaturepools.com (the Allure fiberglass pool at twilight, and the daytime lap pool). The swim spa card uses the GH-1200 top-down product shot from their swim spa page, rotated so the lane runs left to right with the studio background removed. Upload `img/swimspa.webp` to the WordPress media library if you want the GHL embed to reference it by URL instead of inline data.
 - **Design consultation.** Described as complimentary, at the customer's home, about an hour. Confirm that matches how the team actually runs pool consults.
 
 ## Design system
