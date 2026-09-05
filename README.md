@@ -7,6 +7,14 @@ Two self-contained landing pages for the Official Nashville Home Show, September
 | `dist/nashville-home-show.html` | Event page for Meta and programmatic geofencing traffic before and during the show. Drives booth visits and pre-registration for the backyard upgrade credit. | kevinsparkshottubs.com/nashville-home-show |
 | `dist/post-nashville-home-show.html` | 30-day retargeting page for people who attended or visited the booth. Routes them to a pool consultation, a swim spa visit, or a hot tub showroom appointment. | kevinsparkshottubs.com/post-nashville-home-show |
 
+## Share links (GitHub Pages, public)
+
+- Index: https://z8young1.github.io/kevin-sparks-home-show/
+- Event page: https://z8young1.github.io/kevin-sparks-home-show/nashville-home-show.html
+- Post-show page: https://z8young1.github.io/kevin-sparks-home-show/post-nashville-home-show.html
+
+Pages serves the `docs/` folder on `main`. `build.py` refreshes `docs/` on every run, so edit, build, commit, push.
+
 ## Files
 
 - `src/` is what you edit: `shared.css`, `shared.js`, and the two page bodies. Images are referenced as `{{img:name.webp}}`.
