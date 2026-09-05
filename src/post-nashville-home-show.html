@@ -1,0 +1,303 @@
+<title>After the Home Show</title>
+<meta name="description" content="You saw the hot tubs, swim spas and pools at Booth 1238. Pick up where you left off: your $1,000 to $2,500 Home Show credit is held through October 13, 2026 at Kevin Sparks Signature Pools in Murfreesboro.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/*SHARED_CSS*/
+.hero-bg{background-image:url("{{img:hero-showroom.webp}}");background-position:center 60%}
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.path{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;transition:transform .25s ease,box-shadow .25s ease}
+.path:hover{transform:translateY(-4px);box-shadow:0 30px 50px -30px rgba(22,32,58,.35)}
+.path .opt-art{aspect-ratio:3/2}
+.path-body{padding:1.5rem 1.5rem 1rem;display:grid;gap:.8rem;align-content:start}
+.path-body .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.path-body h3{font-size:1.55rem;line-height:1.08;text-transform:none;letter-spacing:0}
+.path-body p{color:var(--ink-2);font-size:.98rem}
+.path-body dl{margin:.3rem 0 0;display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.9rem}
+.path-body dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);padding-top:.15rem}
+.path-body dd{margin:0;font-weight:500}
+.path-foot{padding:1rem 1.5rem 1.5rem}
+.path-foot .btn{width:100%}
+@media (max-width:900px){.paths{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;counter-reset:step}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.5rem;display:grid;gap:.6rem;align-content:start;position:relative}
+.step::before{counter-increment:step;content:counter(step);font-family:var(--display);font-weight:700;font-size:3rem;line-height:1;color:var(--ember);letter-spacing:.02em}
+.step h3{font-size:1.3rem}
+.step p{color:var(--ink-2);font-size:.95rem}
+.step .t{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+.pass-v.big{font-size:2.1rem}
+.days b{font-size:2.2rem}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <img src="{{img:logo.webp}}" alt="Kevin Sparks Signature Pools">
+    <div class="top-meta">
+      <span class="hide-m">Murfreesboro showroom</span>
+      <span class="pill">Credit held through Oct 13</span>
+      <a href="tel:6152384144" class="hide-m">615.238.4144</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg" role="img" aria-label="A Generation hot tub cabinet in a backyard against a cedar fence"></div>
+  <div class="hero-veil"></div>
+  <canvas id="steam" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Nashville Home Show · Booth 1238 · Thanks for stopping by</span>
+      <h1>You saw it in person. Now let's put it <em>in your backyard.</em></h1>
+      <p class="lede">Pick up right where you left off at Music City Center. Your backyard upgrade credit is still on the table, the models you sat in are filled and waiting in Murfreesboro, and the next step takes about an hour.</p>
+      <div class="hero-cta">
+        <a class="btn btn-ember" href="#next">Book my next step <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="tel:6152384144">Call 615.238.4144</a>
+      </div>
+    </div>
+
+    <aside class="pass" aria-label="Your Home Show credit">
+      <div class="pass-head"><span>Your Home Show credit</span><span>Booth 1238</span></div>
+      <div class="pass-body">
+        <div class="pass-row">
+          <span class="pass-k">Credit</span>
+          <span class="pass-v big">$1,000 to $2,500<small>toward a qualifying pool, swim spa or hot tub</small></span>
+        </div>
+        <div class="pass-row">
+          <span class="pass-k" id="count-label">Held through Oct 13</span>
+          <div class="count days" id="count"><div><b id="c-d">30</b><span>days left</span></div></div>
+        </div>
+        <div class="pass-row">
+          <span class="pass-k">Redeem at</span>
+          <span class="pass-v">Murfreesboro<small>2349F S Church St · Mon to Fri 8 AM to 4:30 PM</small></span>
+        </div>
+        <div class="pass-booth">
+          <span>Or at your home<br>design consultation</span>
+          <b style="font-size:1.6rem">Free</b>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="sec" id="paths">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Which one stuck with you?</span>
+      <h2>Three ways forward. Pick the one you kept thinking about.</h2>
+      <p>Everyone leaves the show with one picture in their head. Tell us which one, and we will make the next hour count.</p>
+    </div>
+    <div class="paths">
+      <article class="path rv">
+        <div class="opt-art"><canvas class="water" data-kind="pool" aria-hidden="true"></canvas><span class="tag">Swimming pools</span></div>
+        <div class="path-body">
+          <span class="k">Pools</span>
+          <h3>Let's turn the pool you were dreaming about at the Home Show into a plan.</h3>
+          <p>Schedule your complimentary backyard design consultation. We come to you, walk the yard, and talk through fiberglass versus gunite, hardscape, decking, and a realistic date for your first swim.</p>
+          <dl>
+            <dt>Next step</dt><dd>Design consultation at your home</dd>
+            <dt>Takes</dt><dd>About an hour</dd>
+            <dt>Credit</dt><dd>Up to $2,500 toward your pool</dd>
+          </dl>
+        </div>
+        <div class="path-foot"><a class="btn btn-cyan" href="#next" data-pick="Pool">Schedule my design consultation</a></div>
+      </article>
+      <article class="path rv">
+        <div class="opt-art"><canvas class="water" data-kind="swimspa" aria-hidden="true"></canvas><span class="tag">Swim spas</span></div>
+        <div class="path-body">
+          <span class="k">Swim spas</span>
+          <h3>Pool experience. Smaller footprint. Year-round possibilities.</h3>
+          <p>Come experience the swim spa again and let us help determine if it's right for your backyard. Bring photos of the space and we will tell you honestly whether it fits, what it needs for power, and what it costs installed.</p>
+          <dl>
+            <dt>Next step</dt><dd>Showroom visit in Murfreesboro</dd>
+            <dt>Takes</dt><dd>About an hour</dd>
+            <dt>Credit</dt><dd>Applies to your swim spa</dd>
+          </dl>
+        </div>
+        <div class="path-foot"><a class="btn btn-cyan" href="#next" data-pick="Swim spa">Book my swim spa visit</a></div>
+      </article>
+      <article class="path rv">
+        <div class="opt-art"><img src="{{img:hero-tub.webp}}" alt="Generation hot tub on a backyard patio"><span class="tag">Hot tubs</span></div>
+        <div class="path-body">
+          <span class="k">Hot tubs</span>
+          <h3>Still thinking about that hot tub?</h3>
+          <p>Come visit our showroom, choose your model and let us help you create your backyard retreat. All nine Generation tubs are on the floor and filled. Climb back into the one you liked, pick your shell and cabinet under real light, and leave with an out-the-door number in writing.</p>
+          <dl>
+            <dt>Next step</dt><dd>One-hour showroom appointment</dd>
+            <dt>Delivery</dt><dd>Weeks, not seasons</dd>
+            <dt>Credit</dt><dd>Applies to your hot tub</dd>
+          </dl>
+        </div>
+        <div class="path-foot"><a class="btn btn-cyan" href="#next" data-pick="Hot tub">Plan my showroom visit</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec deep" id="models">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Generation Hot Tubs · Back on the floor in Murfreesboro</span>
+      <h2>Which one did you sit in?</h2>
+      <p>All nine models are filled and running at 104°F. Tell us the one you remember and we will have it warmed up, with your shell and cabinet samples laid out next to it.</p>
+    </div>
+    <div class="rail-wrap rv">
+      <div class="rail">
+        <article class="model"><img src="{{img:alpha1.webp}}" alt="Alpha 1 hot tub shell"><span class="series">Classic · 110v ready</span><h3>Alpha 1</h3><div class="spec"><span><b>3</b> seats</span><span><b>28</b> jets</span></div><p>The couple's tub. Compact enough for a townhouse patio, still deep enough for a proper full-body soak.</p></article>
+        <article class="model"><img src="{{img:gh500.webp}}" alt="GH500 hot tub shell"><span class="series">Classic · 110v ready</span><h3>GH500</h3><div class="spec"><span><b>5 to 6</b> seats</span><span><b>29</b> jets</span></div><p>The most jets of any Classic model. Six adults, one lounger, and a footprint that still clears a standard gate.</p></article>
+        <article class="model"><img src="{{img:gh550.webp}}" alt="GH550 hot tub shell"><span class="series">Classic · 110v ready</span><h3>GH550</h3><div class="spec"><span><b>5 to 6</b> seats</span><span><b>25</b> jets</span></div><p>The efficiency pick. Fewer, larger jets and less water to heat, which shows up on the power bill every month.</p><span class="best">Lowest running cost</span></article>
+        <article class="model"><img src="{{img:alpha2.webp}}" alt="Alpha 2 hot tub shell"><span class="series">Signature · Two pumps</span><h3>Alpha 2</h3><div class="spec"><span><b>3</b> seats</span><span><b>Foot</b> jet</span></div><p>The Alpha 1 footprint with two pumps and a dedicated foot massage jet. Small tub, serious therapy.</p></article>
+        <article class="model"><img src="{{img:millennial.webp}}" alt="Millennial hot tub shell"><span class="series">Signature · Waterfall</span><h3>Millennial</h3><div class="spec"><span><b>45</b> jets</span><span><b>2</b> pumps</span></div><p>Most jets in the whole lineup. If hydrotherapy is the reason you are shopping, start your visit here.</p><span class="best">Most jets</span></article>
+        <article class="model"><img src="{{img:boomer.webp}}" alt="Boomer hot tub shell"><span class="series">Signature · Waterfall</span><h3>Boomer</h3><div class="spec"><span><b>Smallest</b> Signature</span></div><p>Signature jets and a waterfall in the smallest Signature footprint. The value play if the yard is tight.</p></article>
+        <article class="model"><img src="{{img:silent.webp}}" alt="Silent hot tub shell"><span class="series">Signature · Waterfall</span><h3>Silent</h3><div class="spec"><span><b>44</b> jets</span><span><b>Fastest</b> heat</span></div><p>Least water of any 44-jet model, so it heats fastest and recovers quickest after a full house gets in.</p></article>
+        <article class="model"><img src="{{img:genx.webp}}" alt="Gen X hot tub shell"><span class="series">Signature · Waterfall</span><h3>Gen X</h3><div class="spec"><span><b>92"</b> shell</span><span><b>44</b> jets</span></div><p>Full 92 inch shell with 44 jets and a waterfall. Room for the whole family without anybody's knees touching.</p></article>
+        <article class="model"><img src="{{img:genz.webp}}" alt="Gen Z hot tub shell"><span class="series">Signature · Waterfall</span><h3>Gen Z</h3><div class="spec"><span><b>490</b> gal</span><span><b>Deepest</b> soak</span></div><p>The biggest water volume we sell. Deepest soak in the lineup and the one people book weekends around.</p><span class="best">Largest capacity</span></article>
+      </div>
+    </div>
+    <div class="stats rv" style="margin-top:2.5rem">
+      <div><b>42</b><span>Years building in Middle Tennessee</span></div>
+      <div><b>55</b><span>Miles from the factory to our floor</span></div>
+      <div><b>10</b><span>Year shell warranty</span></div>
+      <div><b>3</b><span>Years on plumbing, acrylic and electrical</span></div>
+      <div><b>$5,995</b><span>Starting price, delivered</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="grid-2" style="margin-bottom:clamp(2rem,4vw,3rem)">
+      <div class="rv">
+        <span class="eyebrow">What the next hour looks like</span>
+        <h2 style="margin-top:.8rem">One hour, three steps, zero pressure.</h2>
+        <p class="lede" style="margin-top:1rem">We are not going to keep you all afternoon. Here is exactly how the visit runs, whether it is at the showroom or in your own backyard.</p>
+      </div>
+      <div class="photo rv" style="aspect-ratio:3/2"><img src="{{img:portrait.webp}}" alt="Waterfall feature running into a Generation hot tub"><span class="cap">Signature Series waterfall · Running on the floor</span></div>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="t">Step one</span><h3>Tell us about the yard</h3><p>Where it goes, how we get it back there, what the surface is, and what power you have. Photos on your phone are plenty. This is the part that prevents surprises on delivery day.</p></div>
+      <div class="step rv"><span class="t">Step two</span><h3>Get in the water</h3><p>Shoes off, climb in, try the seats. Check where the jets hit your shoulders and whether the lounger fits your height. For a pool, we walk the yard with you and sketch it in place.</p></div>
+      <div class="step rv"><span class="t">Step three</span><h3>Leave with a real number</h3><p>Out-the-door price with your Home Show credit applied, what the pad or site needs, a delivery or build window, and financing if you want it. Written down. Yours to take home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="showroom" style="background:var(--panel-2)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">The showroom</span>
+      <h2>Thirty-five minutes from downtown. Fifty-five from the factory.</h2>
+      <p>Murfreesboro, just off South Church Street. Weekday hours below, and weekends by appointment so the tubs are warm and the right samples are out when you walk in.</p>
+    </div>
+    <div class="logi">
+      <div class="rv">
+        <div class="hours">
+          <table>
+            <thead><tr><th>Day</th><th>Hours</th><th>Good to know</th></tr></thead>
+            <tbody>
+              <tr><td>Mon to Fri</td><td class="t">8 AM to 4:30 PM</td><td class="note">Walk in, or book so your model is ready</td></tr>
+              <tr><td>Sat &amp; Sun</td><td class="t">By appointment</td><td class="note">Book below or call 615.238.4144</td></tr>
+              <tr><td>Your home</td><td class="t">Your schedule</td><td class="note">Pool and swim spa design consultations come to you</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="deals">
+          <div class="deal"><b>Bring</b><span>Photos of the space, rough measurements, and whoever will be using it. Seat fit is personal.</span></div>
+          <div class="deal"><b>Financing</b><span>Options laid out at your appointment, with the credit applied first.</span></div>
+        </div>
+      </div>
+      <div class="venue rv">
+        <div class="addr">
+          <span class="eyebrow">Kevin Sparks Signature Pools</span>
+          <h3>Murfreesboro showroom</h3>
+          <p class="mono">2349F S Church St<br>Murfreesboro, TN 37130</p>
+          <p>Nine Generation hot tubs on the floor, swim spa on display, and the crew that designs and builds fiberglass and gunite pools across Middle Tennessee.</p>
+          <div class="btns">
+            <a class="btn btn-cyan" href="https://www.google.com/maps/dir/?api=1&destination=2349F+S+Church+St%2C+Murfreesboro%2C+TN+37130" target="_blank" rel="noopener">Directions</a>
+            <a class="btn btn-ghost" href="tel:6152384144">615.238.4144</a>
+          </div>
+        </div>
+        <div class="find"><b style="font-size:2.2rem">Oct 13</b><span>Your Home Show credit is held on file through Wednesday, October 13. Book before then and the amount is locked, even if your install date is later.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec deep form-sec" id="next">
+  <div class="wrap">
+    <div class="form-side rv">
+      <span class="eyebrow">Pick up where you left off</span>
+      <h2>Tell us what caught your eye. We'll take it from there.</h2>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Your credit stays attached</b> to your file the moment you book.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>We reach out within one business day</b> to confirm a time that works.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Showroom or your backyard.</b> Hot tubs and swim spas at the showroom. Pools start with a visit to your yard.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Prefer to talk?</b> <a href="tel:6152384144">615.238.4144</a>, Monday to Friday, 8 AM to 4:30 PM.</span></li>
+      </ul>
+    </div>
+    <form class="lead rv" action="#" method="post" novalidate>
+      <input type="hidden" name="page" value="post-nashville-home-show">
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term"><input type="hidden" name="fbclid"><input type="hidden" name="gclid"><input type="hidden" name="referrer">
+      <div class="f2">
+        <label class="fld"><span>First name</span><input name="first_name" autocomplete="given-name" required></label>
+        <label class="fld"><span>Last name</span><input name="last_name" autocomplete="family-name" required></label>
+      </div>
+      <div class="f2">
+        <label class="fld"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="fld"><span>Mobile</span><input type="tel" name="phone" autocomplete="tel" required></label>
+      </div>
+      <div class="fld"><span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">What did you see at the show?</span>
+        <div class="seg" style="margin-top:.4rem">
+          <input type="radio" name="interest" value="Hot tub" id="i1" checked><label for="i1">Hot tub</label>
+          <input type="radio" name="interest" value="Swim spa" id="i2"><label for="i2">Swim spa</label>
+          <input type="radio" name="interest" value="Pool" id="i3"><label for="i3">Pool</label>
+          <input type="radio" name="interest" value="All three" id="i4"><label for="i4">All three</label>
+        </div>
+      </div>
+      <div class="f2">
+        <label class="fld"><span>Model you remember (optional)</span>
+          <select name="model"><option value="">Not sure</option><option>Alpha 1</option><option>GH500</option><option>GH550</option><option>Alpha 2</option><option>Millennial</option><option>Boomer</option><option>Silent</option><option>Gen X</option><option>Gen Z</option><option>The swim spa</option></select></label>
+        <label class="fld"><span>How should we follow up?</span>
+          <select name="next_step"><option>Book a showroom visit</option><option>Schedule a home design consultation</option><option>Just call me</option></select></label>
+      </div>
+      <label class="fld"><span>Best time</span>
+        <select name="best_time"><option value="">No preference</option><option>Weekday mornings</option><option>Weekday afternoons</option><option>Saturday</option><option>Sunday</option></select></label>
+      <button class="btn btn-ember" type="submit" style="width:100%">Book my next step</button>
+      <p class="fine">Credit applies to a qualifying purchase from Kevin Sparks Signature Pools, one per household, amount confirmed at your appointment. We will text and email to confirm your time. No spam, and no sharing your info.</p>
+      <div class="done" aria-live="polite">
+        <span class="eyebrow" style="justify-content:center">Got it</span>
+        <h3 style="font-size:var(--step-2)">We'll reach out within one business day.</h3>
+        <span class="code">KS-1238-0000</span>
+        <p class="fine">Your Home Show credit is noted on your file under this reference. Want to move faster? Call 615.238.4144 and mention it.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="{{img:logo.webp}}" alt="Kevin Sparks Signature Pools">
+    <div>
+      <p><a href="tel:6152384144">615.238.4144</a> · 2349F S Church St, Murfreesboro, TN 37130</p>
+      <p class="mono">Mon to Fri 8 AM to 4:30 PM · Weekends by appointment</p>
+    </div>
+    <p class="mono">Generation Hot Tubs · Swim Spas · Fiberglass &amp; Gunite Pools</p>
+  </div>
+</footer>
+
+<div class="bar" aria-hidden="true">
+  <div class="l">Home Show credit · <span id="bar-days">30</span> days left<b>$1,000 to $2,500 through Oct 13</b></div>
+  <a class="btn btn-ember" href="#next">Book now</a>
+</div>
+
+<script>
+/*SHARED_JS*/
+(function(){
+  /* Credit window: 30 days after the show closes. Ends Oct 13, 2026 at midnight Central. */
+  var end = Date.parse('2026-10-14T04:59:59Z');
+  var d = Math.ceil((end - Date.now())/864e5);
+  var big=document.getElementById('c-d'), bar=document.getElementById('bar-days'), lab=document.getElementById('count-label');
+  if(d>0){ big.textContent=d; bar.textContent=d; }
+  else { lab.textContent='Credit window'; big.parentNode.innerHTML='<b>Closed</b><span>call us anyway</span>'; bar.parentNode.firstChild.textContent='Home Show credit window closed · '; }
+})();
+</script>

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "landing-pages",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "/Users/jeremyyoung/kevin-sparks-home-show/dist"],
+      "port": 8765
+    }
+  ]
+}

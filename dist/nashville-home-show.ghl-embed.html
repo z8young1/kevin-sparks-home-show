@@ -1,0 +1,727 @@
+<title>Booth 1238 at the Nashville Home Show</title>
+<meta name="description" content="Kevin Sparks Signature Pools brings hot tubs, swim spas and swimming pools together at Booth 1238, Nashville Home Show, September 11 to 13, 2026. Register for a $1,000 to $2,500 backyard upgrade credit.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* ============================================================
+   Kevin Sparks Signature Pools · Nashville Home Show pages
+   Brand system carried from kevinsparkshottubs.com:
+   Oswald display · DM Sans body · IBM Plex Mono data
+   ============================================================ */
+:root{
+  --deep:#0A1128;        /* navy ground */
+  --deep-2:#132453;      /* navy gradient end */
+  --deep-3:#080E1F;      /* darkest */
+  --cyan:#009EF0;        /* brand */
+  --cyan-2:#3FB6F5;      /* brand on dark */
+  --blue:#005091;        /* brand ink on light */
+  --ember:#F2A33C;       /* the show accent: booth, credit */
+  --ember-2:#FFC46B;
+  --ground:#F1F5FA;      /* light page ground, blue-biased */
+  --panel:#FFFFFF;
+  --panel-2:#E9F1FA;
+  --line:#D5E0EC;
+  --ink:#16203A;
+  --ink-2:#4C5E7C;
+  --on-deep:#EAF2FB;
+  --on-deep-dim:#94A9CA;
+  --line-deep:rgba(234,242,251,.14);
+
+  --display:"Oswald","Arial Narrow",Impact,sans-serif;
+  --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+
+  --step--1:.875rem;
+  --step-0:1.0625rem;
+  --step-1:1.3rem;
+  --step-2:1.7rem;
+  --step-3:2.25rem;
+  --step-4:clamp(2.6rem,6.2vw,4.9rem);
+
+  --wrap:1180px;
+  --gutter:clamp(1.1rem,4vw,2.5rem);
+  --r:6px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--body);font-size:var(--step-0);line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:.005em}
+h1{font-size:var(--step-4);text-transform:uppercase}
+h2{font-size:var(--step-3);text-transform:uppercase}
+h3{font-size:var(--step-1);text-transform:uppercase;letter-spacing:.02em}
+p{margin:0}
+.lede{font-size:var(--step-1);line-height:1.45;max-width:38ch;color:var(--ink-2)}
+.wrap{width:min(var(--wrap),100% - 2*var(--gutter));margin-inline:auto}
+.eyebrow{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);display:inline-flex;align-items:center;gap:.6rem
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;flex:none}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.sec{padding-block:clamp(3.5rem,8vw,6.5rem)}
+.sec-head{display:grid;gap:.9rem;max-width:62ch;margin-bottom:clamp(2rem,4vw,3rem)}
+.sec-head p{color:var(--ink-2);font-size:var(--step-0)}
+.deep{background:linear-gradient(160deg,var(--deep) 0%,var(--deep-2) 100%);color:var(--on-deep)}
+.deep .eyebrow{color:var(--cyan-2)}
+.deep .sec-head p,.deep .lede{color:var(--on-deep-dim)}
+.deep a{color:var(--cyan-2)}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+  font-size:1.05rem;line-height:1;padding:1rem 1.5rem;border-radius:var(--r);
+  text-decoration:none;border:2px solid transparent;cursor:pointer;
+  transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease;
+  white-space:nowrap
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+.btn-ember{background:var(--ember);color:var(--deep-3);box-shadow:0 10px 30px -10px rgba(242,163,60,.7)}
+.btn-ember:hover{background:var(--ember-2)}
+.btn-cyan{background:var(--cyan);color:#fff}
+.btn-cyan:hover{background:#1FAAF5}
+.btn-ghost{background:transparent;color:var(--on-deep);border-color:var(--line-deep)}
+.btn-ghost:hover{border-color:var(--on-deep)}
+.btn-ghost-ink{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost-ink:hover{border-color:var(--ink)}
+.btn svg{width:1.05em;height:1.05em;flex:none}
+
+/* top bar */
+.top{
+  position:sticky;top:0;z-index:40;background:rgba(10,17,40,.86);backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-deep);color:var(--on-deep)
+}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:66px}
+.top img{height:38px;width:auto}
+.top-meta{display:flex;align-items:center;gap:1.4rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.top-meta a{color:var(--on-deep);text-decoration:none}
+.top-meta .pill{background:var(--ember);color:var(--deep-3);padding:.35rem .6rem;border-radius:3px;font-weight:600}
+@media (max-width:760px){.top-meta .hide-m{display:none}}
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--deep-3);color:var(--on-deep)}
+.hero-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center 40%;
+  filter:saturate(.85)}
+.hero-veil{position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(90deg,rgba(8,14,31,.94) 0%,rgba(8,14,31,.86) 45%,rgba(8,14,31,.55) 100%),
+             linear-gradient(0deg,rgba(8,14,31,1) 0%,rgba(8,14,31,0) 40%)}
+.hero canvas{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen;opacity:.55}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:end;
+  padding-block:clamp(3.5rem,8vw,6rem) clamp(3rem,6vw,4.5rem)}
+.hero h1{margin-block:1rem 1.2rem}
+.hero h1 em{font-style:normal;color:var(--ember)}
+.hero .lede{color:var(--on-deep-dim)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.hero .eyebrow{color:var(--cyan-2)}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+
+/* the show pass card */
+.pass{
+  background:var(--panel);color:var(--ink);border-radius:10px;overflow:hidden;
+  box-shadow:0 40px 80px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08);
+  font-family:var(--mono);position:relative
+}
+.pass-head{background:var(--ember);color:var(--deep-3);padding:.9rem 1.3rem;display:flex;justify-content:space-between;align-items:center;
+  font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.pass-body{padding:1.3rem;display:grid;gap:1rem}
+.pass-row{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:baseline;padding-block:.65rem;border-bottom:1px dashed var(--line)}
+.pass-row:last-child{border-bottom:0}
+.pass-k{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.pass-v{font-family:var(--display);font-size:1.5rem;font-weight:600;text-transform:uppercase;line-height:1;text-align:right}
+.pass-v small{display:block;font-family:var(--mono);font-size:.74rem;font-weight:400;text-transform:none;color:var(--ink-2);margin-top:.3rem;letter-spacing:0}
+.pass-booth{background:var(--deep);color:var(--on-deep);margin:.2rem -1.3rem -1.3rem;padding:1.2rem 1.3rem;display:flex;justify-content:space-between;align-items:center}
+.pass-booth b{font-family:var(--display);font-size:2.6rem;font-weight:700;color:var(--ember);line-height:1;letter-spacing:.02em}
+.pass-booth span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-deep-dim)}
+.pass::after{ /* ticket notch */
+  content:"";position:absolute;left:-10px;top:52px;width:20px;height:20px;border-radius:50%;background:var(--deep-3)}
+.count{display:flex;gap:.6rem}
+.count div{background:var(--panel-2);border-radius:4px;padding:.5rem .6rem;min-width:62px;text-align:center}
+.count b{display:block;font-family:var(--display);font-size:1.7rem;font-weight:600;line-height:1}
+.count span{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.count.live b{color:var(--cyan)}
+
+/* number strip */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line-deep);border-radius:var(--r);overflow:hidden}
+.stats div{padding:1.3rem 1.2rem;border-right:1px solid var(--line-deep)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font-family:var(--display);font-size:2.4rem;font-weight:600;line-height:1;color:#fff}
+.stats b sup{font-size:.9rem;vertical-align:top;color:var(--cyan-2);margin-left:.1rem}
+.stats span{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-deep-dim);margin-top:.5rem}
+@media (max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}.stats div{border-bottom:1px solid var(--line-deep)}.stats div:nth-child(odd){border-right:1px solid var(--line-deep)}.stats div:nth-child(even){border-right:0}.stats div:last-child{grid-column:1/-1;border-bottom:0}}
+
+/* credit band */
+.credit{background:var(--ember);color:var(--deep-3);position:relative;overflow:hidden}
+.credit .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1.2rem,4vw,3rem);align-items:center;padding-block:1.8rem}
+.credit .amt{font-family:var(--display);font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;line-height:.95;letter-spacing:-.005em}
+.credit .amt small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:.35rem;opacity:.85}
+.credit h3{font-size:var(--step-2);text-transform:none;letter-spacing:0;line-height:1.1}
+.credit p{margin-top:.4rem;max-width:56ch;font-size:var(--step-0)}
+.credit .btn-deep{background:var(--deep-3);color:#fff}
+.credit .btn-deep:hover{background:var(--deep)}
+@media (max-width:860px){.credit .wrap{grid-template-columns:1fr}}
+
+/* option cards (hot tub / swim spa / pool) */
+.options{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.opt{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;
+  transition:transform .25s ease,box-shadow .25s ease}
+.opt:hover{transform:translateY(-4px);box-shadow:0 30px 50px -30px rgba(22,32,58,.35)}
+.opt-art{aspect-ratio:16/9;position:relative;overflow:hidden;background:var(--deep)}
+.opt-art canvas,.opt-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.opt-art .tag{position:absolute;left:1rem;top:1rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  background:rgba(8,14,31,.7);color:var(--on-deep);padding:.35rem .6rem;border-radius:3px;backdrop-filter:blur(6px)}
+.opt-body{padding:1.4rem 1.4rem 1rem;display:grid;gap:.7rem;align-content:start}
+.opt-body p{color:var(--ink-2);font-size:.98rem}
+.opt dl{margin:.4rem 0 0;display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.9rem}
+.opt dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);padding-top:.15rem}
+.opt dd{margin:0;font-weight:500}
+.opt-foot{padding:1rem 1.4rem 1.4rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.opt-foot .from{font-family:var(--mono);font-size:.78rem;color:var(--ink-2)}
+.opt-foot .from b{font-family:var(--display);font-size:1.4rem;color:var(--ink);font-weight:600;display:block;line-height:1}
+.opt-foot a{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-weight:600;text-decoration:none;color:var(--blue);white-space:nowrap}
+.opt-foot a:hover{color:var(--cyan)}
+@media (max-width:900px){.options{grid-template-columns:1fr}}
+
+/* model rail */
+.rail-wrap{position:relative}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:1rem;overflow-x:auto;padding-bottom:1rem;scroll-snap-type:x mandatory;
+  scrollbar-color:var(--cyan-2) transparent}
+.rail::-webkit-scrollbar{height:6px}.rail::-webkit-scrollbar-thumb{background:var(--line-deep);border-radius:3px}
+.model{scroll-snap-align:start;background:rgba(255,255,255,.04);border:1px solid var(--line-deep);border-radius:8px;padding:1.1rem;display:grid;gap:.6rem;
+  transition:background .2s ease,border-color .2s ease}
+.model:hover{background:rgba(255,255,255,.07);border-color:rgba(234,242,251,.3)}
+.model img{width:100%;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 20px 20px rgba(0,0,0,.45))}
+.model .series{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan-2)}
+.model h3{color:#fff;font-size:1.35rem}
+.model .spec{display:flex;gap:.9rem;font-family:var(--mono);font-size:.74rem;color:var(--on-deep-dim)}
+.model .spec b{color:var(--on-deep);font-weight:500}
+.model p{font-size:.9rem;color:var(--on-deep-dim);line-height:1.45}
+.model .best{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);margin-top:.2rem}
+
+/* logistics */
+.logi{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.hours{border:1px solid var(--line);border-radius:10px;background:var(--panel);overflow:hidden}
+.hours table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours th,.hours td{text-align:left;padding:.95rem 1.2rem;border-bottom:1px solid var(--line)}
+.hours th{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-weight:500;background:var(--panel-2)}
+.hours td:first-child{font-family:var(--display);text-transform:uppercase;font-size:1.15rem;font-weight:600}
+.hours td.t{font-family:var(--mono);font-size:.95rem}
+.hours td.note{color:var(--ink-2);font-size:.9rem}
+.hours tr.now td{background:#FFF6E6}
+.hours tr:last-child td{border-bottom:0}
+.deals{display:grid;gap:.6rem;margin-top:1rem}
+.deal{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline;padding:.9rem 1.1rem;background:var(--panel);border:1px solid var(--line);border-radius:var(--r)}
+.deal b{font-family:var(--display);font-size:1.3rem;font-weight:600;text-transform:uppercase;white-space:nowrap;min-width:5.5rem;color:var(--blue)}
+.deal span{font-size:.95rem;color:var(--ink-2)}
+.venue{display:grid;gap:1rem}
+.venue .addr{background:var(--deep);color:var(--on-deep);border-radius:10px;padding:1.5rem;display:grid;gap:.9rem}
+.venue .addr h3{color:#fff}
+.venue .addr p{color:var(--on-deep-dim)}
+.venue .addr .mono{color:var(--on-deep)}
+.venue .addr .btns{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.3rem}
+.find{border:1px dashed var(--line);border-radius:10px;padding:1.3rem 1.5rem;display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:center;background:var(--panel)}
+.find b{font-family:var(--display);font-size:3rem;font-weight:700;color:var(--ember);line-height:1;letter-spacing:.02em}
+.find span{font-size:.95rem;color:var(--ink-2)}
+@media (max-width:900px){.logi{grid-template-columns:1fr}}
+
+/* form */
+.form-sec .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.form-side{display:grid;gap:1.2rem;position:sticky;top:90px}
+.form-side ul{margin:0;padding:0;list-style:none;display:grid;gap:.7rem}
+.form-side li{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:start;color:var(--on-deep-dim)}
+.form-side li svg{width:20px;height:20px;color:var(--ember);flex:none;margin-top:.15rem}
+.form-side li b{color:var(--on-deep);font-weight:500}
+form.lead{background:var(--panel);color:var(--ink);border-radius:12px;padding:clamp(1.3rem,3vw,2.2rem);display:grid;gap:1rem;
+  box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label.fld{display:grid;gap:.35rem}
+label.fld>span{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.fld input,.fld select{font:inherit;font-size:1rem;padding:.8rem .9rem;border:1px solid var(--line);border-radius:var(--r);background:var(--ground);color:var(--ink);width:100%}
+.fld input:focus,.fld select:focus{border-color:var(--cyan);background:#fff}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{border:1px solid var(--line);border-radius:var(--r);padding:.75rem .5rem;text-align:center;cursor:pointer;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;
+  background:var(--ground);transition:all .15s ease;user-select:none}
+.seg label:hover{border-color:var(--cyan)}
+.seg input:checked+label{background:var(--deep);color:#fff;border-color:var(--deep)}
+.seg input:focus-visible+label{outline:3px solid var(--ember);outline-offset:2px}
+.fine{font-size:.8rem;color:var(--ink-2);line-height:1.45}
+.done{display:none;text-align:center;padding:2rem 1rem;gap:1rem}
+.done.show{display:grid}
+.done .code{font-family:var(--mono);font-size:2rem;letter-spacing:.12em;background:var(--deep);color:var(--ember);padding:1rem;border-radius:var(--r);display:inline-block;margin-inline:auto}
+@media (max-width:900px){.form-sec .wrap{grid-template-columns:1fr}.form-side{position:static}.f2{grid-template-columns:1fr}.seg{grid-template-columns:repeat(2,1fr)}}
+
+/* footer */
+footer{background:var(--deep-3);color:var(--on-deep-dim);padding-block:2.5rem 6rem;font-size:.9rem}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center}
+footer img{height:44px;width:auto}
+footer a{color:var(--on-deep);text-decoration:none}
+footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+/* sticky mobile bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(10,17,40,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line-deep);color:var(--on-deep);padding:.7rem var(--gutter);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;transform:translateY(110%);transition:transform .3s ease}
+.bar.on{transform:none}
+.bar .l{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;line-height:1.3}
+.bar .l b{display:block;font-family:var(--display);font-size:1.1rem;letter-spacing:.03em;color:var(--ember)}
+.bar .btn{padding:.8rem 1.1rem;font-size:.95rem}
+
+/* reveal */
+.rv{transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.pre{opacity:0;transform:translateY(22px)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv,.rv.pre{opacity:1;transform:none;transition:none}.btn:hover{transform:none}.opt:hover{transform:none}}
+
+/* utilities */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
+@media (max-width:860px){.grid-2{grid-template-columns:1fr}}
+.photo{border-radius:10px;overflow:hidden;position:relative;aspect-ratio:4/3}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .cap{position:absolute;left:1rem;bottom:1rem;right:1rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;
+  background:rgba(8,14,31,.6);padding:.5rem .7rem;border-radius:3px;width:max-content;max-width:100%;backdrop-filter:blur(6px)}
+.check{display:grid;gap:.8rem;margin:1.2rem 0 0;padding:0;list-style:none}
+.check li{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:start}
+.check li svg{width:22px;height:22px;color:var(--cyan);flex:none;margin-top:.1rem}
+.check li b{display:block;font-family:var(--display);text-transform:uppercase;font-size:1.1rem;letter-spacing:.03em;font-weight:600}
+.check li span{color:var(--ink-2);font-size:.95rem}
+
+/* GoHighLevel container reset: GHL wraps a Custom HTML element in section/row/column
+   wrappers that cap width, add padding and set overflow:hidden (which kills the sticky header). */
+.c-section,.c-section > .inner,.c-row,.c-row > .inner,.c-column,.c-wrapper,.c-html,.hl_page-preview--content{
+  max-width:100% !important;width:100% !important;padding:0 !important;margin:0 !important;
+  overflow:visible !important;background:transparent !important;
+}
+
+.hero-bg{background-image:url("https://kevinsparkssignaturepools.com/wp-content/uploads/2026/06/Hot-Tub-Image-1024x790.png")}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2025/08/KSSP-Logo-1024x333.webp" alt="Kevin Sparks Signature Pools">
+    <div class="top-meta">
+      <span class="hide-m">Sept 11 to 13 · Music City Center</span>
+      <span class="pill">Booth 1238</span>
+      <a href="tel:6152384144" class="hide-m">615.238.4144</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg" role="img" aria-label="A Generation hot tub on a backyard patio under an umbrella"></div>
+  <div class="hero-veil"></div>
+  <canvas id="steam" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Official Nashville Home Show · Hall D</span>
+      <h1>Come experience your backyard options <em>in person.</em></h1>
+      <p class="lede">Hot tubs, swim spas and swimming pools, side by side at Booth 1238, so you can compare what actually fits your space, your budget and the way your family lives. Then take your shoes off and climb into a Generation hot tub.</p>
+      <div class="hero-cta">
+        <a class="btn btn-ember" href="#credit">Claim your backyard credit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#visit">Get to Booth 1238</a>
+      </div>
+    </div>
+
+    <aside class="pass" aria-label="Show details">
+      <div class="pass-head"><span>Nashville Home Show 2026</span><span>Music City Center</span></div>
+      <div class="pass-body">
+        <div class="pass-row">
+          <span class="pass-k">Show dates</span>
+          <span class="pass-v">Sept 11 to 13<small>Fri &amp; Sat 10 AM to 7 PM · Sun 10 AM to 5 PM</small></span>
+        </div>
+        <div class="pass-row">
+          <span class="pass-k" id="count-label">Doors open in</span>
+          <div class="count" id="count">
+            <div><b id="c-d">0</b><span>days</span></div>
+            <div><b id="c-h">0</b><span>hrs</span></div>
+            <div><b id="c-m">0</b><span>min</span></div>
+            <div><b id="c-s">0</b><span>sec</span></div>
+          </div>
+        </div>
+        <div class="pass-row">
+          <span class="pass-k">Where</span>
+          <span class="pass-v">Hall D<small>201 Rep. John Lewis Way S, Nashville</small></span>
+        </div>
+        <div class="pass-booth">
+          <span>Find us at<br>booth number</span>
+          <b>1238</b>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="credit" id="credit-band">
+  <div class="wrap">
+    <div class="amt"><small>Backyard upgrade credit</small>$1,000 to $2,500</div>
+    <div>
+      <h3>Register now, then scan the QR code at the booth to lock it in.</h3>
+      <p>Good toward a qualifying pool, swim spa or hot tub purchase from Kevin Sparks Signature Pools. Registering ahead takes thirty seconds and means no typing on the show floor.</p>
+    </div>
+    <a class="btn btn-deep" href="#credit">Register for the credit</a>
+  </div>
+</section>
+
+<section class="sec" id="compare">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Compare them side by side</span>
+      <h2>One booth. Three ways to add water to the backyard.</h2>
+      <p>Most shows put the pool builder in one aisle and the hot tub dealer in another. We are bringing all three together so the comparison happens in one conversation, based on your yard, your budget and how soon you want to be in the water.</p>
+    </div>
+    <div class="options">
+      <article class="opt rv">
+        <div class="opt-art"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/06/Hot-Tub-Image-1024x790.png" alt="Generation hot tub on a patio"><span class="tag">Filled and on the floor</span></div>
+        <div class="opt-body">
+          <h3>Hot tub</h3>
+          <p>The most attainable upgrade. Three models plug into a standard 110v outlet, so it can be running in your yard within weeks, not seasons.</p>
+          <dl>
+            <dt>Footprint</dt><dd>Fits a patio or a townhouse deck</dd>
+            <dt>Timeline</dt><dd>Weeks</dd>
+            <dt>Power</dt><dd>110v plug-in, or 220v for faster heat</dd>
+            <dt>Season</dt><dd>Year-round. 104°F in January.</dd>
+          </dl>
+        </div>
+        <div class="opt-foot"><span class="from">Starting at<b>$5,995</b></span><a href="#models">Compare nine models</a></div>
+      </article>
+      <article class="opt rv">
+        <div class="opt-art"><canvas class="water" data-kind="swimspa" aria-hidden="true"></canvas><span class="tag">Pool experience, smaller footprint</span></div>
+        <div class="opt-body">
+          <h3>Swim spa</h3>
+          <p>Swim against a current, train, or soak in a footprint that fits where a pool will not. Heated, so the season never ends.</p>
+          <dl>
+            <dt>Footprint</dt><dd>Side yard or patio</dd>
+            <dt>Timeline</dt><dd>Weeks to install</dd>
+            <dt>Use</dt><dd>Swim current plus hydrotherapy seats</dd>
+            <dt>Season</dt><dd>Year-round</dd>
+          </dl>
+        </div>
+        <div class="opt-foot"><span class="from">Pricing<b>At the booth</b></span><a href="#credit" data-pick="Swim spa">See it at the show</a></div>
+      </article>
+      <article class="opt rv">
+        <div class="opt-art"><canvas class="water" data-kind="pool" aria-hidden="true"></canvas><span class="tag">Designed and built by Kevin Sparks</span></div>
+        <div class="opt-body">
+          <h3>Swimming pool</h3>
+          <p>Fiberglass or gunite, with the hardscape, decking and lighting designed as one project by the crew that has built them in Middle Tennessee for 42 years.</p>
+          <dl>
+            <dt>Footprint</dt><dd>Custom to the yard</dd>
+            <dt>Timeline</dt><dd>Plan now, swim in 2027</dd>
+            <dt>Build</dt><dd>Fiberglass or gunite</dd>
+            <dt>Extras</dt><dd>Hardscape, decking, spa pads</dd>
+          </dl>
+        </div>
+        <div class="opt-foot"><span class="from">Pricing<b>Custom quote</b></span><a href="#credit" data-pick="Pool">Start a design conversation</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec deep" id="models">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Generation Hot Tubs · Built in McMinnville, TN</span>
+      <h2>Nine tubs. Two series. One that fits you.</h2>
+      <p>Every Generation model is built 55 miles from the booth. Seat depth and jet placement are personal, so the only honest way to choose is to sit in one. Bring the family and try the seats.</p>
+    </div>
+    <div class="rail-wrap rv">
+      <div class="rail">
+        <article class="model"><img src="https://generationhottubs.com/wp-content/uploads/2024/02/Alpha-1024x683.png" alt="Alpha 1 hot tub shell"><span class="series">Classic · 110v ready</span><h3>Alpha 1</h3><div class="spec"><span><b>3</b> seats</span><span><b>28</b> jets</span></div><p>The couple's tub. Compact enough for a townhouse patio, still deep enough for a proper full-body soak.</p></article>
+        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/gh500-1024x1020.webp" alt="GH500 hot tub shell"><span class="series">Classic · 110v ready</span><h3>GH500</h3><div class="spec"><span><b>5 to 6</b> seats</span><span><b>29</b> jets</span></div><p>The most jets of any Classic model. Six adults, one lounger, and a footprint that still clears a standard gate.</p></article>
+        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GH550-Img.webp" alt="GH550 hot tub shell"><span class="series">Classic · 110v ready</span><h3>GH550</h3><div class="spec"><span><b>5 to 6</b> seats</span><span><b>25</b> jets</span></div><p>The efficiency pick. Fewer, larger jets and less water to heat, which shows up on the power bill every month.</p><span class="best">Lowest running cost</span></article>
+        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Alpha2-1024x683.png" alt="Alpha 2 hot tub shell"><span class="series">Signature · Two pumps</span><h3>Alpha 2</h3><div class="spec"><span><b>3</b> seats</span><span><b>Foot</b> jet</span></div><p>The Alpha 1 footprint with two pumps and a dedicated foot massage jet. Small tub, serious therapy.</p></article>
+        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Millennial-1024x1024.png" alt="Millennial hot tub shell"><span class="series">Signature · Waterfall</span><h3>Millennial</h3><div class="spec"><span><b>45</b> jets</span><span><b>2</b> pumps</span></div><p>Most jets in the whole lineup. If hydrotherapy is the reason you are shopping, start your visit here.</p><span class="best">Most jets</span></article>
+        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Boomer-1024x1024.png" alt="Boomer hot tub shell"><span class="series">Signature · Waterfall</span><h3>Boomer</h3><div class="spec"><span><b>Smallest</b> Signature</span></div><p>Signature jets and a waterfall in the smallest Signature footprint. The value play if the yard is tight.</p></article>
+        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Silent-1024x1024.png" alt="Silent hot tub shell"><span class="series">Signature · Waterfall</span><h3>Silent</h3><div class="spec"><span><b>44</b> jets</span><span><b>Fastest</b> heat</span></div><p>Least water of any 44-jet model, so it heats fastest and recovers quickest after a full house gets in.</p></article>
+        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GenX-1024x1024.png" alt="Gen X hot tub shell"><span class="series">Signature · Waterfall</span><h3>Gen X</h3><div class="spec"><span><b>92"</b> shell</span><span><b>44</b> jets</span></div><p>Full 92 inch shell with 44 jets and a waterfall. Room for the whole family without anybody's knees touching.</p></article>
+        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GenZ-2-1024x1024.png" alt="Gen Z hot tub shell"><span class="series">Signature · Waterfall</span><h3>Gen Z</h3><div class="spec"><span><b>490</b> gal</span><span><b>Deepest</b> soak</span></div><p>The biggest water volume we sell. Deepest soak in the lineup and the one people book weekends around.</p><span class="best">Largest capacity</span></article>
+      </div>
+    </div>
+    <div class="stats rv" style="margin-top:2.5rem">
+      <div><b>42</b><span>Years building in Middle Tennessee</span></div>
+      <div><b>55</b><span>Miles from the factory to our floor</span></div>
+      <div><b>10</b><span>Year shell warranty</span></div>
+      <div><b>104<sup>°F</sup></b><span>Set it once. Balboa holds it.</span></div>
+      <div><b>$5,995</b><span>Starting price, delivered</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="why">
+  <div class="wrap grid-2">
+    <div class="photo rv"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/DSC00877-Enhanced-NR-Edit.png" alt="Close-up of a Generation hot tub cabinet against a cedar fence"><span class="cap">Graphite cabinet · Real light, not a phone screen</span></div>
+    <div class="rv">
+      <span class="eyebrow">Why the hot tub is the fastest yes at the show</span>
+      <h2 style="margin-top:.8rem">Not a big-box hot tub.</h2>
+      <ul class="check">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><div><b>Three models just plug in</b><span>Alpha 1, GH500 and GH550 run on a 110v / 20a circuit. No electrician, no trenching, no waiting on a permit.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><div><b>Balboa on the inside</b><span>Every model runs Balboa electrical equipment with a digital topside control. It is the system service techs actually stock parts for.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><div><b>Real hydrotherapy</b><span>Up to 45 jets and two 6 bhp two-speed pumps in the Signature Series. Enough pressure to reach a shoulder knot after a twelve-hour day.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><div><b>One crew for the whole yard</b><span>Pools, gunite, hardscape, decking and spa pads under one roof for 42 years. The people who set your tub are the people who build the patio it sits on.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="visit" style="background:var(--panel-2)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Plan your visit</span>
+      <h2>Three days at Music City Center.</h2>
+      <p>Tickets are cheaper online, seniors and kids get in free, and Friday and Saturday evenings drop to five dollars. Bring photos of your yard and rough measurements. We will do the rest at the booth.</p>
+    </div>
+    <div class="logi">
+      <div class="rv">
+        <div class="hours">
+          <table>
+            <thead><tr><th>Day</th><th>Hours</th><th>Good to know</th></tr></thead>
+            <tbody>
+              <tr data-day="2026-09-11"><td>Fri, Sept 11</td><td class="t">10 AM to 7 PM</td><td class="note">$5 admission after 5 PM at the box office</td></tr>
+              <tr data-day="2026-09-12"><td>Sat, Sept 12</td><td class="t">10 AM to 7 PM</td><td class="note">$5 admission after 5 PM at the box office</td></tr>
+              <tr data-day="2026-09-13"><td>Sun, Sept 13</td><td class="t">10 AM to 5 PM</td><td class="note">Teachers free with school ID. Titans gear gets 50% off.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="deals">
+          <div class="deal"><b>$8 online</b><span>Adult admission, versus $10 at the door. A 4-pack is $24 online.</span></div>
+          <div class="deal"><b>Free</b><span>Ages 60 and up with ID, children 12 and under, and active or retired military and first responders with ID.</span></div>
+          <div class="deal"><b>Parking</b><span>The show recommends reserving a spot in advance through SpotHero for Music City Center.</span></div>
+        </div>
+      </div>
+      <div class="venue rv">
+        <div class="addr">
+          <span class="eyebrow">Venue</span>
+          <h3>Music City Center, Hall D</h3>
+          <p class="mono">201 Rep. John Lewis Way S<br>Nashville, TN 37203</p>
+          <p>Downtown, a block from Broadway. Enter Hall D and ask any show volunteer for Booth 1238, or just follow the sound of running water.</p>
+          <div class="btns">
+            <a class="btn btn-cyan" href="https://www.google.com/maps/dir/?api=1&destination=Music+City+Center%2C+201+Rep.+John+Lewis+Way+S%2C+Nashville%2C+TN+37203" target="_blank" rel="noopener">Directions</a>
+            <a class="btn btn-ghost" href="https://www.nashvillefallhomeshow.com/" target="_blank" rel="noopener">Tickets, $2 off online</a>
+          </div>
+        </div>
+        <div class="find"><b>1238</b><span>Our booth number. Save it, screenshot it, or just look for the hot tubs, the swim spa and the pool display all in one place.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec deep form-sec" id="credit">
+  <div class="wrap">
+    <div class="form-side rv">
+      <span class="eyebrow">Backyard upgrade credit</span>
+      <h2>Register in thirty seconds. Bring your phone to Booth 1238.</h2>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>$1,000 to $2,500</b> toward a qualifying pool, swim spa or hot tub purchase</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Your name is at the booth.</b> Scan the QR code when you arrive and the credit attaches to your file.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>No obligation.</b> Sit in a tub, ask every question, and leave with real numbers written down.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Can't make the show?</b> Register anyway. The credit is good at our Murfreesboro showroom too.</span></li>
+      </ul>
+    </div>
+    <form class="lead rv" action="#" method="post" novalidate>
+      <input type="hidden" name="page" value="nashville-home-show">
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term"><input type="hidden" name="fbclid"><input type="hidden" name="gclid"><input type="hidden" name="referrer">
+      <div class="f2">
+        <label class="fld"><span>First name</span><input name="first_name" autocomplete="given-name" required></label>
+        <label class="fld"><span>Last name</span><input name="last_name" autocomplete="family-name" required></label>
+      </div>
+      <div class="f2">
+        <label class="fld"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="fld"><span>Mobile (we text your confirmation)</span><input type="tel" name="phone" autocomplete="tel" required></label>
+      </div>
+      <div class="f2">
+        <label class="fld"><span>Home ZIP</span><input name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}"></label>
+        <label class="fld"><span>When are you planning?</span>
+          <select name="timeline"><option value="">Choose one</option><option>This fall</option><option>Within 6 months</option><option>6 to 18 months</option><option>Just looking for now</option></select></label>
+      </div>
+      <div class="fld"><span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">What are you most curious about?</span>
+        <div class="seg" style="margin-top:.4rem">
+          <input type="radio" name="interest" value="Hot tub" id="i1" checked><label for="i1">Hot tub</label>
+          <input type="radio" name="interest" value="Swim spa" id="i2"><label for="i2">Swim spa</label>
+          <input type="radio" name="interest" value="Pool" id="i3"><label for="i3">Pool</label>
+          <input type="radio" name="interest" value="Not sure" id="i4"><label for="i4">Not sure</label>
+        </div>
+      </div>
+      <label class="fld"><span>Which day are you coming?</span>
+        <select name="visit_day"><option value="">Not sure yet</option><option>Friday, Sept 11</option><option>Saturday, Sept 12</option><option>Sunday, Sept 13</option><option>I can't make the show</option></select></label>
+      <button class="btn btn-ember" type="submit" style="width:100%">Register for my credit</button>
+      <p class="fine">Credit applies to a qualifying purchase from Kevin Sparks Signature Pools, one per household, amount confirmed at your appointment. We will text and email your confirmation. No spam, and no sharing your info.</p>
+      <div class="done" aria-live="polite">
+        <span class="eyebrow" style="justify-content:center">You're registered</span>
+        <h3 style="font-size:var(--step-2)">See you at Booth 1238.</h3>
+        <span class="code">KS-1238-0000</span>
+        <p class="fine">Show this code at the booth or just give us your name. We texted it to you as well. Sunday closes at 5 PM, so come early.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2025/08/KSSP-Logo-1024x333.webp" alt="Kevin Sparks Signature Pools">
+    <div>
+      <p><a href="tel:6152384144">615.238.4144</a> · 2349F S Church St, Murfreesboro, TN 37130</p>
+      <p class="mono">Mon to Fri 8 AM to 4:30 PM · Weekends by appointment</p>
+    </div>
+    <p class="mono">Generation Hot Tubs · Swim Spas · Fiberglass &amp; Gunite Pools</p>
+  </div>
+</footer>
+
+<div class="bar" aria-hidden="true">
+  <div class="l">Sept 11 to 13 · Hall D<b>Booth 1238</b></div>
+  <a class="btn btn-ember" href="#credit">Claim credit</a>
+</div>
+
+<script>
+/* Shared behaviour: reveal, steam, water art, sticky bar, UTM capture, demo submit */
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Reveal: only elements below the first viewport get parked, so the page is readable at rest */
+  var rv = document.querySelectorAll('.rv');
+  if(!reduce && 'IntersectionObserver' in window){
+    var vh = window.innerHeight;
+    rv.forEach(function(el){ if(el.getBoundingClientRect().top > vh*0.92) el.classList.add('pre'); });
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.remove('pre'); e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    rv.forEach(function(el){ io.observe(el); });
+    /* Safety net: nothing stays hidden if the observer never fires */
+    setTimeout(function(){ rv.forEach(function(el){ el.classList.remove('pre'); el.classList.add('in'); }); }, 2500);
+  }
+
+  /* Steam in the hero: slow rising wisps, 104 degrees on a cool evening */
+  var sc = document.getElementById('steam');
+  if(sc && !reduce){
+    var ctx = sc.getContext('2d'), W, H, puffs=[];
+    function size(){ W = sc.width = sc.offsetWidth; H = sc.height = sc.offsetHeight; }
+    size(); window.addEventListener('resize', size);
+    for(var i=0;i<26;i++) puffs.push(mk(true));
+    function mk(init){ return { x: Math.random()*W, y: init? Math.random()*H : H+60, r: 60+Math.random()*140, v: .12+Math.random()*.25, a: 0, max: .05+Math.random()*.07, drift:(Math.random()-.5)*.25, life:0 }; }
+    function tick(){
+      ctx.clearRect(0,0,W,H);
+      puffs.forEach(function(p,i){
+        p.y -= p.v; p.x += p.drift + Math.sin(p.life/90)*.2; p.life++;
+        p.a = Math.min(p.max, p.a + .0006);
+        if(p.y < -p.r){ puffs[i] = mk(false); return; }
+        var g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);
+        g.addColorStop(0,'rgba(180,215,255,'+p.a+')'); g.addColorStop(1,'rgba(180,215,255,0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+      });
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+
+  /* Water art for the option cards that have no photography yet (swim spa, pool) */
+  document.querySelectorAll('canvas.water').forEach(function(c){
+    var ctx=c.getContext('2d'), W,H, t=0, kind=c.dataset.kind||'pool';
+    function size(){ W=c.width=c.offsetWidth*1; H=c.height=c.offsetHeight*1; }
+    size(); window.addEventListener('resize',size);
+    function frame(){
+      t+=reduce?0:.012;
+      var g=ctx.createLinearGradient(0,0,0,H);
+      g.addColorStop(0,'#0B4F86'); g.addColorStop(1,'#1FA8E0');
+      ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+      /* caustic ripples */
+      ctx.globalAlpha=.22; ctx.strokeStyle='#CFF1FF'; ctx.lineWidth=1.2;
+      for(var r=0;r<9;r++){
+        ctx.beginPath();
+        for(var x=0;x<=W;x+=6){
+          var y = H*(0.12+r*0.1) + Math.sin(x*0.02 + t*1.6 + r)*6 + Math.cos(x*0.011 - t + r*2)*5;
+          x? ctx.lineTo(x,y):ctx.moveTo(x,y);
+        }
+        ctx.stroke();
+      }
+      ctx.globalAlpha=1;
+      if(kind==='swimspa'){
+        /* the shell edge and a current line, the thing that makes a swim spa a swim spa */
+        ctx.fillStyle='rgba(8,14,31,.55)'; ctx.fillRect(0,0,W,H*.14); ctx.fillRect(0,H*.86,W,H*.14);
+        ctx.fillStyle='rgba(255,255,255,.75)';
+        for(var i=0;i<W;i+=28){ var o=(t*40)%28; ctx.fillRect(i-o,H*.5-1.5,14,3); }
+        ctx.fillStyle='#F2A33C'; ctx.beginPath(); ctx.arc(W*.16, H*.5, 7,0,Math.PI*2); ctx.fill();
+      } else {
+        /* pool coping and tile line */
+        ctx.fillStyle='#E6DFD2'; ctx.fillRect(0,0,W,H*.11); ctx.fillRect(0,0,W*.09,H); 
+        ctx.fillStyle='#1B3A6B'; ctx.fillRect(W*.09,H*.11,W,4);
+        for(var k=0;k<W;k+=18){ ctx.fillStyle=(k/18)%2?'#1B3A6B':'#CFF1FF'; ctx.fillRect(W*.09+k,H*.11,18,4); }
+      }
+      if(!reduce) requestAnimationFrame(frame);
+    }
+    frame();
+  });
+
+  /* Sticky bar appears once the hero CTA has scrolled away */
+  var bar=document.querySelector('.bar'), hero=document.querySelector('.hero');
+  if(bar && hero){
+    var onS=function(){ bar.classList.toggle('on', window.scrollY > hero.offsetHeight*0.85); };
+    window.addEventListener('scroll', onS, {passive:true}); onS();
+  }
+
+  /* Attribution: keep whatever Meta or the geofencing vendor appended on the URL */
+  var q=new URLSearchParams(location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(function(k){
+    var v=q.get(k); if(!v) return;
+    document.querySelectorAll('input[name="'+k+'"]').forEach(function(i){ i.value=v; });
+  });
+  var ref=document.querySelector('input[name="referrer"]'); if(ref) ref.value=document.referrer||'';
+
+  /* Option card links pre-select the interest in the form */
+  document.querySelectorAll('[data-pick]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var r=document.querySelector('input[name="interest"][value="'+a.dataset.pick+'"]'); if(r) r.checked=true;
+    });
+  });
+
+  /* Demo submit: swap in the confirmation. Wire action= to the CRM before launch. */
+  document.querySelectorAll('form.lead').forEach(function(f){
+    f.addEventListener('submit', function(e){
+      if(f.getAttribute('action')==='#'){
+        e.preventDefault();
+        var code='KS-1238-'+Math.random().toString(36).slice(2,6).toUpperCase();
+        var c=f.querySelector('.code'); if(c) c.textContent=code;
+        Array.prototype.forEach.call(f.children,function(ch){ if(!ch.classList.contains('done')) ch.style.display='none'; });
+        f.querySelector('.done').classList.add('show');
+        f.scrollIntoView({behavior: reduce?'auto':'smooth', block:'center'});
+      }
+    });
+  });
+})();
+
+(function(){
+  /* Show clock, all times Central (CDT, UTC-5) */
+  var open = Date.parse('2026-09-11T15:00:00Z');
+  var days = {'2026-09-11':[15,24],'2026-09-12':[15,24],'2026-09-13':[15,22]}; /* open, close in UTC hours */
+  var end  = Date.parse('2026-09-13T22:00:00Z');
+  var lab=document.getElementById('count-label'), box=document.getElementById('count');
+  var el={d:document.getElementById('c-d'),h:document.getElementById('c-h'),m:document.getElementById('c-m'),s:document.getElementById('c-s')};
+  function pad(n){return (n<10?'0':'')+n}
+  function ctDate(ms){ var d=new Date(ms-5*3600e3); return d.toISOString().slice(0,10); }
+  function tick(){
+    var now=Date.now();
+    if(now<open){
+      var t=open-now; el.d.textContent=Math.floor(t/864e5); el.h.textContent=pad(Math.floor(t/36e5)%24); el.m.textContent=pad(Math.floor(t/6e4)%60); el.s.textContent=pad(Math.floor(t/1e3)%60);
+    } else if(now<end){
+      var key=ctDate(now), hrs=days[key], utcH=new Date(now).getUTCHours()+new Date(now).getUTCMinutes()/60;
+      box.classList.add('live');
+      if(hrs && utcH>=hrs[0] && utcH<hrs[1]){ lab.textContent='Open right now'; box.innerHTML='<div><b>Open</b><span>until '+(hrs[1]===24?'7 PM':'5 PM')+'</span></div>'; }
+      else { lab.textContent='Doors open'; box.innerHTML='<div><b>10 AM</b><span>'+(utcH<15?'today':'tomorrow')+'</span></div>'; }
+      document.querySelectorAll('.hours tr[data-day]').forEach(function(r){ r.classList.toggle('now', r.dataset.day===key); });
+      return;
+    } else {
+      lab.textContent='The show has wrapped'; box.innerHTML='<div><b>Credit</b><span>still good</span></div>';
+      var q=document.querySelector('.hero-cta .btn-ghost'); if(q){ q.textContent='Visit the showroom instead'; q.href='https://kevinsparkshottubs.com/post-nashville-home-show'; }
+      return;
+    }
+    setTimeout(tick,1000);
+  }
+  tick();
+})();
+</script>
