@@ -8,7 +8,9 @@ js  = (src/'shared.js').read_text()
 def data_uri(name):
     p = img/name
     return 'data:image/webp;base64,' + base64.b64encode(p.read_bytes()).decode()
-for page in ['nashville-home-show','post-nashville-home-show']:
+THANKS_ARTIFACT = 'THANKS_ARTIFACT_URL'
+PAGES = ['nashville-home-show','post-nashville-home-show','thank-you']
+for page in PAGES:
     html = (src/f'{page}.html').read_text()
     html = html.replace('/*SHARED_CSS*/', css).replace('/*SHARED_JS*/', js)
     html = re.sub(r'\{\{img:([^}]+)\}\}', lambda m: data_uri(m.group(1)), html)
@@ -16,7 +18,7 @@ for page in ['nashville-home-show','post-nashville-home-show']:
         if ch in html: print(f'WARNING: {label} dash in {page}', file=sys.stderr)
     # artifact version: content only (the Artifact host supplies the document skeleton)
     (out/'dist').mkdir(exist_ok=True)
-    (out/'dist'/f'{page}.artifact.html').write_text(html)
+    (out/'dist'/f'{page}.artifact.html').write_text(html.replace('data-thanks="thank-you.html"', 'data-thanks="'+THANKS_ARTIFACT+'"'))
     # deployable version: a complete document
     full = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
             '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
@@ -51,7 +53,7 @@ GHL_RESET = """
   overflow:visible !important;background:transparent !important;
 }
 """
-for page in ['nashville-home-show','post-nashville-home-show']:
+for page in PAGES:
     html = (src/f'{page}.html').read_text()
     html = html.replace('/*SHARED_CSS*/', css + GHL_RESET).replace('/*SHARED_JS*/', js)
     html = re.sub(r'\{\{img:([^}]+)\}\}', lambda m: LIVE[m.group(1)], html)
@@ -60,6 +62,6 @@ for page in ['nashville-home-show','post-nashville-home-show']:
 
 # ---- GitHub Pages: copy the standalone documents into docs/ ----
 (out/'docs').mkdir(exist_ok=True)
-for page in ['nashville-home-show','post-nashville-home-show']:
+for page in PAGES:
     (out/'docs'/f'{page}.html').write_text((out/'dist'/f'{page}.html').read_text())
 print('docs/ updated')

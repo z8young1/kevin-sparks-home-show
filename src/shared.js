@@ -98,16 +98,18 @@
     });
   });
 
-  /* Demo submit: swap in the confirmation. Wire action= to the CRM before launch. */
+  /* Demo submit: hand off to the thank-you page with what they told us. In production, set the
+     CRM form's redirect to the thank-you URL and pass the same parameters. */
   document.querySelectorAll('form.lead').forEach(function(f){
     f.addEventListener('submit', function(e){
       if(f.getAttribute('action')==='#'){
         e.preventDefault();
+        if(!f.checkValidity()){ f.reportValidity(); return; }
         var code='KS-1238-'+Math.random().toString(36).slice(2,6).toUpperCase();
-        var c=f.querySelector('.code'); if(c) c.textContent=code;
-        Array.prototype.forEach.call(f.children,function(ch){ if(!ch.classList.contains('done')) ch.style.display='none'; });
-        f.querySelector('.done').classList.add('show');
-        f.scrollIntoView({behavior: reduce?'auto':'smooth', block:'center'});
+        var g=function(n){ var el=f.querySelector('[name="'+n+'"]:checked, select[name="'+n+'"], input[name="'+n+'"]'); return el? el.value : ''; };
+        var p=new URLSearchParams({ from: f.querySelector('[name="page"]').value==='post-nashville-home-show'?'post':'event',
+          name:g('first_name'), interest:g('interest'), day:g('visit_day'), model:g('model'), code:code });
+        location.href = f.dataset.thanks + '?' + p.toString();
       }
     });
   });

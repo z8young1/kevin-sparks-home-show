@@ -518,7 +518,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Can't make the show?</b> Register anyway. The credit is good at our Murfreesboro showroom too.</span></li>
       </ul>
     </div>
-    <form class="lead rv" action="#" method="post" novalidate>
+    <form class="lead rv" action="#" method="post" data-thanks="THANKS_ARTIFACT_URL" novalidate>
       <input type="hidden" name="page" value="nashville-home-show">
       <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term"><input type="hidden" name="fbclid"><input type="hidden" name="gclid"><input type="hidden" name="referrer">
       <div class="f2">
@@ -673,16 +673,18 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
     });
   });
 
-  /* Demo submit: swap in the confirmation. Wire action= to the CRM before launch. */
+  /* Demo submit: hand off to the thank-you page with what they told us. In production, set the
+     CRM form's redirect to the thank-you URL and pass the same parameters. */
   document.querySelectorAll('form.lead').forEach(function(f){
     f.addEventListener('submit', function(e){
       if(f.getAttribute('action')==='#'){
         e.preventDefault();
+        if(!f.checkValidity()){ f.reportValidity(); return; }
         var code='KS-1238-'+Math.random().toString(36).slice(2,6).toUpperCase();
-        var c=f.querySelector('.code'); if(c) c.textContent=code;
-        Array.prototype.forEach.call(f.children,function(ch){ if(!ch.classList.contains('done')) ch.style.display='none'; });
-        f.querySelector('.done').classList.add('show');
-        f.scrollIntoView({behavior: reduce?'auto':'smooth', block:'center'});
+        var g=function(n){ var el=f.querySelector('[name="'+n+'"]:checked, select[name="'+n+'"], input[name="'+n+'"]'); return el? el.value : ''; };
+        var p=new URLSearchParams({ from: f.querySelector('[name="page"]').value==='post-nashville-home-show'?'post':'event',
+          name:g('first_name'), interest:g('interest'), day:g('visit_day'), model:g('model'), code:code });
+        location.href = f.dataset.thanks + '?' + p.toString();
       }
     });
   });

@@ -1,5 +1,6 @@
-<title>Booth 1238 at the Nashville Home Show</title>
-<meta name="description" content="Kevin Sparks Signature Pools brings hot tubs, swim spas and swimming pools together at Booth 1238, Nashville Home Show, September 11 to 13, 2026. Register for a $1,000 to $2,500 backyard upgrade credit.">
+<title>You're on the list</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Confirmation page for Kevin Sparks Signature Pools Home Show registrations.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -303,14 +304,36 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
 }
 
 .hero-bg{background-image:url("https://kevinsparkssignaturepools.com/wp-content/uploads/2026/06/Hot-Tub-Image-1024x790.png")}
+.hero .wrap{align-items:start}
+.ty-code{display:inline-grid;gap:.4rem;margin-top:1.6rem;padding:1rem 1.3rem;border:1px dashed var(--line-deep);border-radius:8px;background:rgba(255,255,255,.04)}
+.ty-code span{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-deep-dim)}
+.ty-code b{font-family:var(--mono);font-size:clamp(1.5rem,4vw,2.2rem);letter-spacing:.12em;color:var(--ember);font-weight:600}
+.next{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.nx{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:1.5rem;display:grid;gap:.7rem;align-content:start}
+.nx .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.nx h3{font-size:1.35rem}
+.nx p{color:var(--ink-2);font-size:.95rem}
+.nx .btn{justify-self:start;margin-top:.3rem}
+@media (max-width:860px){.next{grid-template-columns:1fr}}
+.pick{border-left:4px solid var(--ember);background:var(--panel);border-radius:0 10px 10px 0;padding:1.4rem 1.6rem;display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:center}
+.pick img{width:110px;aspect-ratio:1;object-fit:contain}
+.pick .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.pick h3{margin-top:.3rem}
+.pick p{color:var(--ink-2);margin-top:.4rem;font-size:.95rem}
+[data-when]{display:none}
+html[data-from="event"] [data-when~="event"],html[data-from="post"] [data-when~="post"]{display:revert}
+html[data-from="event"] .nx[data-when~="event"],html[data-from="post"] .nx[data-when~="post"]{display:grid}
+html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[data-when~="post"]{display:grid}
 </style>
 
 <header class="top">
   <div class="wrap">
     <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2025/08/KSSP-Logo-1024x333.webp" alt="Kevin Sparks Signature Pools">
     <div class="top-meta">
-      <span class="hide-m">Sept 11 to 13 · Music City Center</span>
-      <span class="pill">Booth 1238</span>
+      <span class="hide-m" data-when="event">Sept 11 to 13 · Music City Center</span>
+      <span class="hide-m" data-when="post">Murfreesboro showroom</span>
+      <span class="pill" data-when="event">Booth 1238</span>
+      <span class="pill" data-when="post">Credit held through Oct 13</span>
       <a href="tel:6152384144" class="hide-m">615.238.4144</a>
     </div>
   </div>
@@ -322,244 +345,74 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
   <canvas id="steam" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
-      <span class="eyebrow">Official Nashville Home Show · Hall D</span>
-      <h1>Come experience your backyard options <em>in person.</em></h1>
-      <p class="lede">Hot tubs, swim spas and swimming pools, side by side at Booth 1238, so you can compare what actually fits your space, your budget and the way your family lives. Then take your shoes off and climb into a Generation hot tub.</p>
+      <span class="eyebrow" data-when="event">You're registered</span>
+      <span class="eyebrow" data-when="post">Got it</span>
+      <h1 data-when="event">See you at <em>Booth 1238</em>, <span id="nm">friend</span>.</h1>
+      <h1 data-when="post">Thanks, <span id="nm2">friend</span>. <em>We'll be in touch</em> within one business day.</h1>
+      <p class="lede" data-when="event">Your backyard upgrade credit is reserved. Show the code below at the booth or just give us your name. We texted it to you as well.</p>
+      <p class="lede" data-when="post">Your Home Show credit is attached to your file. We will call or text to lock in a time, and if you would rather not wait, the phone number below rings the showroom directly.</p>
+      <div class="ty-code"><span>Your credit reference</span><b id="code">KS-1238-0000</b></div>
       <div class="hero-cta">
-        <a class="btn btn-ember" href="#credit">Claim your backyard credit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost" href="#visit">Get to Booth 1238</a>
+        <a class="btn btn-ember" data-when="event" id="cal" href="#" target="_blank" rel="noopener">Add it to my calendar</a>
+        <a class="btn btn-ghost" data-when="event" href="https://www.google.com/maps/dir/?api=1&destination=Music+City+Center%2C+201+Rep.+John+Lewis+Way+S%2C+Nashville%2C+TN+37203" target="_blank" rel="noopener">Directions to Music City Center</a>
+        <a class="btn btn-ember" data-when="post" href="tel:6152384144">Call 615.238.4144 now</a>
+        <a class="btn btn-ghost" data-when="post" href="https://www.google.com/maps/dir/?api=1&destination=2349F+S+Church+St%2C+Murfreesboro%2C+TN+37130" target="_blank" rel="noopener">Directions to the showroom</a>
       </div>
     </div>
 
-    <aside class="pass" aria-label="Show details">
-      <div class="pass-head"><span>Nashville Home Show 2026</span><span>Music City Center</span></div>
+    <aside class="pass" aria-label="Details">
+      <div class="pass-head"><span data-when="event">Nashville Home Show 2026</span><span data-when="post">Kevin Sparks Signature Pools</span><span id="pass-right">Hall D</span></div>
       <div class="pass-body">
-        <div class="pass-row">
-          <span class="pass-k">Show dates</span>
-          <span class="pass-v">Sept 11 to 13<small>Fri &amp; Sat 10 AM to 7 PM · Sun 10 AM to 5 PM</small></span>
+        <div class="pass-row" data-when="event">
+          <span class="pass-k">Your day</span>
+          <span class="pass-v" id="day">Sept 11 to 13<small>Fri &amp; Sat 10 AM to 7 PM · Sun 10 AM to 5 PM</small></span>
         </div>
-        <div class="pass-row">
-          <span class="pass-k" id="count-label">Doors open in</span>
-          <div class="count" id="count">
-            <div><b id="c-d">0</b><span>days</span></div>
-            <div><b id="c-h">0</b><span>hrs</span></div>
-            <div><b id="c-m">0</b><span>min</span></div>
-            <div><b id="c-s">0</b><span>sec</span></div>
-          </div>
-        </div>
-        <div class="pass-row">
+        <div class="pass-row" data-when="event">
           <span class="pass-k">Where</span>
-          <span class="pass-v">Hall D<small>201 Rep. John Lewis Way S, Nashville</small></span>
+          <span class="pass-v">Music City Center<small>201 Rep. John Lewis Way S, Nashville</small></span>
+        </div>
+        <div class="pass-row" data-when="post">
+          <span class="pass-k">Credit</span>
+          <span class="pass-v">$1,000 to $2,500<small>toward a qualifying pool, swim spa or hot tub</small></span>
+        </div>
+        <div class="pass-row" data-when="post">
+          <span class="pass-k">Held through</span>
+          <span class="pass-v">Oct 13, 2026<small id="dleft"></small></span>
+        </div>
+        <div class="pass-row">
+          <span class="pass-k">You're interested in</span>
+          <span class="pass-v" id="int">Hot tub</span>
         </div>
         <div class="pass-booth">
-          <span>Find us at<br>booth number</span>
-          <b>1238</b>
+          <span data-when="event">Find us at<br>booth number</span>
+          <b data-when="event">1238</b>
+          <span data-when="post">Showroom hours<br>Mon to Fri</span>
+          <b data-when="post" style="font-size:1.5rem">8 AM to 4:30 PM</b>
         </div>
       </div>
     </aside>
   </div>
 </section>
 
-<section class="credit" id="credit-band">
-  <div class="wrap">
-    <div class="amt"><small>Backyard upgrade credit</small>$1,000 to $2,500</div>
-    <div>
-      <h3>Register now, then scan the QR code at the booth to lock it in.</h3>
-      <p>Good toward a qualifying pool, swim spa or hot tub purchase from Kevin Sparks Signature Pools. Registering ahead takes thirty seconds and means no typing on the show floor.</p>
-    </div>
-    <a class="btn btn-deep" href="#credit">Register for the credit</a>
-  </div>
-</section>
-
-<section class="sec" id="compare">
+<section class="sec" id="next">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow">Compare them side by side</span>
-      <h2>One booth. Three ways to add water to the backyard.</h2>
-      <p>Most shows put the pool builder in one aisle and the hot tub dealer in another. We are bringing all three together so the comparison happens in one conversation, based on your yard, your budget and how soon you want to be in the water.</p>
+      <span class="eyebrow">What to do next</span>
+      <h2 data-when="event">Three things that make the visit count.</h2>
+      <h2 data-when="post">While you wait for our call.</h2>
     </div>
-    <div class="options">
-      <article class="opt rv">
-        <div class="opt-art"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/06/Hot-Tub-Image-1024x790.png" alt="Generation hot tub on a patio"><span class="tag">Filled and on the floor</span></div>
-        <div class="opt-body">
-          <h3>Hot tub</h3>
-          <p>The most attainable upgrade. Three models plug into a standard 110v outlet, so it can be running in your yard within weeks, not seasons.</p>
-          <dl>
-            <dt>Footprint</dt><dd>Fits a patio or a townhouse deck</dd>
-            <dt>Timeline</dt><dd>Weeks</dd>
-            <dt>Power</dt><dd>110v plug-in, or 220v for faster heat</dd>
-            <dt>Season</dt><dd>Year-round. 104°F in January.</dd>
-          </dl>
-        </div>
-        <div class="opt-foot"><span class="from">Starting at<b>$5,995</b></span><a href="#models">Compare nine models</a></div>
-      </article>
-      <article class="opt rv">
-        <div class="opt-art"><canvas class="water" data-kind="swimspa" aria-hidden="true"></canvas><span class="tag">Pool experience, smaller footprint</span></div>
-        <div class="opt-body">
-          <h3>Swim spa</h3>
-          <p>Swim against a current, train, or soak in a footprint that fits where a pool will not. Heated, so the season never ends.</p>
-          <dl>
-            <dt>Footprint</dt><dd>Side yard or patio</dd>
-            <dt>Timeline</dt><dd>Weeks to install</dd>
-            <dt>Use</dt><dd>Swim current plus hydrotherapy seats</dd>
-            <dt>Season</dt><dd>Year-round</dd>
-          </dl>
-        </div>
-        <div class="opt-foot"><span class="from">Pricing<b>At the booth</b></span><a href="#credit" data-pick="Swim spa">See it at the show</a></div>
-      </article>
-      <article class="opt rv">
-        <div class="opt-art"><canvas class="water" data-kind="pool" aria-hidden="true"></canvas><span class="tag">Designed and built by Kevin Sparks</span></div>
-        <div class="opt-body">
-          <h3>Swimming pool</h3>
-          <p>Fiberglass or gunite, with the hardscape, decking and lighting designed as one project by the crew that has built them in Middle Tennessee for 42 years.</p>
-          <dl>
-            <dt>Footprint</dt><dd>Custom to the yard</dd>
-            <dt>Timeline</dt><dd>Plan now, swim in 2027</dd>
-            <dt>Build</dt><dd>Fiberglass or gunite</dd>
-            <dt>Extras</dt><dd>Hardscape, decking, spa pads</dd>
-          </dl>
-        </div>
-        <div class="opt-foot"><span class="from">Pricing<b>Custom quote</b></span><a href="#credit" data-pick="Pool">Start a design conversation</a></div>
-      </article>
+    <div class="next">
+      <div class="nx rv" data-when="event"><span class="k">Before you come</span><h3>Photograph the yard</h3><p>Where it would go, how we get it back there, the surface and where the power is. Four photos on your phone let us give you a real answer at the booth instead of a maybe.</p></div>
+      <div class="nx rv" data-when="event"><span class="k">Tickets</span><h3>Buy online and save $2</h3><p>Adults are $8 online versus $10 at the door. Seniors 60 and up, kids 12 and under, and military and first responders with ID get in free. Friday and Saturday after 5 PM is $5.</p><a class="btn btn-cyan" href="https://www.nashvillefallhomeshow.com/" target="_blank" rel="noopener">Get tickets</a></div>
+      <div class="nx rv" data-when="event"><span class="k">At the booth</span><h3>Bring whoever will use it</h3><p>Seat depth and jet placement are personal. Sit in the tubs, ask about the swim spa, and look at the pool display. Ask for the credit by name and we will have you on the list.</p></div>
+      <div class="nx rv" data-when="post"><span class="k">Photos</span><h3>Snap the space</h3><p>Where it goes, access to the yard, the surface, and where the power is. Text them to 615.238.4144 with your reference code and we will review them before your visit.</p></div>
+      <div class="nx rv" data-when="post"><span class="k">Measure</span><h3>Rough dimensions are plenty</h3><p>A tape measure and two numbers: the pad or patio size, and the narrowest gate or pathway on the way in. That decides which models fit before you drive over.</p></div>
+      <div class="nx rv" data-when="post"><span class="k">Or skip the wait</span><h3>Come by this week</h3><p>Monday to Friday, 8 AM to 4:30 PM, no appointment needed. Weekends by appointment. Mention your reference code and the credit is applied to any quote we write.</p><a class="btn btn-cyan" href="https://www.google.com/maps/dir/?api=1&destination=2349F+S+Church+St%2C+Murfreesboro%2C+TN+37130" target="_blank" rel="noopener">Directions</a></div>
     </div>
-  </div>
-</section>
-
-<section class="sec deep" id="models">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Generation Hot Tubs · Built in McMinnville, TN</span>
-      <h2>Nine tubs. Two series. One that fits you.</h2>
-      <p>Every Generation model is built 55 miles from the booth. Seat depth and jet placement are personal, so the only honest way to choose is to sit in one. Bring the family and try the seats.</p>
+    <div class="pick rv" id="pick" style="margin-top:1.5rem;display:none">
+      <img id="pick-img" src="" alt="">
+      <div><span class="k">The one you remember</span><h3 id="pick-name"></h3><p id="pick-p"></p></div>
     </div>
-    <div class="rail-wrap rv">
-      <div class="rail">
-        <article class="model"><img src="https://generationhottubs.com/wp-content/uploads/2024/02/Alpha-1024x683.png" alt="Alpha 1 hot tub shell"><span class="series">Classic · 110v ready</span><h3>Alpha 1</h3><div class="spec"><span><b>3</b> seats</span><span><b>28</b> jets</span></div><p>The couple's tub. Compact enough for a townhouse patio, still deep enough for a proper full-body soak.</p></article>
-        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/gh500-1024x1020.webp" alt="GH500 hot tub shell"><span class="series">Classic · 110v ready</span><h3>GH500</h3><div class="spec"><span><b>5 to 6</b> seats</span><span><b>29</b> jets</span></div><p>The most jets of any Classic model. Six adults, one lounger, and a footprint that still clears a standard gate.</p></article>
-        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GH550-Img.webp" alt="GH550 hot tub shell"><span class="series">Classic · 110v ready</span><h3>GH550</h3><div class="spec"><span><b>5 to 6</b> seats</span><span><b>25</b> jets</span></div><p>The efficiency pick. Fewer, larger jets and less water to heat, which shows up on the power bill every month.</p><span class="best">Lowest running cost</span></article>
-        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Alpha2-1024x683.png" alt="Alpha 2 hot tub shell"><span class="series">Signature · Two pumps</span><h3>Alpha 2</h3><div class="spec"><span><b>3</b> seats</span><span><b>Foot</b> jet</span></div><p>The Alpha 1 footprint with two pumps and a dedicated foot massage jet. Small tub, serious therapy.</p></article>
-        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Millennial-1024x1024.png" alt="Millennial hot tub shell"><span class="series">Signature · Waterfall</span><h3>Millennial</h3><div class="spec"><span><b>45</b> jets</span><span><b>2</b> pumps</span></div><p>Most jets in the whole lineup. If hydrotherapy is the reason you are shopping, start your visit here.</p><span class="best">Most jets</span></article>
-        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Boomer-1024x1024.png" alt="Boomer hot tub shell"><span class="series">Signature · Waterfall</span><h3>Boomer</h3><div class="spec"><span><b>Smallest</b> Signature</span></div><p>Signature jets and a waterfall in the smallest Signature footprint. The value play if the yard is tight.</p></article>
-        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Silent-1024x1024.png" alt="Silent hot tub shell"><span class="series">Signature · Waterfall</span><h3>Silent</h3><div class="spec"><span><b>44</b> jets</span><span><b>Fastest</b> heat</span></div><p>Least water of any 44-jet model, so it heats fastest and recovers quickest after a full house gets in.</p></article>
-        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GenX-1024x1024.png" alt="Gen X hot tub shell"><span class="series">Signature · Waterfall</span><h3>Gen X</h3><div class="spec"><span><b>92"</b> shell</span><span><b>44</b> jets</span></div><p>Full 92 inch shell with 44 jets and a waterfall. Room for the whole family without anybody's knees touching.</p></article>
-        <article class="model"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GenZ-2-1024x1024.png" alt="Gen Z hot tub shell"><span class="series">Signature · Waterfall</span><h3>Gen Z</h3><div class="spec"><span><b>490</b> gal</span><span><b>Deepest</b> soak</span></div><p>The biggest water volume we sell. Deepest soak in the lineup and the one people book weekends around.</p><span class="best">Largest capacity</span></article>
-      </div>
-    </div>
-    <div class="stats rv" style="margin-top:2.5rem">
-      <div><b>42</b><span>Years building in Middle Tennessee</span></div>
-      <div><b>55</b><span>Miles from the factory to our floor</span></div>
-      <div><b>10</b><span>Year shell warranty</span></div>
-      <div><b>104<sup>°F</sup></b><span>Set it once. Balboa holds it.</span></div>
-      <div><b>$5,995</b><span>Starting price, delivered</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="why">
-  <div class="wrap grid-2">
-    <div class="photo rv"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/DSC00877-Enhanced-NR-Edit.png" alt="Close-up of a Generation hot tub cabinet against a cedar fence"><span class="cap">Graphite cabinet · Real light, not a phone screen</span></div>
-    <div class="rv">
-      <span class="eyebrow">Why the hot tub is the fastest yes at the show</span>
-      <h2 style="margin-top:.8rem">Not a big-box hot tub.</h2>
-      <ul class="check">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><div><b>Three models just plug in</b><span>Alpha 1, GH500 and GH550 run on a 110v / 20a circuit. No electrician, no trenching, no waiting on a permit.</span></div></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><div><b>Balboa on the inside</b><span>Every model runs Balboa electrical equipment with a digital topside control. It is the system service techs actually stock parts for.</span></div></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><div><b>Real hydrotherapy</b><span>Up to 45 jets and two 6 bhp two-speed pumps in the Signature Series. Enough pressure to reach a shoulder knot after a twelve-hour day.</span></div></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><div><b>One crew for the whole yard</b><span>Pools, gunite, hardscape, decking and spa pads under one roof for 42 years. The people who set your tub are the people who build the patio it sits on.</span></div></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="visit" style="background:var(--panel-2)">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="eyebrow">Plan your visit</span>
-      <h2>Three days at Music City Center.</h2>
-      <p>Tickets are cheaper online, seniors and kids get in free, and Friday and Saturday evenings drop to five dollars. Bring photos of your yard and rough measurements. We will do the rest at the booth.</p>
-    </div>
-    <div class="logi">
-      <div class="rv">
-        <div class="hours">
-          <table>
-            <thead><tr><th>Day</th><th>Hours</th><th>Good to know</th></tr></thead>
-            <tbody>
-              <tr data-day="2026-09-11"><td>Fri, Sept 11</td><td class="t">10 AM to 7 PM</td><td class="note">$5 admission after 5 PM at the box office</td></tr>
-              <tr data-day="2026-09-12"><td>Sat, Sept 12</td><td class="t">10 AM to 7 PM</td><td class="note">$5 admission after 5 PM at the box office</td></tr>
-              <tr data-day="2026-09-13"><td>Sun, Sept 13</td><td class="t">10 AM to 5 PM</td><td class="note">Teachers free with school ID. Titans gear gets 50% off.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="deals">
-          <div class="deal"><b>$8 online</b><span>Adult admission, versus $10 at the door. A 4-pack is $24 online.</span></div>
-          <div class="deal"><b>Free</b><span>Ages 60 and up with ID, children 12 and under, and active or retired military and first responders with ID.</span></div>
-          <div class="deal"><b>Parking</b><span>The show recommends reserving a spot in advance through SpotHero for Music City Center.</span></div>
-        </div>
-      </div>
-      <div class="venue rv">
-        <div class="addr">
-          <span class="eyebrow">Venue</span>
-          <h3>Music City Center, Hall D</h3>
-          <p class="mono">201 Rep. John Lewis Way S<br>Nashville, TN 37203</p>
-          <p>Downtown, a block from Broadway. Enter Hall D and ask any show volunteer for Booth 1238, or just follow the sound of running water.</p>
-          <div class="btns">
-            <a class="btn btn-cyan" href="https://www.google.com/maps/dir/?api=1&destination=Music+City+Center%2C+201+Rep.+John+Lewis+Way+S%2C+Nashville%2C+TN+37203" target="_blank" rel="noopener">Directions</a>
-            <a class="btn btn-ghost" href="https://www.nashvillefallhomeshow.com/" target="_blank" rel="noopener">Tickets, $2 off online</a>
-          </div>
-        </div>
-        <div class="find"><b>1238</b><span>Our booth number. Save it, screenshot it, or just look for the hot tubs, the swim spa and the pool display all in one place.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec deep form-sec" id="credit">
-  <div class="wrap">
-    <div class="form-side rv">
-      <span class="eyebrow">Backyard upgrade credit</span>
-      <h2>Register in thirty seconds. Bring your phone to Booth 1238.</h2>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>$1,000 to $2,500</b> toward a qualifying pool, swim spa or hot tub purchase</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Your name is at the booth.</b> Scan the QR code when you arrive and the credit attaches to your file.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>No obligation.</b> Sit in a tub, ask every question, and leave with real numbers written down.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Can't make the show?</b> Register anyway. The credit is good at our Murfreesboro showroom too.</span></li>
-      </ul>
-    </div>
-    <form class="lead rv" action="#" method="post" data-thanks="thank-you.html" novalidate>
-      <input type="hidden" name="page" value="nashville-home-show">
-      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term"><input type="hidden" name="fbclid"><input type="hidden" name="gclid"><input type="hidden" name="referrer">
-      <div class="f2">
-        <label class="fld"><span>First name</span><input name="first_name" autocomplete="given-name" required></label>
-        <label class="fld"><span>Last name</span><input name="last_name" autocomplete="family-name" required></label>
-      </div>
-      <div class="f2">
-        <label class="fld"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
-        <label class="fld"><span>Mobile (we text your confirmation)</span><input type="tel" name="phone" autocomplete="tel" required></label>
-      </div>
-      <div class="f2">
-        <label class="fld"><span>Home ZIP</span><input name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}"></label>
-        <label class="fld"><span>When are you planning?</span>
-          <select name="timeline"><option value="">Choose one</option><option>This fall</option><option>Within 6 months</option><option>6 to 18 months</option><option>Just looking for now</option></select></label>
-      </div>
-      <div class="fld"><span style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">What are you most curious about?</span>
-        <div class="seg" style="margin-top:.4rem">
-          <input type="radio" name="interest" value="Hot tub" id="i1" checked><label for="i1">Hot tub</label>
-          <input type="radio" name="interest" value="Swim spa" id="i2"><label for="i2">Swim spa</label>
-          <input type="radio" name="interest" value="Pool" id="i3"><label for="i3">Pool</label>
-          <input type="radio" name="interest" value="Not sure" id="i4"><label for="i4">Not sure</label>
-        </div>
-      </div>
-      <label class="fld"><span>Which day are you coming?</span>
-        <select name="visit_day"><option value="">Not sure yet</option><option>Friday, Sept 11</option><option>Saturday, Sept 12</option><option>Sunday, Sept 13</option><option>I can't make the show</option></select></label>
-      <button class="btn btn-ember" type="submit" style="width:100%">Register for my credit</button>
-      <p class="fine">Credit applies to a qualifying purchase from Kevin Sparks Signature Pools, one per household, amount confirmed at your appointment. We will text and email your confirmation. No spam, and no sharing your info.</p>
-      <div class="done" aria-live="polite">
-        <span class="eyebrow" style="justify-content:center">You're registered</span>
-        <h3 style="font-size:var(--step-2)">See you at Booth 1238.</h3>
-        <span class="code">KS-1238-0000</span>
-        <p class="fine">Show this code at the booth or just give us your name. We texted it to you as well. Sunday closes at 5 PM, so come early.</p>
-      </div>
-    </form>
   </div>
 </section>
 
@@ -574,10 +427,8 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
   </div>
 </footer>
 
-<div class="bar" aria-hidden="true">
-  <div class="l">Sept 11 to 13 · Hall D<b>Booth 1238</b></div>
-  <a class="btn btn-ember" href="#credit">Claim credit</a>
-</div>
+<!-- Conversion tracking goes here: Meta Pixel "Lead" event, Google Ads conversion tag, and the geofencing vendor's pixel.
+     This page only loads after a successful submit, so firing here keeps the lead count clean. -->
 
 <script>
 /* Shared behaviour: reveal, steam, water art, sticky bar, UTM capture, demo submit */
@@ -698,32 +549,43 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
 })();
 
 (function(){
-  /* Show clock, all times Central (CDT, UTC-5) */
-  var open = Date.parse('2026-09-11T15:00:00Z');
-  var days = {'2026-09-11':[15,24],'2026-09-12':[15,24],'2026-09-13':[15,22]}; /* open, close in UTC hours */
-  var end  = Date.parse('2026-09-13T22:00:00Z');
-  var lab=document.getElementById('count-label'), box=document.getElementById('count');
-  var el={d:document.getElementById('c-d'),h:document.getElementById('c-h'),m:document.getElementById('c-m'),s:document.getElementById('c-s')};
-  function pad(n){return (n<10?'0':'')+n}
-  function ctDate(ms){ var d=new Date(ms-5*3600e3); return d.toISOString().slice(0,10); }
-  function tick(){
-    var now=Date.now();
-    if(now<open){
-      var t=open-now; el.d.textContent=Math.floor(t/864e5); el.h.textContent=pad(Math.floor(t/36e5)%24); el.m.textContent=pad(Math.floor(t/6e4)%60); el.s.textContent=pad(Math.floor(t/1e3)%60);
-    } else if(now<end){
-      var key=ctDate(now), hrs=days[key], utcH=new Date(now).getUTCHours()+new Date(now).getUTCMinutes()/60;
-      box.classList.add('live');
-      if(hrs && utcH>=hrs[0] && utcH<hrs[1]){ lab.textContent='Open right now'; box.innerHTML='<div><b>Open</b><span>until '+(hrs[1]===24?'7 PM':'5 PM')+'</span></div>'; }
-      else { lab.textContent='Doors open'; box.innerHTML='<div><b>10 AM</b><span>'+(utcH<15?'today':'tomorrow')+'</span></div>'; }
-      document.querySelectorAll('.hours tr[data-day]').forEach(function(r){ r.classList.toggle('now', r.dataset.day===key); });
-      return;
-    } else {
-      lab.textContent='The show has wrapped'; box.innerHTML='<div><b>Credit</b><span>still good</span></div>';
-      var q=document.querySelector('.hero-cta .btn-ghost'); if(q){ q.textContent='Visit the showroom instead'; q.href='https://kevinsparkshottubs.com/post-nashville-home-show'; }
-      return;
-    }
-    setTimeout(tick,1000);
-  }
-  tick();
+  var q=new URLSearchParams(location.search), root=document.documentElement;
+  var from = q.get('from')==='post' ? 'post' : 'event';
+  root.setAttribute('data-from', from);
+  var name=(q.get('name')||'').trim().split(' ')[0];
+  if(name){ ['nm','nm2'].forEach(function(id){ document.getElementById(id).textContent=name; }); }
+  else { document.getElementById('nm').textContent='we saved you a spot'; document.getElementById('nm2').textContent='you are on the list'; }
+  var code=q.get('code'); if(code) document.getElementById('code').textContent=code;
+  var interest=q.get('interest')||'Hot tub'; document.getElementById('int').textContent=interest;
+  document.getElementById('pass-right').textContent = from==='event' ? 'Hall D' : 'Booth 1238';
+
+  /* Event: the day they picked drives the pass and the calendar link (Central time, CDT) */
+  var days={ 'Friday, Sept 11':['Fri, Sept 11','10 AM to 7 PM','20260911T150000Z/20260911T170000Z'],
+             'Saturday, Sept 12':['Sat, Sept 12','10 AM to 7 PM','20260912T150000Z/20260912T170000Z'],
+             'Sunday, Sept 13':['Sun, Sept 13','10 AM to 5 PM','20260913T150000Z/20260913T170000Z'] };
+  var d=days[q.get('day')||''];
+  if(d){ document.getElementById('day').innerHTML=d[0]+'<small>'+d[1]+' · Hall D</small>'; }
+  var when = d ? d[2] : '20260912T150000Z/20260912T170000Z';
+  var cal='https://calendar.google.com/calendar/render?action=TEMPLATE'
+    +'&text='+encodeURIComponent('Nashville Home Show: Kevin Sparks, Booth 1238')
+    +'&dates='+when
+    +'&details='+encodeURIComponent('Hot tubs, swim spas and pools at Booth 1238, Hall D. Credit reference: '+(code||'')+'. Bring photos of the yard. 615.238.4144')
+    +'&location='+encodeURIComponent('Music City Center, 201 Rep. John Lewis Way S, Nashville, TN 37203');
+  document.getElementById('cal').href=cal;
+
+  /* Post: days left on the credit */
+  var left=Math.ceil((Date.parse('2026-10-14T04:59:59Z')-Date.now())/864e5);
+  document.getElementById('dleft').textContent = left>0 ? left+' days left' : 'call us anyway';
+
+  /* Model they remembered */
+  var models={ 'Alpha 1':['alpha1','3 seats, 28 jets. The couple’s tub.'], 'GH500':['gh500','5 to 6 seats, 29 jets. Most jets in the Classic Series.'],
+    'GH550':['gh550','5 to 6 seats, 25 jets. The efficiency pick.'], 'Alpha 2':['alpha2','3 seats, two pumps and a foot massage jet.'],
+    'Millennial':['millennial','45 jets, the most in the lineup.'], 'Boomer':['boomer','Signature jets and a waterfall in the smallest Signature footprint.'],
+    'Silent':['silent','44 jets and the least water to heat.'], 'Gen X':['genx','92 inch shell, 44 jets and a waterfall.'], 'Gen Z':['genz','490 gallons. The deepest soak we sell.'] };
+  var imgs={ alpha1:"https://generationhottubs.com/wp-content/uploads/2024/02/Alpha-1024x683.png", gh500:"https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/gh500-1024x1020.webp", gh550:"https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GH550-Img.webp", alpha2:"https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Alpha2-1024x683.png", millennial:"https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Millennial-1024x1024.png",
+    boomer:"https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Boomer-1024x1024.png", silent:"https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Silent-1024x1024.png", genx:"https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GenX-1024x1024.png", genz:"https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GenZ-2-1024x1024.png" };
+  var m=models[q.get('model')||''];
+  if(m){ var p=document.getElementById('pick'); p.style.display='grid'; document.getElementById('pick-img').src=imgs[m[0]]; document.getElementById('pick-img').alt=q.get('model')+' hot tub shell';
+    document.getElementById('pick-name').textContent=q.get('model'); document.getElementById('pick-p').textContent=m[1]+' It will be filled and warm when you arrive.'; }
 })();
 </script>
