@@ -1,24 +1,27 @@
-# Kevin Sparks Signature Pools — Nashville Home Show landing pages
+# Kevin Sparks Signature Pools — landing pages
 
-Three pages, ready to paste into GoHighLevel. Nothing needs to be built or compiled.
+Four pages, ready to paste into GoHighLevel. Nothing needs to be built or compiled.
+
+Three are for the Nashville Home Show, September 11 to 13, 2026. The fourth is the evergreen Generation Hot Tubs page, which runs year round and is not tied to the show.
 
 ## What is in this folder
 
 **paste-into-ghl/** — the files you paste into GHL. Each one is a complete page: styles, markup and scripts all in a single file.
 
-| File | Goes live at |
-|---|---|
-| `1-event-page.html` | `https://kevinsparkshottubs.com/nashville-home-show` |
-| `2-post-show-page.html` | `https://kevinsparkshottubs.com/POST-nashville-home-show` |
-| `3-thank-you-page.html` | `https://kevinsparkshottubs.com/thank-you` |
+| File | Goes live at | Notes |
+|---|---|---|
+| `1-event-page.html` | `https://kevinsparkshottubs.com/nashville-home-show` | Show offer, has a form |
+| `2-post-show-page.html` | `https://kevinsparkshottubs.com/POST-nashville-home-show` | No offer, has a form |
+| `3-thank-you-page.html` | `https://kevinsparkshottubs.com/thank-you` | Both forms land here |
+| `4-hot-tubs-page.html` | `https://kevinsparkshottubs.com/hot-tubs` | **Confirm this path with Jeremy.** Evergreen, no form, see below |
 
-**preview-in-browser/** — the same three pages, but with every image baked in so they work offline. Double-click any of them to see the page in Chrome. Do not paste these into GHL, they are much larger files.
+**preview-in-browser/** — the same four pages, but with every image baked in so they work offline. Double-click any of them to see the page in Chrome. Do not paste these into GHL, they are much larger files.
 
 ---
 
 ## Step 1: Build each page in GHL
 
-Do this three times, once per file.
+Do this four times, once per file.
 
 1. **Sites → Websites → New Page.** Use a blank template.
 2. Set the page path to match the table above. The second one has **POST in capital letters**. URL paths are case sensitive, so copy it exactly.
@@ -34,9 +37,23 @@ If you see gutters down the sides after publishing, open the page in Chrome, rig
 
 ---
 
+## The hot tub page works differently
+
+`4-hot-tubs-page.html` has **no form on it**. Every call to action links straight out to the client's existing Monday.com forms, the same ones already in use on their main site:
+
+- "Schedule an Appointment" → the Monday.com appointment form
+- "Free Consultation" → the Monday.com consultation form
+- "Call" → `tel:615-238-4144`
+
+So its leads arrive in Monday.com directly and never pass through GoHighLevel. That has one consequence worth raising with Jeremy before launch: **this page cannot send a confirmation text or email**, because nothing about it touches GHL. The Home Show pages can, because their forms post into GHL first.
+
+If you want that page on the same footing as the others, it needs its own embedded form pointed at the same webhook. That is a change to make deliberately, not something to bolt on during setup.
+
+Everything else about deploying it is identical: paste it into a Custom JS/HTML element the same way, and skip Step 2.
+
 ## Step 2: Connect the form to GoHighLevel
 
-The forms on pages 1 and 2 are custom-built to match the design. They send their data to a **GHL inbound webhook**. Until you do this step, the forms still work and still forward people to the thank-you page, but nothing is saved anywhere.
+Pages 1 and 2 only. Their forms are custom-built to match the design. They send their data to a **GHL inbound webhook**. Until you do this step, the forms still work and still forward people to the thank-you page, but nothing is saved anywhere.
 
 ### Create the webhook
 
@@ -104,11 +121,14 @@ If the webhook is unreachable, the form shows an error and tells the person to c
 
 ## Notes
 
+**Logos link home.** The header and footer logos on every page go to `https://kevinsparkssignaturepools.com/`, opening the client's main site.
+
 **Images** load from the client's existing WordPress site at kevinsparkssignaturepools.com. They are public and work fine from this domain. One swim spa image has no live URL and is embedded directly in the file.
 
 **The offer differs by page, on purpose.**
 - Page 1 (event) states the $1,000 to $2,500 credit is available **during the show only**, September 11 to 13, and must be claimed in person at Booth 1238.
 - Page 2 (post-show) has **no offer on it at all**. It runs on the showroom visit instead.
 - Page 3 (thank-you) shows the credit only when someone arrives from page 1. Coming from page 2, no offer is mentioned.
+- Page 4 (hot tubs) is evergreen and mentions no show offer at all.
 
 **The thank-you path** is set to `/thank-you`. If you use a different path in GHL, search both page files for `data-thanks=` and update the URL there.

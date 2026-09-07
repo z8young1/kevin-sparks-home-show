@@ -21,6 +21,16 @@ for src_name, out_name in FILES:
     shutil.copy(dist / f'{src_name}.ghl-embed.html', stage / 'paste-into-ghl' / f'{out_name}.html')
     shutil.copy(dist / f'{src_name}.html',           stage / 'preview-in-browser' / f'{out_name}.html')
 
+# The evergreen hot tub page is built in ~/kssp-hot-tubs and copied into hot-tubs/.
+# See hot-tubs/SOURCE.md. It ships in the same zip so the partner has one download.
+ht = root / 'hot-tubs'
+missing = [f.name for f in (ht / 'hot-tubs.ghl-embed.html', ht / 'hot-tubs.html') if not f.exists()]
+if missing:
+    raise SystemExit(f'hot-tubs/ is missing {missing}. Rebuild in ~/kssp-hot-tubs and copy them in '
+                     f'(see hot-tubs/SOURCE.md).')
+shutil.copy(ht / 'hot-tubs.ghl-embed.html', stage / 'paste-into-ghl' / '4-hot-tubs-page.html')
+shutil.copy(ht / 'hot-tubs.html',           stage / 'preview-in-browser' / '4-hot-tubs-page.html')
+
 readme = (root / 'src' / 'DEPLOY.md').read_text()
 (stage / 'READ-ME-FIRST.md').write_text(readme)
 

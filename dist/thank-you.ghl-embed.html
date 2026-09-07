@@ -102,6 +102,9 @@ p{margin:0}
   -webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-deep);color:var(--on-deep)
 }
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:66px}
+/* Logos return to the main site. Keep them reading as a logo, not a link. */
+.logo-link{display:inline-flex;align-items:center;text-decoration:none;border:0;line-height:0;flex:0 0 auto}  /* flex:none, or the header anchor shrinks to 0 and the logo stops being clickable */
+.logo-link:focus-visible{outline:3px solid var(--ember);outline-offset:4px;border-radius:4px}
 .top img{height:38px;width:auto}
 .top-meta{display:flex;align-items:center;gap:1.4rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
 .top-meta a{color:var(--on-deep);text-decoration:none}
@@ -333,7 +336,7 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
 
 <header class="top">
   <div class="wrap">
-    <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2025/08/KSSP-Logo-1024x333.webp" alt="Kevin Sparks Signature Pools">
+    <a class="logo-link" href="https://kevinsparkssignaturepools.com/" aria-label="Kevin Sparks Signature Pools home"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2025/08/KSSP-Logo-1024x333.webp" alt="Kevin Sparks Signature Pools"></a>
     <div class="top-meta">
       <span class="hide-m" data-when="event">Sept 11 to 13 · Music City Center</span>
       <span class="hide-m" data-when="post">Murfreesboro showroom</span>
@@ -423,7 +426,7 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
 
 <footer>
   <div class="wrap">
-    <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2025/08/KSSP-Logo-1024x333.webp" alt="Kevin Sparks Signature Pools">
+    <a class="logo-link" href="https://kevinsparkssignaturepools.com/" aria-label="Kevin Sparks Signature Pools home"><img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2025/08/KSSP-Logo-1024x333.webp" alt="Kevin Sparks Signature Pools" loading="lazy"></a>
     <div>
       <p><a href="tel:6152384144">615.238.4144</a> · 2349F S Church St, Murfreesboro, TN 37130</p>
       <p class="mono">Mon to Fri 8 AM to 4:30 PM · Weekends by appointment</p>

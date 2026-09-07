@@ -2,3 +2,5 @@ raw/
 .DS_Store
 kevin-sparks-ghl-package.zip
 .package/
+.pkgpreview/
+kevin-sparks-ghl-package/

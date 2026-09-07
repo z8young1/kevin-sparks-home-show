@@ -1,6 +1,6 @@
 # Kevin Sparks · Nashville Home Show landing pages
 
-Two self-contained landing pages for the Official Nashville Home Show, September 11 to 13, 2026, Music City Center Hall D, Booth 1238.
+Self-contained landing pages for Kevin Sparks Signature Pools. Three are for the Official Nashville Home Show, September 11 to 13, 2026, Music City Center Hall D, Booth 1238. A fourth, the evergreen Generation Hot Tubs page, is built in a separate project and copied in for the partner handoff.
 
 | Page | Purpose | Live URL to replace |
 |---|---|---|
@@ -17,6 +17,14 @@ Two self-contained landing pages for the Official Nashville Home Show, September
 
 Pages serves the `docs/` folder on `main`. `build.py` refreshes `docs/` on every run, so edit, build, commit, push.
 
+## The hot tub page lives elsewhere
+
+`hot-tubs/` holds **built output copied in from `~/kssp-hot-tubs`**, not source. Edit it there, rebuild, and copy the two files back. See `hot-tubs/SOURCE.md` for the exact commands. `src/package.py` fails loudly if those files are missing.
+
+That page has no embedded form: every call to action links out to the client's existing Monday.com forms, so its leads bypass GoHighLevel entirely and it cannot send a confirmation text. Raised in `src/DEPLOY.md` as a decision for Jeremy.
+
+Intended path is `kevinsparkshottubs.com/hot-tubs`, **not yet confirmed**.
+
 ## Files
 
 - `src/` is what you edit: `shared.css`, `shared.js`, and the two page bodies. Images are referenced as `{{img:name.webp}}`.
@@ -24,6 +32,7 @@ Pages serves the `docs/` folder on `main`. `build.py` refreshes `docs/` on every
 - `dist/*.html` are complete standalone documents with images inlined (about 1 MB each). Open in any browser, or host anywhere.
 - `dist/*.ghl-embed.html` are the GoHighLevel versions (about 48 KB). Images point at the already-public WordPress URLs and a container reset is included, same approach as the earlier kssp-hot-tubs build. Paste into a GHL Custom HTML element.
 - `dist/*.artifact.html` are the Claude artifact previews.
+- `hot-tubs/` is copied-in build output from `~/kssp-hot-tubs`, see above.
 
 Rebuild after any edit:
 
@@ -45,6 +54,10 @@ python3 src/build.py
 - **Booth inventory.** The pages say hot tubs, a swim spa and a pool display are all at Booth 1238, matching the brief. The models rail shows all nine Generation tubs; if only certain models will be on the show floor, tell me which and I will tag them.
 - **Swim spa and pool imagery.** Pool cards use Kevin Sparks' own photos from kevinsparkssignaturepools.com (the Allure fiberglass pool at twilight, and the daytime lap pool). The swim spa card uses the GH-1200 top-down product shot from their swim spa page, rotated so the lane runs left to right with the studio background removed. Upload `img/swimspa.webp` to the WordPress media library if you want the GHL embed to reference it by URL instead of inline data.
 - **Design consultation.** Described as complimentary, at the customer's home, about an hour. Confirm that matches how the team actually runs pool consults.
+
+## Logos link home
+
+The header and footer logos on all four pages are anchors to `https://kevinsparkssignaturepools.com/`. Both are flex items, so they carry `flex:0 0 auto`. Without it the anchor shrinks to zero width, the image overflows, and the logo looks fine while being almost entirely unclickable.
 
 ## Links must be absolute
 

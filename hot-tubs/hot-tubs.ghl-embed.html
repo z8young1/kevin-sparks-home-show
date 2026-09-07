@@ -1,0 +1,1347 @@
+<title>Generation Hot Tubs Murfreesboro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+/* ============================================================
+   KEVIN SPARKS SIGNATURE POOLS — Hot Tubs landing page
+   Palette derived from the live site's Elementor globals:
+   #005091 primary · #009EF0 secondary · #0090C8 accent · #121F47 buttons
+   Type: Oswald + DM Sans (site brand) + IBM Plex Mono (spec data)
+   ============================================================ */
+
+:root{
+  /* brand */
+  --blue:#005091;
+  --cyan:#009EF0;
+  --teal:#0090C8;
+  --navy:#121F47;
+  --deep:#0A1128;
+  --ember:#F2A33C;
+
+  /* fixed dark band tokens — identical in both themes */
+  --deep-grad-a:#0A1128;
+  --deep-grad-b:#132453;
+  --on-deep:#EAF2FB;
+  --on-deep-dim:#94A9CA;
+  --deep-line:rgba(146,178,220,.20);
+  --plate:#EEF3F8;          /* light plate the product shots always sit on */
+  --plate-line:#D6E0EB;
+  --plate-ink:#16203A;
+  --plate-dim:#5B6E8C;
+
+  /* light theme */
+  --bg:#F1F5FA;
+  --surface:#FFFFFF;
+  --surface-2:#E7EFF7;
+  --ink:#16203A;
+  --ink-2:#4C5E7C;
+  --line:#D5E0EC;
+  --brand-ink:#005091;
+  --shadow:0 1px 2px rgba(18,31,71,.06), 0 12px 34px -14px rgba(18,31,71,.24);
+
+  /* type scale */
+  --step--1:.8125rem;
+  --step-0:1.0625rem;
+  --step-1:1.25rem;
+  --step-2:clamp(1.45rem,1.15rem + 1.1vw,1.9rem);
+  --step-3:clamp(1.9rem,1.4rem + 2.1vw,2.9rem);
+  --step-4:clamp(2.5rem,1.5rem + 4.3vw,4.6rem);
+  --step-5:clamp(3.1rem,1.4rem + 7vw,6.4rem);
+
+  --wrap:1180px;
+  --radius:14px;
+}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#080E1F;
+    --surface:#101A38;
+    --surface-2:#16234C;
+    --ink:#E9F1FA;
+    --ink-2:#9FB2CE;
+    --line:rgba(150,180,220,.18);
+    --brand-ink:#3FB6F5;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 40px -16px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#080E1F;
+  --surface:#101A38;
+  --surface-2:#16234C;
+  --ink:#E9F1FA;
+  --ink-2:#9FB2CE;
+  --line:rgba(150,180,220,.18);
+  --brand-ink:#3FB6F5;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 40px -16px rgba(0,0,0,.7);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  font-size:var(--step-0);
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4{
+  font-family:Oswald,"Arial Narrow",Impact,sans-serif;
+  font-weight:600;
+  line-height:1.02;
+  letter-spacing:-.005em;
+  text-wrap:balance;
+  margin:0;
+}
+
+p{margin:0}
+img{max-width:100%;display:block}
+
+a{color:var(--brand-ink);text-decoration-thickness:1px;text-underline-offset:3px}
+
+:where(a,button,summary,input,select):focus-visible{
+  outline:2.5px solid var(--cyan);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+.wrap{width:min(100% - 2.5rem,var(--wrap));margin-inline:auto}
+
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.7rem;
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin:0;
+}
+.on-deep .eyebrow{color:#6FC7F5}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  font-family:Oswald,"Arial Narrow",sans-serif;
+  font-weight:500;font-size:.95rem;letter-spacing:.09em;text-transform:uppercase;
+  padding:.95rem 1.6rem;
+  border-radius:999px;
+  border:1.5px solid transparent;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--cyan) 0%,var(--blue) 82%);
+  color:#fff;
+  box-shadow:0 10px 26px -10px rgba(0,158,240,.75);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px -10px rgba(0,158,240,.85)}
+.btn-ghost{
+  background:transparent;color:var(--on-deep);border-color:rgba(180,210,240,.45);
+}
+.btn-ghost:hover{border-color:var(--cyan);color:#fff;background:rgba(0,158,240,.14);transform:translateY(-2px)}
+.btn-solid{background:var(--navy);color:#fff}
+.btn-solid:hover{background:var(--blue);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--brand-ink);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.btn-sm{padding:.62rem 1.1rem;font-size:.8rem}
+
+/* ---------- header ---------- */
+.site-head{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb,var(--deep) 88%,transparent);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--deep-line);
+}
+.head-in{display:flex;align-items:center;gap:1.5rem;padding:.7rem 0}
+.logo{display:inline-flex;align-items:center;flex:0 0 auto;line-height:0}
+.logo img{width:186px;height:auto}
+.nav{display:flex;gap:1.6rem;margin-left:auto}
+.nav a{
+  font-family:Oswald,sans-serif;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--on-deep-dim);text-decoration:none;transition:color .16s ease;
+}
+.nav a:hover{color:#fff}
+.head-cta{display:flex;align-items:center;gap:.75rem}
+.head-tel{
+  font-family:"IBM Plex Mono",monospace;font-size:.86rem;font-weight:500;
+  color:var(--on-deep);text-decoration:none;white-space:nowrap;
+}
+.head-tel:hover{color:var(--cyan)}
+@media(max-width:1040px){.nav{display:none}}
+@media(max-width:620px){
+  /* the sticky bottom bar already carries the appointment CTA on phones,
+     so the header trades it for a tappable phone number */
+  .head-cta .btn{display:none}
+  .head-tel{
+    padding:.55rem .9rem;border:1.5px solid rgba(180,210,240,.45);border-radius:999px;
+  }
+  .logo img{width:150px}
+  .head-in{gap:.7rem}
+  .hero-photo{background-position:52% 55%}
+  .hero .eyebrow{font-size:.62rem;letter-spacing:.11em}
+  .hero h1{font-size:clamp(2.7rem,10.5vw,3.4rem)}
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  background:var(--deep);
+  color:var(--on-deep);
+  isolation:isolate;
+  overflow:hidden;
+}
+.hero-photo{
+  position:absolute;inset:0;
+  background-size:cover;background-position:58% 62%;
+  opacity:.82;
+  filter:saturate(.9) contrast(1.02);
+  z-index:-3;
+}
+#caustics{
+  position:absolute;inset:0;width:100%;height:100%;
+  z-index:-2;
+  mix-blend-mode:screen;
+  opacity:.42;
+  pointer-events:none;
+}
+.hero-veil{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    linear-gradient(100deg, rgba(8,14,34,.95) 0%, rgba(8,14,34,.88) 30%, rgba(8,14,34,.52) 58%, rgba(8,14,34,.22) 100%),
+    radial-gradient(80% 60% at 86% 24%, rgba(0,158,240,.20) 0%, transparent 64%),
+    linear-gradient(180deg, rgba(8,14,34,.42) 0%, transparent 26%, transparent 74%, rgba(8,14,34,.55) 100%);
+}
+.hero-in{padding:clamp(3.6rem,9vw,7.5rem) 0 clamp(2.6rem,5vw,4rem)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2.5rem;align-items:end}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;align-items:start}}
+
+.hero h1{
+  font-size:var(--step-5);
+  font-weight:700;
+  letter-spacing:-.018em;
+  text-transform:uppercase;
+  margin:1.1rem 0 0;
+  max-width:15ch;
+}
+.hero h1 .lit{
+  background:linear-gradient(100deg,#7ED2FF 0%,var(--cyan) 45%,#0F86D6 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{
+  margin-top:1.35rem;max-width:56ch;
+  font-size:clamp(1.02rem,.94rem + .34vw,1.22rem);
+  color:#CBDCF0;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
+.hero-note{
+  margin-top:1rem;font-family:"IBM Plex Mono",monospace;font-size:.74rem;
+  letter-spacing:.06em;color:var(--on-deep-dim);
+}
+
+/* temperature readout — the one warm note on the page */
+.temp{
+  display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;
+  padding:1.05rem 1.3rem;
+  border:1px solid var(--deep-line);
+  border-left:3px solid var(--ember);
+  border-radius:10px;
+  background:rgba(10,17,40,.55);
+  backdrop-filter:blur(6px);
+}
+.temp .val{
+  font-family:"IBM Plex Mono",monospace;font-size:2.1rem;font-weight:600;
+  color:var(--ember);line-height:1;font-variant-numeric:tabular-nums;
+}
+.temp .cap{
+  font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--on-deep-dim);max-width:22ch;line-height:1.5;
+}
+@media(max-width:900px){.temp{align-self:start}}
+
+/* trust strip */
+.trust{
+  border-top:1px solid var(--deep-line);
+  background:rgba(6,11,26,.55);
+  position:relative;z-index:2;
+}
+.trust-in{
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.trust-item{
+  padding:1.5rem 1.2rem;
+  border-right:1px solid var(--deep-line);
+}
+.trust-item:last-child{border-right:0}
+.trust-item .n{
+  font-family:Oswald,sans-serif;font-size:1.55rem;font-weight:600;color:#fff;
+  line-height:1;font-variant-numeric:tabular-nums;
+}
+.trust-item .l{
+  font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--on-deep-dim);margin-top:.5rem;line-height:1.5;
+}
+@media(max-width:760px){
+  .trust-in{grid-template-columns:1fr 1fr}
+  .trust-item:nth-child(2){border-right:0}
+  .trust-item:nth-child(-n+2){border-bottom:1px solid var(--deep-line)}
+}
+
+/* ---------- generic sections ---------- */
+.sec{padding:clamp(3.4rem,7vw,6rem) 0}
+.sec-deep{
+  background:linear-gradient(165deg,var(--deep-grad-a) 0%,var(--deep-grad-b) 100%);
+  color:var(--on-deep);
+}
+.sec-deep h2,.sec-deep h3{color:#fff}
+.sec-head{max-width:60ch;margin-bottom:clamp(2rem,4vw,3.2rem)}
+.sec-head h2{font-size:var(--step-3);text-transform:uppercase;margin-top:.7rem}
+.sec-head p{margin-top:1rem;color:var(--ink-2);font-size:1.05rem}
+.sec-deep .sec-head p{color:#B4C8E2}
+
+/* ---------- why grid ---------- */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.why-card{background:var(--surface);padding:1.9rem 1.7rem;display:flex;flex-direction:column;gap:.7rem}
+.why-card .idx{
+  font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.14em;color:var(--teal);
+}
+.why-card h3{font-size:1.28rem;text-transform:uppercase;letter-spacing:.01em}
+.why-card p{color:var(--ink-2);font-size:.96rem}
+.why-card .tag{
+  margin-top:auto;padding-top:.9rem;
+  font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.08em;
+  color:var(--ink-2);border-top:1px dashed var(--line);
+}
+@media(max-width:940px){.why{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.why{grid-template-columns:1fr}}
+
+/* ---------- lineup ---------- */
+.filters{
+  display:flex;flex-wrap:wrap;gap:1.6rem;align-items:center;
+  padding-bottom:1.5rem;margin-bottom:2.2rem;border-bottom:1px solid var(--deep-line);
+}
+.fgroup{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.fgroup .flabel{
+  font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--on-deep-dim);margin-right:.2rem;
+}
+.chip{
+  font-family:Oswald,sans-serif;font-size:.82rem;letter-spacing:.09em;text-transform:uppercase;
+  padding:.5rem 1.05rem;border-radius:999px;
+  border:1.5px solid var(--deep-line);
+  background:transparent;color:var(--on-deep-dim);cursor:pointer;
+  transition:all .16s ease;
+}
+.chip:hover{color:#fff;border-color:rgba(180,210,240,.55)}
+.chip[aria-pressed="true"]{
+  background:var(--cyan);border-color:var(--cyan);color:#04121F;font-weight:600;
+}
+.count{
+  margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:.72rem;
+  color:var(--on-deep-dim);letter-spacing:.06em;font-variant-numeric:tabular-nums;
+}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+@media(max-width:980px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+
+.card{
+  display:flex;flex-direction:column;
+  background:#0E1836;
+  border:1px solid var(--deep-line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(0,158,240,.6);box-shadow:0 22px 44px -22px rgba(0,158,240,.55)}
+.card.is-hidden{display:none}
+
+.card-media{
+  position:relative;background:var(--plate);aspect-ratio:1/1;
+}
+/* absolutely positioned so a slightly non-square shot can never stretch the plate
+   and knock the card titles out of alignment across a row */
+.card-media img{
+  position:absolute;inset:1.15rem;margin:auto;z-index:1;
+  width:auto;height:auto;
+  max-width:calc(100% - 2.3rem);max-height:calc(100% - 2.3rem);
+}
+.series-tag{
+  position:absolute;top:.8rem;left:.8rem;z-index:2;
+  font-family:"IBM Plex Mono",monospace;font-size:.62rem;font-weight:600;
+  letter-spacing:.13em;text-transform:uppercase;
+  padding:.3rem .6rem;border-radius:5px;
+}
+.series-tag.classic{background:#DCE7F2;color:#22456F}
+.series-tag.signature{background:var(--navy);color:#8FD6FF}
+.volt-tag{
+  position:absolute;top:.8rem;right:.8rem;z-index:2;
+  font-family:"IBM Plex Mono",monospace;font-size:.6rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.3rem .55rem;border-radius:5px;
+  background:#FBEAD1;color:#8A5410;border:1px solid rgba(200,130,30,.55);
+}
+
+.card-body{padding:1.35rem 1.4rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-size:1.6rem;text-transform:uppercase;color:#fff;letter-spacing:.01em}
+.card-blurb{color:#A8BDD9;font-size:.92rem;margin-top:.55rem}
+
+.specs{
+  display:grid;grid-template-columns:1fr 1fr;gap:.1rem 1rem;
+  margin:1.15rem 0 1.25rem;
+  padding:.9rem 0;
+  border-top:1px solid var(--deep-line);border-bottom:1px solid var(--deep-line);
+}
+.spec{display:flex;justify-content:space-between;gap:.5rem;padding:.22rem 0}
+.spec dt{
+  font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#7E93B4;
+}
+.spec dd{
+  margin:0;font-family:"IBM Plex Mono",monospace;font-size:.78rem;font-weight:500;
+  color:#DCEAF8;font-variant-numeric:tabular-nums;
+}
+.spec.wide{grid-column:1/-1}
+.card-actions{display:flex;gap:.6rem;margin-top:auto;flex-wrap:wrap}
+.card-actions .btn{flex:1;min-width:118px}
+
+.empty{
+  display:none;padding:3rem 1rem;text-align:center;color:var(--on-deep-dim);
+  font-family:"IBM Plex Mono",monospace;font-size:.85rem;letter-spacing:.06em;
+}
+.empty.show{display:block}
+
+/* ---------- compare table ---------- */
+.table-scroll{
+  overflow-x:auto;
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface);
+  -webkit-overflow-scrolling:touch;
+}
+table{border-collapse:collapse;width:100%;min-width:840px}
+thead th{
+  position:sticky;top:0;
+  background:var(--navy);color:#fff;
+  font-family:Oswald,sans-serif;font-weight:500;font-size:.76rem;
+  letter-spacing:.11em;text-transform:uppercase;
+  text-align:left;padding:.9rem 1rem;white-space:nowrap;
+}
+tbody td{
+  padding:.85rem 1rem;
+  border-top:1px solid var(--line);
+  font-family:"IBM Plex Mono",monospace;font-size:.8rem;
+  color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+tbody td:first-child{
+  font-family:Oswald,sans-serif;font-size:1rem;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--ink);font-weight:500;
+}
+tbody tr:hover td{background:var(--surface-2)}
+.best{color:var(--brand-ink);font-weight:600}
+.tnote{
+  margin-top:.9rem;font-family:"IBM Plex Mono",monospace;font-size:.7rem;
+  color:var(--ink-2);letter-spacing:.04em;
+}
+
+/* ---------- visit steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;counter-reset:step}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{
+  position:relative;padding:1.9rem 1.6rem;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+}
+.step .num{
+  font-family:"IBM Plex Mono",monospace;font-size:.72rem;font-weight:600;
+  letter-spacing:.16em;color:var(--cyan);
+}
+.step h3{font-size:1.3rem;text-transform:uppercase;margin:.6rem 0 .55rem}
+.step p{color:var(--ink-2);font-size:.96rem}
+.step .dur{
+  display:inline-block;margin-top:1rem;
+  font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-2);
+  padding:.25rem .6rem;border:1px solid var(--line);border-radius:4px;
+}
+
+/* ---------- warranty ---------- */
+.warranty{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+@media(max-width:820px){.warranty{grid-template-columns:1fr 1fr}}
+.wcard{
+  padding:1.5rem 1.4rem;border:1px solid var(--deep-line);border-radius:var(--radius);
+  background:rgba(255,255,255,.035);
+}
+.wcard .yr{
+  font-family:Oswald,sans-serif;font-size:2.7rem;font-weight:700;line-height:.9;
+  color:var(--cyan);font-variant-numeric:tabular-nums;
+}
+.wcard .yr span{font-size:1rem;letter-spacing:.1em;color:var(--on-deep-dim);margin-left:.3rem}
+.wcard h3{font-size:1.05rem;text-transform:uppercase;margin:.8rem 0 .4rem;letter-spacing:.06em}
+.wcard p{font-size:.88rem;color:#A5BAD6}
+
+/* ---------- customize ---------- */
+.custom{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media(max-width:860px){.custom{grid-template-columns:1fr}}
+.swatches{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.6rem}
+.sw{width:104px}
+.sw .chipimg{
+  height:76px;border-radius:10px;border:1px solid var(--line);
+  box-shadow:inset 0 2px 10px rgba(255,255,255,.5), inset 0 -6px 14px rgba(0,0,0,.10);
+}
+.sw .nm{
+  margin-top:.5rem;font-family:"IBM Plex Mono",monospace;font-size:.64rem;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);line-height:1.4;
+}
+.sw-silver  {background:linear-gradient(135deg,#FDFDFD 0%,#E3E7EB 45%,#F6F8FA 70%,#CFD6DD 100%)}
+.sw-midnight{background:linear-gradient(135deg,#4A5A72 0%,#1E293B 42%,#5B6B84 68%,#141C2B 100%)}
+.sw-storm   {background:linear-gradient(135deg,#D7DDE4 0%,#8E9AA9 40%,#EDF1F5 66%,#7A8797 100%)}
+.sw-smoky   {background:linear-gradient(135deg,#C9C2B8 0%,#7E7669 42%,#E0DAD1 68%,#6B6459 100%)}
+.sw-tuscan  {background:linear-gradient(135deg,#F6EBD6 0%,#D8B87E 42%,#FBF4E5 68%,#C09B5C 100%)}
+
+.optlist{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.05rem}
+.optlist li{
+  display:flex;gap:.8rem;align-items:baseline;
+  padding:.72rem 0;border-bottom:1px dashed var(--line);
+  font-size:.96rem;color:var(--ink-2);
+}
+.optlist li:last-child{border-bottom:0}
+.optlist b{
+  font-family:Oswald,sans-serif;font-weight:500;font-size:.9rem;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--ink);white-space:nowrap;min-width:11.5ch;
+}
+.custom-photo{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+
+/* ---------- final CTA ---------- */
+.final{position:relative;overflow:hidden;background:var(--deep);color:var(--on-deep)}
+.final-photo{
+  position:absolute;inset:0;background-size:cover;background-position:center 55%;
+  opacity:.22;filter:saturate(.7);
+}
+.final-veil{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(90% 120% at 20% 30%, rgba(0,80,145,.55) 0%, transparent 60%),
+    linear-gradient(180deg,rgba(10,17,40,.90),rgba(10,17,40,.97));
+}
+.final-in{position:relative;z-index:2;padding:clamp(3.4rem,7vw,6rem) 0}
+.final-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem)}
+@media(max-width:880px){.final-grid{grid-template-columns:1fr}}
+.final h2{font-size:var(--step-4);text-transform:uppercase;color:#fff;margin-top:.8rem;max-width:16ch}
+.final p.lead{margin-top:1.2rem;color:#C3D6EC;max-width:50ch;font-size:1.06rem}
+.final-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
+
+.infobox{
+  border:1px solid var(--deep-line);border-radius:var(--radius);
+  background:rgba(255,255,255,.04);padding:1.7rem 1.6rem;
+  display:grid;gap:1.25rem;align-content:start;
+}
+.info-row .k{
+  font-family:"IBM Plex Mono",monospace;font-size:.65rem;letter-spacing:.15em;
+  text-transform:uppercase;color:#7E93B4;
+}
+.info-row .v{margin-top:.35rem;color:#E4EEF9;font-size:.98rem;line-height:1.55}
+.info-row .v a{color:#7FD0FF;text-decoration:none}
+.info-row .v a:hover{text-decoration:underline}
+
+/* ---------- footer ---------- */
+.foot{background:#060B1A;color:#8298B8;padding:2.2rem 0;border-top:1px solid var(--deep-line)}
+.foot-in{display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center;justify-content:space-between}
+.foot img{width:150px;opacity:.9}
+.foot .logo-link{display:inline-flex;align-items:center;flex:0 0 auto;line-height:0;text-decoration:none}
+.foot p{font-size:.8rem;max-width:62ch}
+.foot a{color:#7FD0FF}
+
+/* ---------- sticky mobile CTA ---------- */
+.sticky-cta{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;
+  padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));
+  background:color-mix(in srgb,var(--deep) 94%,transparent);
+  backdrop-filter:blur(12px);
+  border-top:1px solid var(--deep-line);
+  gap:.5rem;
+}
+.sticky-cta .btn{flex:1;padding:.85rem .6rem;font-size:.82rem}
+@media(max-width:720px){
+  .sticky-cta{display:flex}
+  .sticky-cta .btn{white-space:nowrap;font-size:.78rem}
+  .sticky-cta .btn:first-child{flex:0 0 84px}
+  body{padding-bottom:4.4rem}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+  #caustics{display:none}
+}
+
+/* ============================================================
+   GoHighLevel container reset.
+   GHL wraps a Custom HTML element in section / row / column
+   wrappers that cap width, add padding and set overflow:hidden.
+   The overflow rule is what silently kills position:sticky, so
+   the header stops sticking. This unwraps all of it.
+   If the page still shows side gutters, inspect the wrapper in
+   Chrome DevTools and add its class to this list.
+   ============================================================ */
+.c-section,
+.c-section > .inner,
+.c-row,
+.c-row > .inner,
+.c-column,
+.c-wrapper,
+.c-html,
+.hl_page-preview--content{
+  max-width:100% !important;
+  width:100% !important;
+  padding:0 !important;
+  margin:0 !important;
+  overflow:visible !important;
+  background:transparent !important;
+}
+</style>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="https://kevinsparkssignaturepools.com/" aria-label="Kevin Sparks Signature Pools home">
+      <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2025/08/KSSP-Logo-1024x333.webp" alt="Kevin Sparks Signature Pools" width="700" height="228">
+    </a>
+    <nav class="nav" aria-label="Section navigation">
+      <a href="#why">Why Generation</a>
+      <a href="#lineup">The Lineup</a>
+      <a href="#compare">Compare</a>
+      <a href="#visit">Your Visit</a>
+    </nav>
+    <div class="head-cta">
+      <a class="head-tel" href="tel:615-238-4144">615.238.4144</a>
+      <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-photo" style="background-image:url('https://kevinsparkssignaturepools.com/wp-content/uploads/2026/06/Hot-Tub-Image-1024x790.png')"></div>
+  <canvas id="caustics" aria-hidden="true"></canvas>
+  <div class="hero-veil"></div>
+
+  <div class="wrap hero-in">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Murfreesboro Showroom &nbsp;/&nbsp; Generation Hot Tubs &nbsp;/&nbsp; Built in Tennessee</p>
+        <h1>The best room in your house <span class="lit">has no roof.</span></h1>
+        <p class="hero-sub">
+          Nine American-made Generation hot tubs, on the floor and open for business at
+          2349F S Church Street. Come sit in them, check the legroom, and leave knowing
+          exactly which one fits your yard and your budget.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
+          <a class="btn btn-ghost" href="https://forms.monday.com/forms/ae0bb9e0d1e9108337892f71021a017b?r=use1">Free Consultation</a>
+        </div>
+        <p class="hero-note">Takes about an hour. No pressure, no obligation, no high-pressure closing pitch.</p>
+      </div>
+
+      <div class="temp">
+        <div class="val" id="tempval">104&deg;F</div>
+        <div class="cap">Set it once. Every model holds temperature with Balboa controls.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div class="wrap trust-in">
+      <div class="trust-item">
+        <div class="n">42 Years</div>
+        <div class="l">Building in Middle Tennessee</div>
+      </div>
+      <div class="trust-item">
+        <div class="n">$5,995</div>
+        <div class="l">Hot tubs &amp; swim spas start here</div>
+      </div>
+      <div class="trust-item">
+        <div class="n">55 Miles</div>
+        <div class="l">From the factory in McMinnville</div>
+      </div>
+      <div class="trust-item">
+        <div class="n">10 Years</div>
+        <div class="l">Shell structure warranty</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY ========== -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Why people buy here</p>
+      <h2>Eight reasons this isn't a big-box hot tub</h2>
+      <p>
+        Generation builds these spas about an hour southeast of our showroom. That changes
+        almost everything about how you buy one, how it gets installed, and what happens
+        the day something needs attention.
+      </p>
+    </div>
+
+    <div class="why">
+      <article class="why-card">
+        <div class="idx">01</div>
+        <h3>Built an hour down the road</h3>
+        <p>Generation Hot Tubs manufactures in McMinnville, Tennessee. Parts, replacement panels and technical answers come from up the highway, not from a container ship.</p>
+        <div class="tag">Made in the USA</div>
+      </article>
+
+      <article class="why-card">
+        <div class="idx">02</div>
+        <h3>Three models just plug in</h3>
+        <p>The Alpha 1, GH500 and GH550 run on a 110v / 20a circuit. No electrician, no trenching, no waiting on a permit. Step up to 220v / 50a later when you want faster heat and stronger jets.</p>
+        <div class="tag">110v ready</div>
+      </article>
+
+      <article class="why-card">
+        <div class="idx">03</div>
+        <h3>Balboa on the inside</h3>
+        <p>Every single model runs Balboa electrical equipment with a digital topside control. It is the system service techs actually stock parts for, which is the whole point in year six.</p>
+        <div class="tag">Serviceable by design</div>
+      </article>
+
+      <article class="why-card">
+        <div class="idx">04</div>
+        <h3>Real hydrotherapy counts</h3>
+        <p>Up to 45 jets and two 6 bhp two-speed pumps in the Signature Series. Not marketing jets. Enough pressure to reach a shoulder knot after a twelve-hour day.</p>
+        <div class="tag">25 to 45 jets</div>
+      </article>
+
+      <article class="why-card">
+        <div class="idx">05</div>
+        <h3>We do the whole yard</h3>
+        <p>Pools, gunite, hardscape, decking and spa pads under one roof for 42 years. The people who set your tub are the people who build the patio it sits on.</p>
+        <div class="tag">One crew, one number</div>
+      </article>
+
+      <article class="why-card">
+        <div class="idx">06</div>
+        <h3>Ten years on the shell</h3>
+        <p>Backed by three years on plumbing, three on the acrylic surface and three on the electrical equipment. Register within 30 days of delivery and you are covered.</p>
+        <div class="tag">Manufacturer warranty</div>
+      </article>
+
+      <article class="why-card">
+        <div class="idx">07</div>
+        <h3>Five shells, two cabinets</h3>
+        <p>Sterling Silver through Midnight Canyon, in graphite or black cabinetry. Pick the combination in person under real light instead of guessing from a phone screen.</p>
+        <div class="tag">Built to order</div>
+      </article>
+
+      <article class="why-card">
+        <div class="idx">08</div>
+        <h3>Sit in it first</h3>
+        <p>Seat depth is personal. Jet placement is personal. Bring the family, climb in, and find out which shell actually fits you before anybody writes anything down.</p>
+        <div class="tag">Showroom floor models</div>
+      </article>
+
+      <article class="why-card" style="background:linear-gradient(150deg,var(--navy) 0%,#0A1128 100%);border-left:3px solid var(--cyan)">
+        <div class="idx" style="color:#6FC7F5">Next step</div>
+        <h3 style="color:#fff">Come see them wet</h3>
+        <p style="color:#A8BDD9">Nine models on the floor in Murfreesboro. Pick an hour that works and we will have them ready.</p>
+        <div style="margin-top:auto;padding-top:1.1rem">
+          <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LINEUP ========== -->
+<section class="sec sec-deep on-deep" id="lineup">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The lineup / 9 models</p>
+      <h2>Find your size, then come sit in it</h2>
+      <p>
+        Two families. The Classic Series keeps it simple and efficient. The Signature Series
+        adds a second pump, a waterfall and a lot more jets. Filter below, then bring your
+        short list to the showroom.
+      </p>
+    </div>
+
+    <div class="filters">
+      <div class="fgroup" role="group" aria-label="Filter by series">
+        <span class="flabel">Series</span>
+        <button class="chip" data-filter="series" data-value="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="series" data-value="classic" aria-pressed="false">Classic</button>
+        <button class="chip" data-filter="series" data-value="signature" aria-pressed="false">Signature</button>
+      </div>
+      <div class="fgroup" role="group" aria-label="Filter by seating">
+        <span class="flabel">Seats</span>
+        <button class="chip" data-filter="seats" data-value="all" aria-pressed="true">Any</button>
+        <button class="chip" data-filter="seats" data-value="3" aria-pressed="false">3 people</button>
+        <button class="chip" data-filter="seats" data-value="6" aria-pressed="false">5 to 6 people</button>
+      </div>
+      <div class="fgroup" role="group" aria-label="Filter by power">
+        <span class="flabel">Power</span>
+        <button class="chip" data-filter="power" data-value="all" aria-pressed="true">Any</button>
+        <button class="chip" data-filter="power" data-value="110" aria-pressed="false">Plugs into 110v</button>
+      </div>
+      <p class="count" id="count" aria-live="polite">Showing 9 of 9</p>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <!-- ALPHA 1 -->
+      <article class="card" data-series="classic" data-seats="3" data-power="110">
+        <div class="card-media">
+          <span class="series-tag classic">Classic Series</span>
+          <img src="https://generationhottubs.com/wp-content/uploads/2024/02/Alpha-1024x683.png" alt="Alpha 1 hot tub, overhead view" loading="lazy">
+          <span class="volt-tag">110v ready</span>
+        </div>
+        <div class="card-body">
+          <h3>Alpha 1</h3>
+          <p class="card-blurb">The couple's tub. Compact enough for a townhouse patio, still deep enough for a proper full-body soak.</p>
+          <dl class="specs">
+            <div class="spec"><dt>Seats</dt><dd>3</dd></div>
+            <div class="spec"><dt>Jets</dt><dd>28</dd></div>
+            <div class="spec"><dt>Water</dt><dd>285 gal</dd></div>
+            <div class="spec"><dt>Pumps</dt><dd>1</dd></div>
+            <div class="spec wide"><dt>Footprint</dt><dd>82&quot; &times; 66&quot; &times; 34.5&quot;</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/gh-300/">Full Specs</a>
+            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GH500 -->
+      <article class="card" data-series="classic" data-seats="6" data-power="110">
+        <div class="card-media">
+          <span class="series-tag classic">Classic Series</span>
+          <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/gh500-1024x1020.webp" alt="GH500 hot tub, overhead view" loading="lazy">
+          <span class="volt-tag">110v ready</span>
+        </div>
+        <div class="card-body">
+          <h3>GH500</h3>
+          <p class="card-blurb">The most jets of any Classic model. Six adults, one lounger, and a footprint that still clears a standard gate.</p>
+          <dl class="specs">
+            <div class="spec"><dt>Seats</dt><dd>5-6</dd></div>
+            <div class="spec"><dt>Jets</dt><dd>29</dd></div>
+            <div class="spec"><dt>Water</dt><dd>325 gal</dd></div>
+            <div class="spec"><dt>Pumps</dt><dd>1</dd></div>
+            <div class="spec wide"><dt>Footprint</dt><dd>77&quot; &times; 77&quot; &times; 34&quot;</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/gh500/">Full Specs</a>
+            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GH550 -->
+      <article class="card" data-series="classic" data-seats="6" data-power="110">
+        <div class="card-media">
+          <span class="series-tag classic">Classic Series</span>
+          <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GH550-Img.webp" alt="GH550 hot tub, overhead view" loading="lazy">
+          <span class="volt-tag">110v ready</span>
+        </div>
+        <div class="card-body">
+          <h3>GH550</h3>
+          <p class="card-blurb">The efficiency pick. Fewer, larger jets and less water to heat, which shows up on the power bill every month.</p>
+          <dl class="specs">
+            <div class="spec"><dt>Seats</dt><dd>5-6</dd></div>
+            <div class="spec"><dt>Jets</dt><dd>25</dd></div>
+            <div class="spec"><dt>Water</dt><dd>305 gal</dd></div>
+            <div class="spec"><dt>Pumps</dt><dd>1</dd></div>
+            <div class="spec wide"><dt>Footprint</dt><dd>77&quot; &times; 77&quot; &times; 34&quot;</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/gh550/">Full Specs</a>
+            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ALPHA 2 -->
+      <article class="card" data-series="signature" data-seats="3" data-power="220">
+        <div class="card-media">
+          <span class="series-tag signature">Signature Series</span>
+          <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Alpha2-1024x683.png" alt="Alpha 2 hot tub, overhead view" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Alpha 2</h3>
+          <p class="card-blurb">The Alpha 1 footprint with two pumps and a dedicated foot massage jet. Small tub, serious therapy.</p>
+          <dl class="specs">
+            <div class="spec"><dt>Seats</dt><dd>3</dd></div>
+            <div class="spec"><dt>Jets</dt><dd>26</dd></div>
+            <div class="spec"><dt>Water</dt><dd>285 gal</dd></div>
+            <div class="spec"><dt>Pumps</dt><dd>2 &times; 6 bhp</dd></div>
+            <div class="spec wide"><dt>Footprint</dt><dd>82&quot; &times; 66&quot; &times; 34.5&quot;</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/alpha/">Full Specs</a>
+            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- MILLENNIAL -->
+      <article class="card" data-series="signature" data-seats="6" data-power="220">
+        <div class="card-media">
+          <span class="series-tag signature">Signature Series</span>
+          <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Millennial-1024x1024.png" alt="Millennial hot tub, overhead view" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Millennial</h3>
+          <p class="card-blurb">Most jets in the whole lineup. If hydrotherapy is the reason you are shopping, start your visit here.</p>
+          <dl class="specs">
+            <div class="spec"><dt>Seats</dt><dd>5-6</dd></div>
+            <div class="spec"><dt>Jets</dt><dd>45</dd></div>
+            <div class="spec"><dt>Water</dt><dd>470 gal</dd></div>
+            <div class="spec"><dt>Pumps</dt><dd>2 &times; 6 bhp</dd></div>
+            <div class="spec wide"><dt>Footprint</dt><dd>92&quot; &times; 92&quot; &times; 36&quot;</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/millennial/">Full Specs</a>
+            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- BOOMER -->
+      <article class="card" data-series="signature" data-seats="6" data-power="220">
+        <div class="card-media">
+          <span class="series-tag signature">Signature Series</span>
+          <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Boomer-1024x1024.png" alt="Boomer hot tub, overhead view" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Boomer</h3>
+          <p class="card-blurb">Signature jets and a waterfall in the smallest Signature footprint. The value play if the yard is tight.</p>
+          <dl class="specs">
+            <div class="spec"><dt>Seats</dt><dd>5-6</dd></div>
+            <div class="spec"><dt>Jets</dt><dd>44</dd></div>
+            <div class="spec"><dt>Water</dt><dd>355 gal</dd></div>
+            <div class="spec"><dt>Pumps</dt><dd>2 &times; 6 bhp</dd></div>
+            <div class="spec wide"><dt>Footprint</dt><dd>82&quot; &times; 82&quot; &times; 36&quot;</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/boomer/">Full Specs</a>
+            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- SILENT -->
+      <article class="card" data-series="signature" data-seats="6" data-power="220">
+        <div class="card-media">
+          <span class="series-tag signature">Signature Series</span>
+          <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/Silent-1024x1024.png" alt="Silent hot tub, overhead view" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Silent</h3>
+          <p class="card-blurb">Least water of any 44-jet model, so it heats fastest and recovers quickest after a full house gets in.</p>
+          <dl class="specs">
+            <div class="spec"><dt>Seats</dt><dd>5-6</dd></div>
+            <div class="spec"><dt>Jets</dt><dd>44</dd></div>
+            <div class="spec"><dt>Water</dt><dd>345 gal</dd></div>
+            <div class="spec"><dt>Pumps</dt><dd>2 &times; 6 bhp</dd></div>
+            <div class="spec wide"><dt>Footprint</dt><dd>82&quot; &times; 82&quot; &times; 36&quot;</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/silent/">Full Specs</a>
+            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GEN X -->
+      <article class="card" data-series="signature" data-seats="6" data-power="220">
+        <div class="card-media">
+          <span class="series-tag signature">Signature Series</span>
+          <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GenX-1024x1024.png" alt="Gen X hot tub, overhead view" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Gen X</h3>
+          <p class="card-blurb">Full 92 inch shell with 44 jets and a waterfall. Room for the whole family without anybody's knees touching.</p>
+          <dl class="specs">
+            <div class="spec"><dt>Seats</dt><dd>5-6</dd></div>
+            <div class="spec"><dt>Jets</dt><dd>44</dd></div>
+            <div class="spec"><dt>Water</dt><dd>480 gal</dd></div>
+            <div class="spec"><dt>Pumps</dt><dd>2 &times; 6 bhp</dd></div>
+            <div class="spec wide"><dt>Footprint</dt><dd>92&quot; &times; 92&quot; &times; 36&quot;</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/gen-x/">Full Specs</a>
+            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GEN Z -->
+      <article class="card" data-series="signature" data-seats="6" data-power="220">
+        <div class="card-media">
+          <span class="series-tag signature">Signature Series</span>
+          <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/GenZ-2-1024x1024.png" alt="Gen Z hot tub, overhead view" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3>Gen Z</h3>
+          <p class="card-blurb">The biggest water volume we sell. Deepest soak in the lineup and the one people book weekends around.</p>
+          <dl class="specs">
+            <div class="spec"><dt>Seats</dt><dd>5-6</dd></div>
+            <div class="spec"><dt>Jets</dt><dd>43</dd></div>
+            <div class="spec"><dt>Water</dt><dd>490 gal</dd></div>
+            <div class="spec"><dt>Pumps</dt><dd>2 &times; 6 bhp</dd></div>
+            <div class="spec wide"><dt>Footprint</dt><dd>92&quot; &times; 92&quot; &times; 36&quot;</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/gen-z/">Full Specs</a>
+            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="empty" id="empty">No model matches that combination. Clear a filter, or just call us at 615.238.4144 and we will sort it out.</p>
+  </div>
+</section>
+
+<!-- ========== COMPARE ========== -->
+<section class="sec" id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Side by side</p>
+      <h2>Every number in one place</h2>
+      <p>Print this, measure your pad, and bring it with you. Highlighted figures are the best in the lineup for that column.</p>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Generation hot tub specifications compared</caption>
+        <thead>
+          <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Series</th>
+            <th scope="col">Seats</th>
+            <th scope="col">Jets</th>
+            <th scope="col">Dimensions</th>
+            <th scope="col">Water</th>
+            <th scope="col">Pumps</th>
+            <th scope="col">Power</th>
+            <th scope="col">Waterfall</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Alpha 1</td><td>Classic</td><td>3</td><td>28</td><td>82 &times; 66 &times; 34.5</td><td>285 gal</td><td>1</td><td class="best">110v or 220v</td><td>No</td></tr>
+          <tr><td>GH500</td><td>Classic</td><td>5-6</td><td>29</td><td>77 &times; 77 &times; 34</td><td>325 gal</td><td>1</td><td class="best">110v or 220v</td><td>No</td></tr>
+          <tr><td>GH550</td><td>Classic</td><td>5-6</td><td>25</td><td>77 &times; 77 &times; 34</td><td>305 gal</td><td>1</td><td class="best">110v or 220v</td><td>No</td></tr>
+          <tr><td>Alpha 2</td><td>Signature</td><td>3</td><td>26</td><td>82 &times; 66 &times; 34.5</td><td>285 gal</td><td>2 &times; 6 bhp</td><td>220v / 50a</td><td>No</td></tr>
+          <tr><td>Millennial</td><td>Signature</td><td>5-6</td><td class="best">45</td><td>92 &times; 92 &times; 36</td><td>470 gal</td><td>2 &times; 6 bhp</td><td>220v / 50a</td><td>Yes</td></tr>
+          <tr><td>Boomer</td><td>Signature</td><td>5-6</td><td>44</td><td>82 &times; 82 &times; 36</td><td>355 gal</td><td>2 &times; 6 bhp</td><td>220v / 50a</td><td>Yes</td></tr>
+          <tr><td>Silent</td><td>Signature</td><td>5-6</td><td>44</td><td>82 &times; 82 &times; 36</td><td>345 gal</td><td>2 &times; 6 bhp</td><td>220v / 50a</td><td>Yes</td></tr>
+          <tr><td>Gen X</td><td>Signature</td><td>5-6</td><td>44</td><td>92 &times; 92 &times; 36</td><td>480 gal</td><td>2 &times; 6 bhp</td><td>220v / 50a</td><td>Yes</td></tr>
+          <tr><td>Gen Z</td><td>Signature</td><td>5-6</td><td>43</td><td>92 &times; 92 &times; 36</td><td class="best">490 gal</td><td>2 &times; 6 bhp</td><td>220v / 50a</td><td>Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">Dimensions in inches. Specifications from Generation Hot Tubs and subject to change. Every model includes Balboa electrical equipment, a digital topside control, a 5 inch LED light and an ABS bottom.</p>
+
+    <div style="margin-top:2rem;display:flex;gap:.85rem;flex-wrap:wrap">
+      <a class="btn btn-primary" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
+      <a class="btn btn-outline" href="tel:615-238-4144">Call 615.238.4144</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VISIT ========== -->
+<section class="sec" id="visit" style="background:var(--surface-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What an appointment actually looks like</p>
+      <h2>One hour, three steps, zero pressure</h2>
+      <p>
+        We are not going to keep you all afternoon. Here is exactly how the visit runs so
+        you know what you are signing up for.
+      </p>
+    </div>
+
+    <div class="steps">
+      <article class="step">
+        <div class="num">STEP 01</div>
+        <h3>Tell us about the yard</h3>
+        <p>Where it goes, how we get it back there, what the surface is, and what power you have. Photos on your phone are plenty. This is the part that prevents surprises on delivery day.</p>
+        <span class="dur">About 15 minutes</span>
+      </article>
+      <article class="step">
+        <div class="num">STEP 02</div>
+        <h3>Get in the tubs</h3>
+        <p>Shoes off, climb in, try the seats. Check where the jets hit your shoulders and whether the lounger fits your height. Shell and cabinet colors get picked here too, under real light.</p>
+        <span class="dur">About 30 minutes</span>
+      </article>
+      <article class="step">
+        <div class="num">STEP 03</div>
+        <h3>Leave with a real number</h3>
+        <p>Out-the-door price on the model you liked, what the pad needs, a delivery window and financing options if you want them. Written down. Yours to take home and think about.</p>
+        <span class="dur">About 15 minutes</span>
+      </article>
+    </div>
+
+    <div style="margin-top:2.4rem;display:flex;gap:.85rem;flex-wrap:wrap;align-items:center">
+      <a class="btn btn-primary" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Pick Your Time</a>
+      <a class="btn btn-outline" href="https://forms.monday.com/forms/ae0bb9e0d1e9108337892f71021a017b?r=use1">Or Start With a Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WARRANTY ========== -->
+<section class="sec sec-deep on-deep">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Coverage</p>
+      <h2>What is actually warrantied</h2>
+      <p>The full manufacturer warranty, in plain numbers. Register within 30 days of delivery and it applies to you as the original owner.</p>
+    </div>
+
+    <div class="warranty">
+      <div class="wcard">
+        <div class="yr">10<span>YR</span></div>
+        <h3>Shell structure</h3>
+        <p>Structurally sound and free from water loss. The part that would end the whole thing if it failed.</p>
+      </div>
+      <div class="wcard">
+        <div class="yr">3<span>YR</span></div>
+        <h3>Plumbing</h3>
+        <p>All internal plumbing, wall fittings, jet fittings and bonded components including the filter compartment.</p>
+      </div>
+      <div class="wcard">
+        <div class="yr">3<span>YR</span></div>
+        <h3>Acrylic surface</h3>
+        <p>Against blistering or cracking caused by a defect in materials. Normal fading is not included.</p>
+      </div>
+      <div class="wcard">
+        <div class="yr">3<span>YR</span></div>
+        <h3>Electrical equipment</h3>
+        <p>Control systems, pumps and heaters against defect or malfunction. One year on lighting, audio and air controls.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:1.4rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--on-deep-dim);letter-spacing:.04em">
+      Skirting panels carry a one year warranty. Coverage applies to the original purchaser under normal use and care. Ask us for the full terms at your appointment.
+    </p>
+  </div>
+</section>
+
+<!-- ========== CUSTOMIZE ========== -->
+<section class="sec">
+  <div class="wrap custom">
+    <div>
+      <p class="eyebrow">Build it your way</p>
+      <h2 style="font-size:var(--step-3);text-transform:uppercase;margin-top:.7rem">Five shells, two cabinets, and the extras that matter</h2>
+      <p style="margin-top:1rem;color:var(--ink-2)">
+        Acrylic shells are marbled, so no two panels read the same in the sun. Come look at
+        physical samples next to your cabinet choice before you commit.
+      </p>
+
+      <div class="swatches">
+        <div class="sw"><div class="chipimg sw-silver"></div><div class="nm">Sterling Silver</div></div>
+        <div class="sw"><div class="chipimg sw-midnight"></div><div class="nm">Midnight Canyon</div></div>
+        <div class="sw"><div class="chipimg sw-storm"></div><div class="nm">Storm Clouds</div></div>
+        <div class="sw"><div class="chipimg sw-smoky"></div><div class="nm">Smoky Mountains</div></div>
+        <div class="sw"><div class="chipimg sw-tuscan"></div><div class="nm">Tuscan Sun</div></div>
+      </div>
+      <p style="margin-top:.9rem;font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--ink-2);letter-spacing:.04em">
+        Swatches shown for reference only. See the real samples in Murfreesboro.
+      </p>
+
+      <ul class="optlist">
+        <li><b>Cabinets</b><span>Graphite or black, with a black cover on every model.</span></li>
+        <li><b>Audio</b><span>Bluetooth stereo with a subwoofer and four transducers built into the shell.</span></li>
+        <li><b>Lighting</b><span>LED perimeter lighting with lit cupholders, on top of the standard 5 inch LED.</span></li>
+        <li><b>Water care</b><span>Ozone system to cut down how much chemical you handle.</span></li>
+        <li><b>Access</b><span>Steps, cover lift and a matching spa deck.</span></li>
+      </ul>
+    </div>
+
+    <div class="custom-photo">
+      <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/DSC00780-Enhanced-NR-683x1024.jpg" alt="Lit waterfall feature and LED perimeter lighting on a Generation hot tub" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="final">
+  <div class="final-photo" style="background-image:url('https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/DSC00877-Enhanced-NR-Edit.png')"></div>
+  <div class="final-veil"></div>
+  <div class="wrap final-in">
+    <div class="final-grid">
+      <div>
+        <p class="eyebrow">2349F S Church Street, Murfreesboro</p>
+        <h2>Book an hour. Change your evenings.</h2>
+        <p class="lead">
+          Pick a time that works, tell us roughly what you are after, and we will have the
+          right models ready when you walk in. Bring the family. Bring the yard measurements.
+          Bring nothing at all and we will still make it worth the trip.
+        </p>
+        <div class="final-actions">
+          <a class="btn btn-primary" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
+          <a class="btn btn-ghost" href="https://forms.monday.com/forms/ae0bb9e0d1e9108337892f71021a017b?r=use1">Free Consultation</a>
+        </div>
+      </div>
+
+      <div class="infobox">
+        <div class="info-row">
+          <div class="k">Showroom</div>
+          <div class="v">Kevin Sparks Signature Pools<br>2349F S Church St<br>Murfreesboro, TN 37130</div>
+        </div>
+        <div class="info-row">
+          <div class="k">Hours</div>
+          <div class="v">Monday to Friday, 8:00 AM to 4:30 PM<br>Weekends by appointment</div>
+        </div>
+        <div class="info-row">
+          <div class="k">Phone</div>
+          <div class="v"><a href="tel:615-238-4144">615.238.4144</a></div>
+        </div>
+        <div class="info-row">
+          <div class="k">Email</div>
+          <div class="v"><a href="mailto:sales@kevinsparkssignaturepools.com">sales@kevinsparkssignaturepools.com</a></div>
+        </div>
+        <div class="info-row">
+          <div class="k">Also ask about</div>
+          <div class="v">Swim spas, fiberglass and gunite pools, hardscape and spa pads.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="logo-link" href="https://kevinsparkssignaturepools.com/" aria-label="Kevin Sparks Signature Pools home">
+      <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2025/08/KSSP-Logo-1024x333.webp" alt="Kevin Sparks Signature Pools" loading="lazy">
+    </a>
+    <p>
+      Creating spaces of connection and community. All photos are of work designed and
+      installed by Kevin Sparks Signature Pools. No stock photography.
+      <a href="https://kevinsparkssignaturepools.com/contact/">Contact us</a>.
+    </p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="btn btn-ghost" href="tel:615-238-4144">Call</a>
+  <a class="btn btn-primary" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- lineup filters ---------- */
+  var grid  = document.getElementById('grid');
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+  var empty = document.getElementById('empty');
+  var count = document.getElementById('count');
+  var state = { series:'all', seats:'all', power:'all' };
+
+  function apply(){
+    var shown = 0;
+    cards.forEach(function(card){
+      var ok =
+        (state.series === 'all' || card.dataset.series === state.series) &&
+        (state.seats  === 'all' || card.dataset.seats  === state.seats)  &&
+        (state.power  === 'all' || card.dataset.power  === state.power);
+      card.classList.toggle('is-hidden', !ok);
+      if (ok) shown++;
+    });
+    empty.classList.toggle('show', shown === 0);
+    count.textContent = 'Showing ' + shown + ' of ' + cards.length;
+  }
+
+  document.querySelectorAll('.chip').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      var key = chip.dataset.filter;
+      state[key] = chip.dataset.value;
+      document.querySelectorAll('.chip[data-filter="' + key + '"]').forEach(function(c){
+        c.setAttribute('aria-pressed', String(c === chip));
+      });
+      apply();
+    });
+  });
+  apply();
+
+  /* ---------- hero: water caustics ---------- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var canvas = document.getElementById('caustics');
+  if (!canvas || reduce.matches) return;
+
+  var ctx = canvas.getContext('2d', { alpha:true });
+  var W = 168, H = 108;                       /* render small, upscale smooth */
+  var buf = ctx.createImageData(W, H);
+  var data = buf.data;
+  var off = document.createElement('canvas');
+  off.width = W; off.height = H;
+  var octx = off.getContext('2d');
+
+  function size(){
+    var r = canvas.getBoundingClientRect();
+    canvas.width  = Math.max(1, Math.round(r.width));
+    canvas.height = Math.max(1, Math.round(r.height));
+  }
+  size();
+  window.addEventListener('resize', size, { passive:true });
+
+  var t = 0, running = true, last = 0;
+
+  function frame(now){
+    if (!running) return;
+    requestAnimationFrame(frame);
+    if (now - last < 40) return;              /* ~25fps is plenty for water */
+    last = now;
+    t += 0.016;
+
+    var i = 0;
+    for (var y = 0; y < H; y++){
+      var fy = y / H * 6.0;
+      for (var x = 0; x < W; x++, i += 4){
+        var fx = x / W * 9.0;
+        var v = Math.sin(fx * 1.7 + t * 0.9)
+              + Math.sin(fy * 2.1 - t * 0.7)
+              + Math.sin((fx + fy) * 1.25 + t * 1.15)
+              + Math.sin(Math.sqrt(fx * fx + fy * fy) * 2.4 - t * 1.5);
+        var ridge = 1 - Math.min(1, Math.abs(v) * 0.42);
+        ridge = ridge * ridge * ridge;         /* tighten into light bands */
+        var a = ridge * 235;
+        data[i]     = 90  + ridge * 120;       /* toward #009EF0 */
+        data[i + 1] = 175 + ridge * 70;
+        data[i + 2] = 235;
+        data[i + 3] = a;
+      }
+    }
+    octx.putImageData(buf, 0, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(off, 0, 0, canvas.width, canvas.height);
+  }
+  requestAnimationFrame(frame);
+
+  /* stop painting when the hero scrolls away */
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting && !running){ running = true; requestAnimationFrame(frame); }
+        else if (!e.isIntersecting){ running = false; }
+      });
+    }, { threshold:0 }).observe(canvas);
+  }
+
+  document.addEventListener('visibilitychange', function(){
+    if (document.hidden){ running = false; }
+    else if (!running){ running = true; requestAnimationFrame(frame); }
+  });
+})();
+</script>
