@@ -1,5 +1,5 @@
 <title>After the Home Show</title>
-<meta name="description" content="You saw the hot tubs, swim spas and pools at Booth 1238. Pick up where you left off: your $1,000 to $2,500 Home Show credit is held through October 13, 2026 at Kevin Sparks Signature Pools in Murfreesboro.">
+<meta name="description" content="You saw the hot tubs, swim spas and pools at Booth 1238. Pick up where you left off at the Kevin Sparks Signature Pools showroom in Murfreesboro. Nine Generation hot tubs on the floor, one hour, no pressure.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -163,6 +163,9 @@ p{margin:0}
 .credit .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1.2rem,4vw,3rem);align-items:center;padding-block:1.8rem}
 .credit .amt{font-family:var(--display);font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;line-height:.95;letter-spacing:-.005em}
 .credit .amt small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:.35rem;opacity:.85}
+/* the show-only condition rides under the amount, not above it */
+.credit .amt small.amt-cond{margin:.5rem 0 0;opacity:1;font-size:.68rem;letter-spacing:.12em;
+  display:block;width:fit-content;padding:.28rem .65rem;border:1px solid currentColor;border-radius:999px;line-height:1.4}
 .credit h3{font-size:var(--step-2);text-transform:none;letter-spacing:0;line-height:1.1}
 .credit p{margin-top:.4rem;max-width:56ch;font-size:var(--step-0)}
 .credit .btn-deep{background:var(--deep-3);color:#fff}
@@ -335,7 +338,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
     <img src="https://kevinsparkssignaturepools.com/wp-content/uploads/2025/08/KSSP-Logo-1024x333.webp" alt="Kevin Sparks Signature Pools">
     <div class="top-meta">
       <span class="hide-m">Murfreesboro showroom</span>
-      <span class="pill">Credit held through Oct 13</span>
+      <span class="pill">Booth 1238</span>
       <a href="tel:6152384144" class="hide-m">615.238.4144</a>
     </div>
   </div>
@@ -349,26 +352,26 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
     <div>
       <span class="eyebrow">Nashville Home Show · Booth 1238 · Thanks for stopping by</span>
       <h1>You saw it in person. Now let's put it <em>in your backyard.</em></h1>
-      <p class="lede">Pick up right where you left off at Music City Center. Your backyard upgrade credit is still on the table, the models you sat in are filled and waiting in Murfreesboro, and the next step takes about an hour.</p>
+      <p class="lede">Pick up right where you left off at Music City Center. The models you sat in are filled and waiting in Murfreesboro, the pool crew is ready to walk your yard, and the next step takes about an hour.</p>
       <div class="hero-cta">
         <a class="btn btn-ember" href="#next">Book my next step <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn-ghost" href="tel:6152384144">Call 615.238.4144</a>
       </div>
     </div>
 
-    <aside class="pass" aria-label="Your Home Show credit">
-      <div class="pass-head"><span>Your Home Show credit</span><span>Booth 1238</span></div>
+    <aside class="pass" aria-label="What your next step looks like">
+      <div class="pass-head"><span>Your next step</span><span>From Booth 1238</span></div>
       <div class="pass-body">
         <div class="pass-row">
-          <span class="pass-k">Credit</span>
-          <span class="pass-v big">$1,000 to $2,500<small>toward a qualifying pool, swim spa or hot tub</small></span>
+          <span class="pass-k">Takes</span>
+          <span class="pass-v big">About an hour<small>sit in them, ask everything, leave with real numbers</small></span>
         </div>
         <div class="pass-row">
-          <span class="pass-k" id="count-label">Held through Oct 13</span>
-          <div class="count days" id="count"><div><b id="c-d">30</b><span>days left</span></div></div>
+          <span class="pass-k">Bring</span>
+          <span class="pass-v">Photos and rough measurements<small>and whoever will actually be using it</small></span>
         </div>
         <div class="pass-row">
-          <span class="pass-k">Redeem at</span>
+          <span class="pass-k">Visit</span>
           <span class="pass-v">Murfreesboro<small>2349F S Church St · Mon to Fri 8 AM to 4:30 PM</small></span>
         </div>
         <div class="pass-booth">
@@ -397,7 +400,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
           <dl>
             <dt>Next step</dt><dd>Design consultation at your home</dd>
             <dt>Takes</dt><dd>About an hour</dd>
-            <dt>Credit</dt><dd>Up to $2,500 toward your pool</dd>
+            <dt>Build</dt><dd>Fiberglass or gunite</dd>
           </dl>
         </div>
         <div class="path-foot"><a class="btn btn-cyan" href="#next" data-pick="Pool">Schedule my design consultation</a></div>
@@ -411,7 +414,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
           <dl>
             <dt>Next step</dt><dd>Showroom visit in Murfreesboro</dd>
             <dt>Takes</dt><dd>About an hour</dd>
-            <dt>Credit</dt><dd>Applies to your swim spa</dd>
+            <dt>Season</dt><dd>Heated, year-round</dd>
           </dl>
         </div>
         <div class="path-foot"><a class="btn btn-cyan" href="#next" data-pick="Swim spa">Book my swim spa visit</a></div>
@@ -425,7 +428,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
           <dl>
             <dt>Next step</dt><dd>One-hour showroom appointment</dd>
             <dt>Delivery</dt><dd>Weeks, not seasons</dd>
-            <dt>Credit</dt><dd>Applies to your hot tub</dd>
+            <dt>On the floor</dt><dd>Nine models to sit in</dd>
           </dl>
         </div>
         <div class="path-foot"><a class="btn btn-cyan" href="#next" data-pick="Hot tub">Plan my showroom visit</a></div>
@@ -477,7 +480,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
     <div class="steps">
       <div class="step rv"><span class="t">Step one</span><h3>Tell us about the yard</h3><p>Where it goes, how we get it back there, what the surface is, and what power you have. Photos on your phone are plenty. This is the part that prevents surprises on delivery day.</p></div>
       <div class="step rv"><span class="t">Step two</span><h3>Get in the water</h3><p>Shoes off, climb in, try the seats. Check where the jets hit your shoulders and whether the lounger fits your height. For a pool, we walk the yard with you and sketch it in place.</p></div>
-      <div class="step rv"><span class="t">Step three</span><h3>Leave with a real number</h3><p>Out-the-door price with your Home Show credit applied, what the pad or site needs, a delivery or build window, and financing if you want it. Written down. Yours to take home.</p></div>
+      <div class="step rv"><span class="t">Step three</span><h3>Leave with a real number</h3><p>Out-the-door price, what the pad or site needs, a delivery or build window, and financing if you want it. Written down. Yours to take home and think about.</p></div>
     </div>
   </div>
 </section>
@@ -503,7 +506,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
         </div>
         <div class="deals">
           <div class="deal"><b>Bring</b><span>Photos of the space, rough measurements, and whoever will be using it. Seat fit is personal.</span></div>
-          <div class="deal"><b>Financing</b><span>Options laid out at your appointment, with the credit applied first.</span></div>
+          <div class="deal"><b>Financing</b><span>Options laid out in writing at your appointment. No application pressure.</span></div>
         </div>
       </div>
       <div class="venue rv">
@@ -517,7 +520,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
             <a class="btn btn-ghost" href="tel:6152384144">615.238.4144</a>
           </div>
         </div>
-        <div class="find"><b style="font-size:2.2rem">Oct 13</b><span>Your Home Show credit is held on file through Wednesday, October 13. Book before then and the amount is locked, even if your install date is later.</span></div>
+        <div class="find"><b style="font-size:2.2rem">Nine</b><span>Generation hot tubs on the floor, filled and ready to sit in, plus a swim spa on display. The same models you saw at Booth 1238, with the time to try them properly.</span></div>
       </div>
     </div>
   </div>
@@ -529,13 +532,13 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
       <span class="eyebrow">Pick up where you left off</span>
       <h2>Tell us what caught your eye. We'll take it from there.</h2>
       <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Your credit stays attached</b> to your file the moment you book.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Tell us which one you sat in</b> and we will have it ready when you arrive.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>We reach out within one business day</b> to confirm a time that works.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Showroom or your backyard.</b> Hot tubs and swim spas at the showroom. Pools start with a visit to your yard.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Prefer to talk?</b> <a href="tel:6152384144">615.238.4144</a>, Monday to Friday, 8 AM to 4:30 PM.</span></li>
       </ul>
     </div>
-    <form class="lead rv" action="#" method="post" data-thanks="thank-you.html" novalidate>
+    <form class="lead rv" action="#" method="post" data-thanks="https://kevinsparkshottubs.com/thank-you" data-webhook="" novalidate>
       <input type="hidden" name="page" value="post-nashville-home-show">
       <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term"><input type="hidden" name="fbclid"><input type="hidden" name="gclid"><input type="hidden" name="referrer">
       <div class="f2">
@@ -563,12 +566,12 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
       <label class="fld"><span>Best time</span>
         <select name="best_time"><option value="">No preference</option><option>Weekday mornings</option><option>Weekday afternoons</option><option>Saturday</option><option>Sunday</option></select></label>
       <button class="btn btn-ember" type="submit" style="width:100%">Book my next step</button>
-      <p class="fine">Credit applies to a qualifying purchase from Kevin Sparks Signature Pools, one per household, amount confirmed at your appointment. We will text and email to confirm your time. No spam, and no sharing your info.</p>
+      <p class="fine">We will text and email to confirm your time. No spam, and no sharing your info.</p>
       <div class="done" aria-live="polite">
         <span class="eyebrow" style="justify-content:center">Got it</span>
         <h3 style="font-size:var(--step-2)">We'll reach out within one business day.</h3>
         <span class="code">KS-1238-0000</span>
-        <p class="fine">Your Home Show credit is noted on your file under this reference. Want to move faster? Call 615.238.4144 and mention it.</p>
+        <p class="fine">Your request is on file under this reference. Want to move faster? Call 615.238.4144 and mention it.</p>
       </div>
     </form>
   </div>
@@ -582,11 +585,12 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
       <p class="mono">Mon to Fri 8 AM to 4:30 PM · Weekends by appointment</p>
     </div>
     <p class="mono">Generation Hot Tubs · Swim Spas · Fiberglass &amp; Gunite Pools</p>
+    <p class="mono"><a href="https://kevinsparkssignaturepools.com/" target="_blank" rel="noopener">kevinsparkssignaturepools.com</a></p>
   </div>
 </footer>
 
 <div class="bar" aria-hidden="true">
-  <div class="l">Home Show credit · <span id="bar-days">30</span> days left<b>$1,000 to $2,500 through Oct 13</b></div>
+  <div class="l">Murfreesboro showroom<b>Nine hot tubs, filled and ready</b></div>
   <a class="btn btn-ember" href="#next">Book now</a>
 </div>
 
@@ -653,29 +657,87 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
     });
   });
 
-  /* Demo submit: hand off to the thank-you page with what they told us. In production, set the
-     CRM form's redirect to the thank-you URL and pass the same parameters. */
+  /* Submit: POST the lead to the GoHighLevel inbound webhook, then hand off to the
+     thank-you page. GHL does not send CORS headers on hook endpoints, so a normal
+     fetch usually fails to READ the response even when the POST lands. We therefore
+     try a readable request first and fall back to an opaque no-cors send, which still
+     delivers the body. Nothing redirects until one of the two resolves. */
   document.querySelectorAll('form.lead').forEach(function(f){
+    var btn = f.querySelector('button[type="submit"]');
+    var busy = false;
+
+    function collect(){
+      var d = {}, seen = {};
+      Array.prototype.forEach.call(f.elements, function(el){
+        if(!el.name || el.disabled) return;
+        if((el.type === 'radio' || el.type === 'checkbox') && !el.checked) return;
+        d[el.name] = el.value;
+        seen[el.name] = true;
+      });
+      /* GHL-style names for the standard contact fields so the workflow mapping is obvious */
+      return {
+        firstName: d.first_name || '', lastName: d.last_name || '',
+        email: d.email || '', phone: d.phone || '', postalCode: d.zip || '',
+        timeline: d.timeline || '', interest: d.interest || '',
+        visitDay: d.visit_day || '', model: d.model || '',
+        page: d.page || '', pageUrl: location.href,
+        code: 'KS-1238-' + Math.random().toString(36).slice(2,6).toUpperCase(),
+        submittedAt: new Date().toISOString(),
+        utmSource: d.utm_source || '', utmMedium: d.utm_medium || '',
+        utmCampaign: d.utm_campaign || '', utmContent: d.utm_content || '',
+        utmTerm: d.utm_term || '', fbclid: d.fbclid || '', gclid: d.gclid || '',
+        referrer: d.referrer || ''
+      };
+    }
+
+    function fail(msg){
+      busy = false;
+      if(btn){ btn.disabled = false; btn.textContent = btn.dataset.label || 'Submit'; }
+      var e = f.querySelector('.err');
+      if(!e){ e = document.createElement('p'); e.className = 'fine err'; e.setAttribute('role','alert');
+              e.style.color = '#F2A33C'; f.insertBefore(e, f.querySelector('.fine')); }
+      e.textContent = msg;
+    }
+
+    function done(payload){
+      var p = new URLSearchParams({
+        from: payload.page === 'post-nashville-home-show' ? 'post' : 'event',
+        name: payload.firstName, interest: payload.interest,
+        day: payload.visitDay, model: payload.model, code: payload.code
+      });
+      location.href = f.dataset.thanks + '?' + p.toString();
+    }
+
     f.addEventListener('submit', function(e){
-      if(f.getAttribute('action')==='#'){
-        e.preventDefault();
-        if(!f.checkValidity()){ f.reportValidity(); return; }
-        var code='KS-1238-'+Math.random().toString(36).slice(2,6).toUpperCase();
-        var g=function(n){ var el=f.querySelector('[name="'+n+'"]:checked') || f.querySelector('[name="'+n+'"]'); return el? el.value : ''; };
-        var p=new URLSearchParams({ from: f.querySelector('[name="page"]').value==='post-nashville-home-show'?'post':'event',
-          name:g('first_name'), interest:g('interest'), day:g('visit_day'), model:g('model'), code:code });
-        location.href = f.dataset.thanks + '?' + p.toString();
-      }
+      e.preventDefault();
+      if(busy) return;
+      if(!f.checkValidity()){ f.reportValidity(); return; }
+
+      var hook = f.dataset.webhook || '';
+      var payload = collect();
+
+      /* No webhook configured yet: behave exactly as the review build always has */
+      if(!hook){ done(payload); return; }
+
+      busy = true;
+      if(btn){ btn.dataset.label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending...'; }
+      var body = JSON.stringify(payload);
+
+      fetch(hook, { method:'POST', headers:{'Content-Type':'application/json'}, body: body })
+        .then(function(r){
+          if(!r.ok) throw new Error('http ' + r.status);
+          done(payload);
+        })
+        .catch(function(){
+          /* Opaque retry: we cannot read the result, but the body still reaches GHL */
+          fetch(hook, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: body })
+            .then(function(){ done(payload); })
+            .catch(function(){
+              fail('We could not send that. Please call 615.238.4144 and we will register you by phone.');
+            });
+        });
     });
   });
 })();
 
-(function(){
-  /* Credit window: 30 days after the show closes. Ends Oct 13, 2026 at midnight Central. */
-  var end = Date.parse('2026-10-14T04:59:59Z');
-  var d = Math.ceil((end - Date.now())/864e5);
-  var big=document.getElementById('c-d'), bar=document.getElementById('bar-days'), lab=document.getElementById('count-label');
-  if(d>0){ big.textContent=d; bar.textContent=d; }
-  else { lab.textContent='Credit window'; big.parentNode.innerHTML='<b>Closed</b><span>call us anyway</span>'; bar.parentNode.firstChild.textContent='Home Show credit window closed · '; }
-})();
 </script>

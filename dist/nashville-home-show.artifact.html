@@ -1,5 +1,5 @@
 <title>Booth 1238 at the Nashville Home Show</title>
-<meta name="description" content="Kevin Sparks Signature Pools brings hot tubs, swim spas and swimming pools together at Booth 1238, Nashville Home Show, September 11 to 13, 2026. Register for a $1,000 to $2,500 backyard upgrade credit.">
+<meta name="description" content="Kevin Sparks Signature Pools brings hot tubs, swim spas and swimming pools together at Booth 1238, Nashville Home Show, September 11 to 13, 2026. Available only during the show, September 11 to 13. Register for a $1,000 to $2,500 backyard upgrade credit.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
@@ -163,6 +163,9 @@ p{margin:0}
 .credit .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1.2rem,4vw,3rem);align-items:center;padding-block:1.8rem}
 .credit .amt{font-family:var(--display);font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;line-height:.95;letter-spacing:-.005em}
 .credit .amt small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:.35rem;opacity:.85}
+/* the show-only condition rides under the amount, not above it */
+.credit .amt small.amt-cond{margin:.5rem 0 0;opacity:1;font-size:.68rem;letter-spacing:.12em;
+  display:block;width:fit-content;padding:.28rem .65rem;border:1px solid currentColor;border-radius:999px;line-height:1.4}
 .credit h3{font-size:var(--step-2);text-transform:none;letter-spacing:0;line-height:1.1}
 .credit p{margin-top:.4rem;max-width:56ch;font-size:var(--step-0)}
 .credit .btn-deep{background:var(--deep-3);color:#fff}
@@ -357,10 +360,10 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
 
 <section class="credit" id="credit-band">
   <div class="wrap">
-    <div class="amt"><small>Backyard upgrade credit</small>$1,000 to $2,500</div>
+    <div class="amt"><small>Backyard upgrade credit</small>$1,000 to $2,500<small class="amt-cond">Show days only &middot; Sept 11 to 13</small></div>
     <div>
-      <h3>Register now, then scan the QR code at the booth to lock it in.</h3>
-      <p>Good toward a qualifying pool, swim spa or hot tub purchase from Kevin Sparks Signature Pools. Registering ahead takes thirty seconds and means no typing on the show floor.</p>
+      <h3>Register now, then claim it in person at Booth 1238.</h3>
+      <p>Good toward a qualifying pool, swim spa or hot tub purchase from Kevin Sparks Signature Pools. <b>The credit is available during the Nashville Home Show only.</b> Registering ahead takes thirty seconds, then stop by the booth and talk to someone on our team to claim it and get the details.</p>
     </div>
     <a class="btn btn-deep" href="#credit">Register for the credit</a>
   </div>
@@ -512,15 +515,15 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
   <div class="wrap">
     <div class="form-side rv">
       <span class="eyebrow">Backyard upgrade credit</span>
-      <h2>Register in thirty seconds. Bring your phone to Booth 1238.</h2>
+      <h2>Register in thirty seconds. Claim it at Booth 1238.</h2>
       <ul>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>$1,000 to $2,500</b> toward a qualifying pool, swim spa or hot tub purchase</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Your name is at the booth.</b> Scan the QR code when you arrive and the credit attaches to your file.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Claimed at the booth, in person.</b> Come see us at Booth 1238 during show hours and talk to a member of our team to have the credit applied to your file.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>No obligation.</b> Sit in a tub, ask every question, and leave with real numbers written down.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Can't make the show?</b> Register anyway. The credit is good at our Murfreesboro showroom too.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg><span><b>Show days only.</b> The credit is available September 11 to 13 at Booth 1238 and cannot be claimed after the show closes Sunday at 5 PM.</span></li>
       </ul>
     </div>
-    <form class="lead rv" action="#" method="post" data-thanks="https://claude.ai/code/artifact/b1b17ccb-f42e-4e98-a0fe-0fb5042047bb" novalidate>
+    <form class="lead rv" action="#" method="post" data-thanks="https://claude.ai/code/artifact/b1b17ccb-f42e-4e98-a0fe-0fb5042047bb" data-webhook="" novalidate>
       <input type="hidden" name="page" value="nashville-home-show">
       <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term"><input type="hidden" name="fbclid"><input type="hidden" name="gclid"><input type="hidden" name="referrer">
       <div class="f2">
@@ -547,12 +550,12 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
       <label class="fld"><span>Which day are you coming?</span>
         <select name="visit_day"><option value="">Not sure yet</option><option>Friday, Sept 11</option><option>Saturday, Sept 12</option><option>Sunday, Sept 13</option><option>I can't make the show</option></select></label>
       <button class="btn btn-ember" type="submit" style="width:100%">Register for my credit</button>
-      <p class="fine">Credit applies to a qualifying purchase from Kevin Sparks Signature Pools, one per household, amount confirmed at your appointment. We will text and email your confirmation. No spam, and no sharing your info.</p>
+      <p class="fine">Credit is available during the Nashville Home Show only, September 11 to 13, 2026, and must be claimed in person at Booth 1238. Applies to a qualifying purchase from Kevin Sparks Signature Pools, one per household, amount confirmed at your appointment. We will text and email your confirmation. No spam, and no sharing your info.</p>
       <div class="done" aria-live="polite">
         <span class="eyebrow" style="justify-content:center">You're registered</span>
         <h3 style="font-size:var(--step-2)">See you at Booth 1238.</h3>
         <span class="code">KS-1238-0000</span>
-        <p class="fine">Show this code at the booth or just give us your name. We texted it to you as well. Sunday closes at 5 PM, so come early.</p>
+        <p class="fine">Bring this code to Booth 1238 during the show and talk to someone on our team to claim your credit. We texted it to you as well. Sunday closes at 5 PM, so come early.</p>
       </div>
     </form>
   </div>
@@ -566,6 +569,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
       <p class="mono">Mon to Fri 8 AM to 4:30 PM · Weekends by appointment</p>
     </div>
     <p class="mono">Generation Hot Tubs · Swim Spas · Fiberglass &amp; Gunite Pools</p>
+    <p class="mono"><a href="https://kevinsparkssignaturepools.com/" target="_blank" rel="noopener">kevinsparkssignaturepools.com</a></p>
   </div>
 </footer>
 
@@ -637,19 +641,85 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
     });
   });
 
-  /* Demo submit: hand off to the thank-you page with what they told us. In production, set the
-     CRM form's redirect to the thank-you URL and pass the same parameters. */
+  /* Submit: POST the lead to the GoHighLevel inbound webhook, then hand off to the
+     thank-you page. GHL does not send CORS headers on hook endpoints, so a normal
+     fetch usually fails to READ the response even when the POST lands. We therefore
+     try a readable request first and fall back to an opaque no-cors send, which still
+     delivers the body. Nothing redirects until one of the two resolves. */
   document.querySelectorAll('form.lead').forEach(function(f){
+    var btn = f.querySelector('button[type="submit"]');
+    var busy = false;
+
+    function collect(){
+      var d = {}, seen = {};
+      Array.prototype.forEach.call(f.elements, function(el){
+        if(!el.name || el.disabled) return;
+        if((el.type === 'radio' || el.type === 'checkbox') && !el.checked) return;
+        d[el.name] = el.value;
+        seen[el.name] = true;
+      });
+      /* GHL-style names for the standard contact fields so the workflow mapping is obvious */
+      return {
+        firstName: d.first_name || '', lastName: d.last_name || '',
+        email: d.email || '', phone: d.phone || '', postalCode: d.zip || '',
+        timeline: d.timeline || '', interest: d.interest || '',
+        visitDay: d.visit_day || '', model: d.model || '',
+        page: d.page || '', pageUrl: location.href,
+        code: 'KS-1238-' + Math.random().toString(36).slice(2,6).toUpperCase(),
+        submittedAt: new Date().toISOString(),
+        utmSource: d.utm_source || '', utmMedium: d.utm_medium || '',
+        utmCampaign: d.utm_campaign || '', utmContent: d.utm_content || '',
+        utmTerm: d.utm_term || '', fbclid: d.fbclid || '', gclid: d.gclid || '',
+        referrer: d.referrer || ''
+      };
+    }
+
+    function fail(msg){
+      busy = false;
+      if(btn){ btn.disabled = false; btn.textContent = btn.dataset.label || 'Submit'; }
+      var e = f.querySelector('.err');
+      if(!e){ e = document.createElement('p'); e.className = 'fine err'; e.setAttribute('role','alert');
+              e.style.color = '#F2A33C'; f.insertBefore(e, f.querySelector('.fine')); }
+      e.textContent = msg;
+    }
+
+    function done(payload){
+      var p = new URLSearchParams({
+        from: payload.page === 'post-nashville-home-show' ? 'post' : 'event',
+        name: payload.firstName, interest: payload.interest,
+        day: payload.visitDay, model: payload.model, code: payload.code
+      });
+      location.href = f.dataset.thanks + '?' + p.toString();
+    }
+
     f.addEventListener('submit', function(e){
-      if(f.getAttribute('action')==='#'){
-        e.preventDefault();
-        if(!f.checkValidity()){ f.reportValidity(); return; }
-        var code='KS-1238-'+Math.random().toString(36).slice(2,6).toUpperCase();
-        var g=function(n){ var el=f.querySelector('[name="'+n+'"]:checked') || f.querySelector('[name="'+n+'"]'); return el? el.value : ''; };
-        var p=new URLSearchParams({ from: f.querySelector('[name="page"]').value==='post-nashville-home-show'?'post':'event',
-          name:g('first_name'), interest:g('interest'), day:g('visit_day'), model:g('model'), code:code });
-        location.href = f.dataset.thanks + '?' + p.toString();
-      }
+      e.preventDefault();
+      if(busy) return;
+      if(!f.checkValidity()){ f.reportValidity(); return; }
+
+      var hook = f.dataset.webhook || '';
+      var payload = collect();
+
+      /* No webhook configured yet: behave exactly as the review build always has */
+      if(!hook){ done(payload); return; }
+
+      busy = true;
+      if(btn){ btn.dataset.label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending...'; }
+      var body = JSON.stringify(payload);
+
+      fetch(hook, { method:'POST', headers:{'Content-Type':'application/json'}, body: body })
+        .then(function(r){
+          if(!r.ok) throw new Error('http ' + r.status);
+          done(payload);
+        })
+        .catch(function(){
+          /* Opaque retry: we cannot read the result, but the body still reaches GHL */
+          fetch(hook, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: body })
+            .then(function(){ done(payload); })
+            .catch(function(){
+              fail('We could not send that. Please call 615.238.4144 and we will register you by phone.');
+            });
+        });
     });
   });
 })();

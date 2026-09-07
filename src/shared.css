@@ -158,6 +158,9 @@ p{margin:0}
 .credit .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1.2rem,4vw,3rem);align-items:center;padding-block:1.8rem}
 .credit .amt{font-family:var(--display);font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;line-height:.95;letter-spacing:-.005em}
 .credit .amt small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:.35rem;opacity:.85}
+/* the show-only condition rides under the amount, not above it */
+.credit .amt small.amt-cond{margin:.5rem 0 0;opacity:1;font-size:.68rem;letter-spacing:.12em;
+  display:block;width:fit-content;padding:.28rem .65rem;border:1px solid currentColor;border-radius:999px;line-height:1.4}
 .credit h3{font-size:var(--step-2);text-transform:none;letter-spacing:0;line-height:1.1}
 .credit p{margin-top:.4rem;max-width:56ch;font-size:var(--step-0)}
 .credit .btn-deep{background:var(--deep-3);color:#fff}

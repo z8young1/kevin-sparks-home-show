@@ -60,19 +60,85 @@
     });
   });
 
-  /* Demo submit: hand off to the thank-you page with what they told us. In production, set the
-     CRM form's redirect to the thank-you URL and pass the same parameters. */
+  /* Submit: POST the lead to the GoHighLevel inbound webhook, then hand off to the
+     thank-you page. GHL does not send CORS headers on hook endpoints, so a normal
+     fetch usually fails to READ the response even when the POST lands. We therefore
+     try a readable request first and fall back to an opaque no-cors send, which still
+     delivers the body. Nothing redirects until one of the two resolves. */
   document.querySelectorAll('form.lead').forEach(function(f){
+    var btn = f.querySelector('button[type="submit"]');
+    var busy = false;
+
+    function collect(){
+      var d = {}, seen = {};
+      Array.prototype.forEach.call(f.elements, function(el){
+        if(!el.name || el.disabled) return;
+        if((el.type === 'radio' || el.type === 'checkbox') && !el.checked) return;
+        d[el.name] = el.value;
+        seen[el.name] = true;
+      });
+      /* GHL-style names for the standard contact fields so the workflow mapping is obvious */
+      return {
+        firstName: d.first_name || '', lastName: d.last_name || '',
+        email: d.email || '', phone: d.phone || '', postalCode: d.zip || '',
+        timeline: d.timeline || '', interest: d.interest || '',
+        visitDay: d.visit_day || '', model: d.model || '',
+        page: d.page || '', pageUrl: location.href,
+        code: 'KS-1238-' + Math.random().toString(36).slice(2,6).toUpperCase(),
+        submittedAt: new Date().toISOString(),
+        utmSource: d.utm_source || '', utmMedium: d.utm_medium || '',
+        utmCampaign: d.utm_campaign || '', utmContent: d.utm_content || '',
+        utmTerm: d.utm_term || '', fbclid: d.fbclid || '', gclid: d.gclid || '',
+        referrer: d.referrer || ''
+      };
+    }
+
+    function fail(msg){
+      busy = false;
+      if(btn){ btn.disabled = false; btn.textContent = btn.dataset.label || 'Submit'; }
+      var e = f.querySelector('.err');
+      if(!e){ e = document.createElement('p'); e.className = 'fine err'; e.setAttribute('role','alert');
+              e.style.color = '#F2A33C'; f.insertBefore(e, f.querySelector('.fine')); }
+      e.textContent = msg;
+    }
+
+    function done(payload){
+      var p = new URLSearchParams({
+        from: payload.page === 'post-nashville-home-show' ? 'post' : 'event',
+        name: payload.firstName, interest: payload.interest,
+        day: payload.visitDay, model: payload.model, code: payload.code
+      });
+      location.href = f.dataset.thanks + '?' + p.toString();
+    }
+
     f.addEventListener('submit', function(e){
-      if(f.getAttribute('action')==='#'){
-        e.preventDefault();
-        if(!f.checkValidity()){ f.reportValidity(); return; }
-        var code='KS-1238-'+Math.random().toString(36).slice(2,6).toUpperCase();
-        var g=function(n){ var el=f.querySelector('[name="'+n+'"]:checked') || f.querySelector('[name="'+n+'"]'); return el? el.value : ''; };
-        var p=new URLSearchParams({ from: f.querySelector('[name="page"]').value==='post-nashville-home-show'?'post':'event',
-          name:g('first_name'), interest:g('interest'), day:g('visit_day'), model:g('model'), code:code });
-        location.href = f.dataset.thanks + '?' + p.toString();
-      }
+      e.preventDefault();
+      if(busy) return;
+      if(!f.checkValidity()){ f.reportValidity(); return; }
+
+      var hook = f.dataset.webhook || '';
+      var payload = collect();
+
+      /* No webhook configured yet: behave exactly as the review build always has */
+      if(!hook){ done(payload); return; }
+
+      busy = true;
+      if(btn){ btn.dataset.label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending...'; }
+      var body = JSON.stringify(payload);
+
+      fetch(hook, { method:'POST', headers:{'Content-Type':'application/json'}, body: body })
+        .then(function(r){
+          if(!r.ok) throw new Error('http ' + r.status);
+          done(payload);
+        })
+        .catch(function(){
+          /* Opaque retry: we cannot read the result, but the body still reaches GHL */
+          fetch(hook, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: body })
+            .then(function(){ done(payload); })
+            .catch(function(){
+              fail('We could not send that. Please call 615.238.4144 and we will register you by phone.');
+            });
+        });
     });
   });
 })();

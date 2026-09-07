@@ -4,9 +4,9 @@ Two self-contained landing pages for the Official Nashville Home Show, September
 
 | Page | Purpose | Live URL to replace |
 |---|---|---|
-| `dist/nashville-home-show.html` | Event page for Meta and programmatic geofencing traffic before and during the show. Drives booth visits and pre-registration for the backyard upgrade credit. | kevinsparkshottubs.com/nashville-home-show |
-| `dist/thank-you.html` | Confirmation page both forms redirect to. Reads `from`, `name`, `interest`, `day`, `model` and `code` from the URL and adapts: event registrants get their day, a calendar button, directions and ticket tips; post-show bookers get the credit countdown, showroom directions and what to bring. Conversion pixels belong here. | kevinsparkshottubs.com/thank-you (new) |
-| `dist/post-nashville-home-show.html` | 30-day retargeting page for people who attended or visited the booth. Routes them to a pool consultation, a swim spa visit, or a hot tub showroom appointment. | kevinsparkshottubs.com/post-nashville-home-show |
+| `dist/nashville-home-show.html` | Event page for Meta and programmatic geofencing traffic before and during the show. Drives booth visits and pre-registration for the backyard upgrade credit, which is available during the show only. | kevinsparkshottubs.com/nashville-home-show |
+| `dist/thank-you.html` | Confirmation page both forms redirect to. Reads `from`, `name`, `interest`, `day`, `model` and `code` from the URL and adapts: event registrants get their day, a calendar button, directions and ticket tips; post-show bookers get showroom directions and what to bring. Conversion pixels belong here. | kevinsparkshottubs.com/thank-you |
+| `dist/post-nashville-home-show.html` | Retargeting page for people who attended or visited the booth. Carries no offer. Routes them to a pool consultation, a swim spa visit, or a hot tub showroom appointment. | kevinsparkshottubs.com/POST-nashville-home-show (POST is uppercase) |
 
 ## Share links (GitHub Pages, public)
 
@@ -33,19 +33,38 @@ python3 src/build.py
 
 ## Before launch
 
-1. **Wire the forms.** Both forms have `action="#"`, which in demo mode redirects straight to `thank-you.html` with the answers in the URL. In GoHighLevel, set each form's redirect to the thank-you page URL and pass `from` (`event` or `post`), `name`, `interest`, `day`, `model` and `code` as query parameters using GHL's merge fields, or leave the parameters off and the page falls back to generic copy. Point `action` at the GHL form endpoint or webhook, or swap in the GHL form embed. Field names: `first_name`, `last_name`, `email`, `phone`, `zip`, `interest`, `timeline`, `visit_day` (event page), `model`, `next_step`, `best_time` (post page). Hidden fields capture `utm_*`, `fbclid`, `gclid`, `referrer`, and `page`.
+1. **Wire the forms.** Both forms POST to a GoHighLevel inbound webhook. Create the webhook trigger in a GHL workflow and paste its URL into `GHL_WEBHOOK` in `src/build.py`, then rebuild. While it is blank the forms stay in demo mode: they validate, then hand off to the thank-you page without sending anything. GHL hook endpoints send no CORS headers, so `shared.js` tries a readable fetch, falls back to an opaque `no-cors` send that still delivers the body, and only surfaces an error (with the phone number) if both fail. Payload keys are camelCase to match GHL contact fields: `firstName`, `lastName`, `email`, `phone`, `postalCode`, `timeline`, `interest`, `visitDay`, `model`, `page`, `pageUrl`, `code`, `submittedAt`, `utmSource`, `utmMedium`, `utmCampaign`, `utmContent`, `utmTerm`, `fbclid`, `gclid`, `referrer`. The GHL workflow must send the confirmation SMS and email, because the form copy promises both.
 2. **Confirmation code.** The `KS-1238-XXXX` code shown after submit is generated in the browser. If the booth will validate codes, generate them in the CRM instead and send by SMS.
 3. **QR code.** Point the booth QR at the event page with `?utm_source=booth&utm_medium=qr&utm_campaign=nhs2026#credit` so booth scans are tracked separately from ad clicks and land on the form.
 4. **Conversion tracking.** Put the Meta Pixel `Lead` event, the Google Ads tag and the geofencing vendor's pixel on the thank-you page (there is a marked spot near the bottom of the file). It only loads after a successful submit, so counts stay clean.
-5. **Clocks.** The event page counts down to Friday 10 AM Central, switches to "Open right now" during show hours, highlights the current day in the hours table, and after Sunday 5 PM rewrites the secondary button to send people to the post page. The post page counts days down to October 13.
+5. **Clocks.** The event page counts down to Friday 10 AM Central, switches to "Open right now" during show hours, highlights the current day in the hours table, and after Sunday 5 PM rewrites the secondary button to send people to the post page. The post page has no clock.
 
 ## Assumptions to confirm with Kevin
 
-- **Credit window.** The post page says the credit is held through **October 13, 2026** (30 days after the show closes). Change the date in `src/post-nashville-home-show.html` if the real window differs.
-- **Credit tiers.** The brief says $1,000 to $2,500. The pool card on the post page says "up to $2,500 toward your pool" and the other cards say "applies to your swim spa / hot tub" without an amount. If there is a fixed tier per product, those lines can be made specific.
+- **Credit tiers.** The brief says $1,000 to $2,500 and the event page states that range. If there is a fixed tier per product, those lines can be made specific.
 - **Booth inventory.** The pages say hot tubs, a swim spa and a pool display are all at Booth 1238, matching the brief. The models rail shows all nine Generation tubs; if only certain models will be on the show floor, tell me which and I will tag them.
 - **Swim spa and pool imagery.** Pool cards use Kevin Sparks' own photos from kevinsparkssignaturepools.com (the Allure fiberglass pool at twilight, and the daytime lap pool). The swim spa card uses the GH-1200 top-down product shot from their swim spa page, rotated so the lane runs left to right with the studio background removed. Upload `img/swimspa.webp` to the WordPress media library if you want the GHL embed to reference it by URL instead of inline data.
 - **Design consultation.** Described as complimentary, at the customer's home, about an hour. Confirm that matches how the team actually runs pool consults.
+
+## Links must be absolute
+
+The pages are hosted on kevinsparkshottubs.com, a different domain from the main kevinsparkssignaturepools.com site, so traffic can be tracked separately. Nothing may be a relative link. Every outward URL is declared once in the `URLS` map in `src/build.py` and referenced from the page HTML as `{{url:key}}`. `check_absolute()` fails the build on any relative `href`, `src` or `action`, so a broken cross-domain link cannot ship.
+
+## Offer policy
+
+The offer differs by page on purpose:
+
+- **Event page:** the $1,000 to $2,500 credit is available during the show only, September 11 to 13, and must be claimed in person at Booth 1238.
+- **Post-show page:** no offer anywhere. It runs on the showroom visit instead.
+- **Thank-you page:** branches on `data-when="event"` and `data-when="post"`, so the credit appears only in the event flow.
+
+## Partner handoff
+
+```bash
+python3 src/build.py && python3 src/package.py
+```
+
+Produces `kevin-sparks-ghl-package.zip`: the three paste-ready GHL files, offline previews, and `READ-ME-FIRST.md` with step-by-step GHL and webhook instructions. Source for that README is `src/DEPLOY.md`.
 
 ## Design system
 

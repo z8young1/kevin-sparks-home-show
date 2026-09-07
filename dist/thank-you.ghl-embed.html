@@ -164,6 +164,9 @@ p{margin:0}
 .credit .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1.2rem,4vw,3rem);align-items:center;padding-block:1.8rem}
 .credit .amt{font-family:var(--display);font-size:clamp(2.6rem,6vw,4.2rem);font-weight:700;line-height:.95;letter-spacing:-.005em}
 .credit .amt small{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:.35rem;opacity:.85}
+/* the show-only condition rides under the amount, not above it */
+.credit .amt small.amt-cond{margin:.5rem 0 0;opacity:1;font-size:.68rem;letter-spacing:.12em;
+  display:block;width:fit-content;padding:.28rem .65rem;border:1px solid currentColor;border-radius:999px;line-height:1.4}
 .credit h3{font-size:var(--step-2);text-transform:none;letter-spacing:0;line-height:1.1}
 .credit p{margin-top:.4rem;max-width:56ch;font-size:var(--step-0)}
 .credit .btn-deep{background:var(--deep-3);color:#fff}
@@ -335,7 +338,7 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
       <span class="hide-m" data-when="event">Sept 11 to 13 · Music City Center</span>
       <span class="hide-m" data-when="post">Murfreesboro showroom</span>
       <span class="pill" data-when="event">Booth 1238</span>
-      <span class="pill" data-when="post">Credit held through Oct 13</span>
+      <span class="pill" data-when="post">Booth 1238</span>
       <a href="tel:6152384144" class="hide-m">615.238.4144</a>
     </div>
   </div>
@@ -351,9 +354,9 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
       <span class="eyebrow" data-when="post">Got it</span>
       <h1 data-when="event">See you at <em>Booth 1238</em>, <span id="nm">friend</span>.</h1>
       <h1 data-when="post">Thanks, <span id="nm2">friend</span>. <em>We'll be in touch</em> within one business day.</h1>
-      <p class="lede" data-when="event">Your backyard upgrade credit is reserved. Show the code below at the booth or just give us your name. We texted it to you as well.</p>
-      <p class="lede" data-when="post">Your Home Show credit is attached to your file. We will call or text to lock in a time, and if you would rather not wait, the phone number below rings the showroom directly.</p>
-      <div class="ty-code"><span>Your credit reference</span><b id="code">KS-1238-0000</b></div>
+      <p class="lede" data-when="event">Your backyard upgrade credit is reserved for the show. Bring the code below to Booth 1238 during show hours and talk to someone on our team to claim it. We texted it to you as well.</p>
+      <p class="lede" data-when="post">You are on the list. We will call or text to lock in a time, and if you would rather not wait, the phone number below rings the showroom directly.</p>
+      <div class="ty-code"><span data-when="event">Your credit reference</span><span data-when="post">Your reference</span><b id="code">KS-1238-0000</b></div>
       <div class="hero-cta">
         <a class="btn btn-ember" data-when="event" id="cal" href="#" target="_blank" rel="noopener">Add it to my calendar</a>
         <a class="btn btn-ghost" data-when="event" href="https://www.google.com/maps/dir/?api=1&destination=Music+City+Center%2C+201+Rep.+John+Lewis+Way+S%2C+Nashville%2C+TN+37203" target="_blank" rel="noopener">Directions to Music City Center</a>
@@ -374,12 +377,12 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
           <span class="pass-v">Music City Center<small>201 Rep. John Lewis Way S, Nashville</small></span>
         </div>
         <div class="pass-row" data-when="post">
-          <span class="pass-k">Credit</span>
-          <span class="pass-v">$1,000 to $2,500<small>toward a qualifying pool, swim spa or hot tub</small></span>
+          <span class="pass-k">Next step</span>
+          <span class="pass-v">About an hour<small>showroom visit, or a design consultation at your home</small></span>
         </div>
         <div class="pass-row" data-when="post">
-          <span class="pass-k">Held through</span>
-          <span class="pass-v">Oct 13, 2026<small id="dleft"></small></span>
+          <span class="pass-k">Where</span>
+          <span class="pass-v">Murfreesboro<small>2349F S Church St &middot; Mon to Fri 8 AM to 4:30 PM</small></span>
         </div>
         <div class="pass-row">
           <span class="pass-k">You're interested in</span>
@@ -409,10 +412,10 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
       <div class="nx rv" data-when="event"><span class="k">At the booth</span><h3>Bring whoever will use it</h3><p>Seat depth and jet placement are personal. Sit in the tubs, ask about the swim spa, and look at the pool display. Ask for the credit by name and we will have you on the list.</p></div>
       <div class="nx rv" data-when="post"><span class="k">Photos</span><h3>Snap the space</h3><p>Where it goes, access to the yard, the surface, and where the power is. Text them to 615.238.4144 with your reference code and we will review them before your visit.</p></div>
       <div class="nx rv" data-when="post"><span class="k">Measure</span><h3>Rough dimensions are plenty</h3><p>A tape measure and two numbers: the pad or patio size, and the narrowest gate or pathway on the way in. That decides which models fit before you drive over.</p></div>
-      <div class="nx rv" data-when="post"><span class="k">Or skip the wait</span><h3>Come by this week</h3><p>Monday to Friday, 8 AM to 4:30 PM, no appointment needed. Weekends by appointment. Mention your reference code and the credit is applied to any quote we write.</p><a class="btn btn-cyan" href="https://www.google.com/maps/dir/?api=1&destination=2349F+S+Church+St%2C+Murfreesboro%2C+TN+37130" target="_blank" rel="noopener">Directions</a></div>
+      <div class="nx rv" data-when="post"><span class="k">Or skip the wait</span><h3>Come by this week</h3><p>Monday to Friday, 8 AM to 4:30 PM, no appointment needed. Weekends by appointment. Mention your reference code and we will pull up what you told us.</p><a class="btn btn-cyan" href="https://www.google.com/maps/dir/?api=1&destination=2349F+S+Church+St%2C+Murfreesboro%2C+TN+37130" target="_blank" rel="noopener">Directions</a></div>
     </div>
     <div class="pick rv" id="pick" style="margin-top:1.5rem;display:none">
-      <img id="pick-img" src="" alt="">
+      <img id="pick-img" alt="" hidden>
       <div><span class="k">The one you remember</span><h3 id="pick-name"></h3><p id="pick-p"></p></div>
     </div>
   </div>
@@ -426,6 +429,7 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
       <p class="mono">Mon to Fri 8 AM to 4:30 PM · Weekends by appointment</p>
     </div>
     <p class="mono">Generation Hot Tubs · Swim Spas · Fiberglass &amp; Gunite Pools</p>
+    <p class="mono"><a href="https://kevinsparkssignaturepools.com/" target="_blank" rel="noopener">kevinsparkssignaturepools.com</a></p>
   </div>
 </footer>
 
@@ -495,19 +499,85 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
     });
   });
 
-  /* Demo submit: hand off to the thank-you page with what they told us. In production, set the
-     CRM form's redirect to the thank-you URL and pass the same parameters. */
+  /* Submit: POST the lead to the GoHighLevel inbound webhook, then hand off to the
+     thank-you page. GHL does not send CORS headers on hook endpoints, so a normal
+     fetch usually fails to READ the response even when the POST lands. We therefore
+     try a readable request first and fall back to an opaque no-cors send, which still
+     delivers the body. Nothing redirects until one of the two resolves. */
   document.querySelectorAll('form.lead').forEach(function(f){
+    var btn = f.querySelector('button[type="submit"]');
+    var busy = false;
+
+    function collect(){
+      var d = {}, seen = {};
+      Array.prototype.forEach.call(f.elements, function(el){
+        if(!el.name || el.disabled) return;
+        if((el.type === 'radio' || el.type === 'checkbox') && !el.checked) return;
+        d[el.name] = el.value;
+        seen[el.name] = true;
+      });
+      /* GHL-style names for the standard contact fields so the workflow mapping is obvious */
+      return {
+        firstName: d.first_name || '', lastName: d.last_name || '',
+        email: d.email || '', phone: d.phone || '', postalCode: d.zip || '',
+        timeline: d.timeline || '', interest: d.interest || '',
+        visitDay: d.visit_day || '', model: d.model || '',
+        page: d.page || '', pageUrl: location.href,
+        code: 'KS-1238-' + Math.random().toString(36).slice(2,6).toUpperCase(),
+        submittedAt: new Date().toISOString(),
+        utmSource: d.utm_source || '', utmMedium: d.utm_medium || '',
+        utmCampaign: d.utm_campaign || '', utmContent: d.utm_content || '',
+        utmTerm: d.utm_term || '', fbclid: d.fbclid || '', gclid: d.gclid || '',
+        referrer: d.referrer || ''
+      };
+    }
+
+    function fail(msg){
+      busy = false;
+      if(btn){ btn.disabled = false; btn.textContent = btn.dataset.label || 'Submit'; }
+      var e = f.querySelector('.err');
+      if(!e){ e = document.createElement('p'); e.className = 'fine err'; e.setAttribute('role','alert');
+              e.style.color = '#F2A33C'; f.insertBefore(e, f.querySelector('.fine')); }
+      e.textContent = msg;
+    }
+
+    function done(payload){
+      var p = new URLSearchParams({
+        from: payload.page === 'post-nashville-home-show' ? 'post' : 'event',
+        name: payload.firstName, interest: payload.interest,
+        day: payload.visitDay, model: payload.model, code: payload.code
+      });
+      location.href = f.dataset.thanks + '?' + p.toString();
+    }
+
     f.addEventListener('submit', function(e){
-      if(f.getAttribute('action')==='#'){
-        e.preventDefault();
-        if(!f.checkValidity()){ f.reportValidity(); return; }
-        var code='KS-1238-'+Math.random().toString(36).slice(2,6).toUpperCase();
-        var g=function(n){ var el=f.querySelector('[name="'+n+'"]:checked') || f.querySelector('[name="'+n+'"]'); return el? el.value : ''; };
-        var p=new URLSearchParams({ from: f.querySelector('[name="page"]').value==='post-nashville-home-show'?'post':'event',
-          name:g('first_name'), interest:g('interest'), day:g('visit_day'), model:g('model'), code:code });
-        location.href = f.dataset.thanks + '?' + p.toString();
-      }
+      e.preventDefault();
+      if(busy) return;
+      if(!f.checkValidity()){ f.reportValidity(); return; }
+
+      var hook = f.dataset.webhook || '';
+      var payload = collect();
+
+      /* No webhook configured yet: behave exactly as the review build always has */
+      if(!hook){ done(payload); return; }
+
+      busy = true;
+      if(btn){ btn.dataset.label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending...'; }
+      var body = JSON.stringify(payload);
+
+      fetch(hook, { method:'POST', headers:{'Content-Type':'application/json'}, body: body })
+        .then(function(r){
+          if(!r.ok) throw new Error('http ' + r.status);
+          done(payload);
+        })
+        .catch(function(){
+          /* Opaque retry: we cannot read the result, but the body still reaches GHL */
+          fetch(hook, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: body })
+            .then(function(){ done(payload); })
+            .catch(function(){
+              fail('We could not send that. Please call 615.238.4144 and we will register you by phone.');
+            });
+        });
     });
   });
 })();
@@ -536,10 +606,6 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
     +'&details='+encodeURIComponent('Hot tubs, swim spas and pools at Booth 1238, Hall D. Credit reference: '+(code||'')+'. Bring photos of the yard. 615.238.4144')
     +'&location='+encodeURIComponent('Music City Center, 201 Rep. John Lewis Way S, Nashville, TN 37203');
   document.getElementById('cal').href=cal;
-
-  /* Post: days left on the credit */
-  var left=Math.ceil((Date.parse('2026-10-14T04:59:59Z')-Date.now())/864e5);
-  document.getElementById('dleft').textContent = left>0 ? left+' days left' : 'call us anyway';
 
   /* Model they remembered */
   var models={ 'Alpha 1':['alpha1','3 seats, 28 jets. The couple’s tub.'], 'GH500':['gh500','5 to 6 seats, 29 jets. Most jets in the Classic Series.'],
