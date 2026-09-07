@@ -569,7 +569,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
       <label class="fld"><span>Best time</span>
         <select name="best_time"><option value="">No preference</option><option>Weekday mornings</option><option>Weekday afternoons</option><option>Saturday</option><option>Sunday</option></select></label>
       <button class="btn btn-ember" type="submit" style="width:100%">Book my next step</button>
-      <p class="fine">We will text and email to confirm your time. No spam, and no sharing your info.</p>
+      <p class="fine">We will call or email to confirm your time. No spam, and no sharing your info.</p>
       <div class="done" aria-live="polite">
         <span class="eyebrow" style="justify-content:center">Got it</span>
         <h3 style="font-size:var(--step-2)">We'll reach out within one business day.</h3>
@@ -653,10 +653,17 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
   });
   var ref=document.querySelector('input[name="referrer"]'); if(ref) ref.value=document.referrer||'';
 
-  /* Option card links pre-select the interest in the form */
-  document.querySelectorAll('[data-pick]').forEach(function(a){
+  /* Option and model card links pre-select the form before the page scrolls to it */
+  document.querySelectorAll('[data-pick],[data-pick-model]').forEach(function(a){
     a.addEventListener('click', function(){
-      var r=document.querySelector('input[name="interest"][value="'+a.dataset.pick+'"]'); if(r) r.checked=true;
+      if(a.dataset.pick){
+        var r=document.querySelector('input[name="interest"][value="'+a.dataset.pick+'"]');
+        if(r) r.checked=true;
+      }
+      if(a.dataset.pickModel){
+        var sel=document.querySelector('select[name="model"]');
+        if(sel) sel.value=a.dataset.pickModel;
+      }
     });
   });
 
@@ -703,8 +710,11 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
     }
 
     function done(payload){
+      var from = payload.page === 'nashville-home-show' ? 'event'
+               : payload.page === 'hot-tubs'            ? 'tubs'
+               : 'post';
       var p = new URLSearchParams({
-        from: payload.page === 'post-nashville-home-show' ? 'post' : 'event',
+        from: from,
         name: payload.firstName, interest: payload.interest,
         day: payload.visitDay, model: payload.model, code: payload.code
       });

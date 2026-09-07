@@ -5,7 +5,7 @@
 
 <style>
 /* ============================================================
-   KEVIN SPARKS SIGNATURE POOLS — Hot Tubs landing page
+   KEVIN SPARKS SIGNATURE POOLS / Hot Tubs landing page
    Palette derived from the live site's Elementor globals:
    #005091 primary · #009EF0 secondary · #0090C8 accent · #121F47 buttons
    Type: Oswald + DM Sans (site brand) + IBM Plex Mono (spec data)
@@ -20,7 +20,7 @@
   --deep:#0A1128;
   --ember:#F2A33C;
 
-  /* fixed dark band tokens — identical in both themes */
+  /* fixed dark band tokens, identical in both themes */
   --deep-grad-a:#0A1128;
   --deep-grad-b:#132453;
   --on-deep:#EAF2FB;
@@ -244,7 +244,7 @@ a{color:var(--brand-ink);text-decoration-thickness:1px;text-underline-offset:3px
   letter-spacing:.06em;color:var(--on-deep-dim);
 }
 
-/* temperature readout — the one warm note on the page */
+/* temperature readout: the one warm note on the page */
 .temp{
   display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;
   padding:1.05rem 1.3rem;
@@ -534,6 +534,44 @@ tbody tr:hover td{background:var(--surface-2)}
 .final p.lead{margin-top:1.2rem;color:#C3D6EC;max-width:50ch;font-size:1.06rem}
 .final-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2rem}
 
+/* ---------- booking form ---------- */
+form.lead{
+  background:var(--surface);color:var(--ink);border-radius:14px;
+  padding:clamp(1.2rem,3vw,1.9rem);display:grid;gap:.9rem;margin-top:1.8rem;
+  box-shadow:0 40px 80px -40px rgba(0,0,0,.7);
+}
+form.lead .f2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+form.lead label.fld{display:grid;gap:.35rem}
+form.lead label.fld>span,form.lead .flabel{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-2);
+}
+form.lead input,form.lead select{
+  font:inherit;font-size:1rem;padding:.75rem .85rem;width:100%;
+  border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);
+}
+form.lead input:focus,form.lead select:focus{border-color:var(--cyan);background:#fff;outline:none}
+form.lead .seg{display:grid;grid-template-columns:repeat(4,1fr);gap:.45rem;margin-top:.4rem}
+form.lead .seg input{position:absolute;opacity:0;pointer-events:none}
+form.lead .seg label{
+  border:1px solid var(--line);border-radius:8px;padding:.62rem .4rem;text-align:center;cursor:pointer;
+  font-family:Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:.86rem;background:var(--bg);transition:all .15s ease;user-select:none;
+}
+form.lead .seg label:hover{border-color:var(--cyan)}
+form.lead .seg input:checked+label{background:var(--navy);color:#fff;border-color:var(--navy)}
+form.lead .seg input:focus-visible+label{outline:2.5px solid var(--cyan);outline-offset:2px}
+form.lead .fine{font-size:.78rem;color:var(--ink-2);line-height:1.5}
+form.lead .err{color:#B4560B;font-weight:500}
+form.lead .done{display:none;text-align:center;padding:1.6rem .5rem;gap:.9rem}
+form.lead .done.show{display:grid}
+form.lead .done .code{
+  font-family:"IBM Plex Mono",monospace;font-size:1.7rem;letter-spacing:.12em;
+  background:var(--navy);color:var(--ember);padding:.9rem;border-radius:8px;
+  display:inline-block;margin-inline:auto;
+}
+@media(max-width:560px){form.lead .f2{grid-template-columns:1fr}form.lead .seg{grid-template-columns:1fr 1fr}}
+
 .infobox{
   border:1px solid var(--deep-line);border-radius:var(--radius);
   background:rgba(255,255,255,.04);padding:1.7rem 1.6rem;
@@ -576,31 +614,6 @@ tbody tr:hover td{background:var(--surface-2)}
   *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
   #caustics{display:none}
 }
-
-/* ============================================================
-   GoHighLevel container reset.
-   GHL wraps a Custom HTML element in section / row / column
-   wrappers that cap width, add padding and set overflow:hidden.
-   The overflow rule is what silently kills position:sticky, so
-   the header stops sticking. This unwraps all of it.
-   If the page still shows side gutters, inspect the wrapper in
-   Chrome DevTools and add its class to this list.
-   ============================================================ */
-.c-section,
-.c-section > .inner,
-.c-row,
-.c-row > .inner,
-.c-column,
-.c-wrapper,
-.c-html,
-.hl_page-preview--content{
-  max-width:100% !important;
-  width:100% !important;
-  padding:0 !important;
-  margin:0 !important;
-  overflow:visible !important;
-  background:transparent !important;
-}
 </style>
 
 <header class="site-head">
@@ -616,7 +629,7 @@ tbody tr:hover td{background:var(--surface-2)}
     </nav>
     <div class="head-cta">
       <a class="head-tel" href="tel:615-238-4144">615.238.4144</a>
-      <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
+      <a class="btn btn-primary btn-sm" href="#book">Schedule an Appointment</a>
     </div>
   </div>
 </header>
@@ -640,8 +653,8 @@ tbody tr:hover td{background:var(--surface-2)}
           exactly which one fits your yard and your budget.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
-          <a class="btn btn-ghost" href="https://forms.monday.com/forms/ae0bb9e0d1e9108337892f71021a017b?r=use1">Free Consultation</a>
+          <a class="btn btn-primary" href="#book">Schedule an Appointment</a>
+          <a class="btn btn-ghost" href="#book">Free Consultation</a>
         </div>
         <p class="hero-note">Takes about an hour. No pressure, no obligation, no high-pressure closing pitch.</p>
       </div>
@@ -750,7 +763,7 @@ tbody tr:hover td{background:var(--surface-2)}
         <h3 style="color:#fff">Come see them wet</h3>
         <p style="color:#A8BDD9">Nine models on the floor in Murfreesboro. Pick an hour that works and we will have them ready.</p>
         <div style="margin-top:auto;padding-top:1.1rem">
-          <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
+          <a class="btn btn-primary btn-sm" href="#book">Schedule an Appointment</a>
         </div>
       </article>
     </div>
@@ -812,7 +825,7 @@ tbody tr:hover td{background:var(--surface-2)}
           </dl>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/gh-300/">Full Specs</a>
-            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+            <a class="btn btn-primary btn-sm" href="#book" data-pick="Hot tub" data-pick-model="Alpha 1">See It</a>
           </div>
         </div>
       </article>
@@ -836,7 +849,7 @@ tbody tr:hover td{background:var(--surface-2)}
           </dl>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/gh500/">Full Specs</a>
-            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+            <a class="btn btn-primary btn-sm" href="#book" data-pick="Hot tub" data-pick-model="GH500">See It</a>
           </div>
         </div>
       </article>
@@ -860,7 +873,7 @@ tbody tr:hover td{background:var(--surface-2)}
           </dl>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/gh550/">Full Specs</a>
-            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+            <a class="btn btn-primary btn-sm" href="#book" data-pick="Hot tub" data-pick-model="GH550">See It</a>
           </div>
         </div>
       </article>
@@ -883,7 +896,7 @@ tbody tr:hover td{background:var(--surface-2)}
           </dl>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/alpha/">Full Specs</a>
-            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+            <a class="btn btn-primary btn-sm" href="#book" data-pick="Hot tub" data-pick-model="Alpha 2">See It</a>
           </div>
         </div>
       </article>
@@ -906,7 +919,7 @@ tbody tr:hover td{background:var(--surface-2)}
           </dl>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/millennial/">Full Specs</a>
-            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+            <a class="btn btn-primary btn-sm" href="#book" data-pick="Hot tub" data-pick-model="Millennial">See It</a>
           </div>
         </div>
       </article>
@@ -929,7 +942,7 @@ tbody tr:hover td{background:var(--surface-2)}
           </dl>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/boomer/">Full Specs</a>
-            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+            <a class="btn btn-primary btn-sm" href="#book" data-pick="Hot tub" data-pick-model="Boomer">See It</a>
           </div>
         </div>
       </article>
@@ -952,7 +965,7 @@ tbody tr:hover td{background:var(--surface-2)}
           </dl>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/silent/">Full Specs</a>
-            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+            <a class="btn btn-primary btn-sm" href="#book" data-pick="Hot tub" data-pick-model="Silent">See It</a>
           </div>
         </div>
       </article>
@@ -975,7 +988,7 @@ tbody tr:hover td{background:var(--surface-2)}
           </dl>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/gen-x/">Full Specs</a>
-            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+            <a class="btn btn-primary btn-sm" href="#book" data-pick="Hot tub" data-pick-model="Gen X">See It</a>
           </div>
         </div>
       </article>
@@ -998,7 +1011,7 @@ tbody tr:hover td{background:var(--surface-2)}
           </dl>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="https://generationhottubs.com/gen-z/">Full Specs</a>
-            <a class="btn btn-primary btn-sm" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">See It</a>
+            <a class="btn btn-primary btn-sm" href="#book" data-pick="Hot tub" data-pick-model="Gen Z">See It</a>
           </div>
         </div>
       </article>
@@ -1049,7 +1062,7 @@ tbody tr:hover td{background:var(--surface-2)}
     <p class="tnote">Dimensions in inches. Specifications from Generation Hot Tubs and subject to change. Every model includes Balboa electrical equipment, a digital topside control, a 5 inch LED light and an ABS bottom.</p>
 
     <div style="margin-top:2rem;display:flex;gap:.85rem;flex-wrap:wrap">
-      <a class="btn btn-primary" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
+      <a class="btn btn-primary" href="#book">Schedule an Appointment</a>
       <a class="btn btn-outline" href="tel:615-238-4144">Call 615.238.4144</a>
     </div>
   </div>
@@ -1089,8 +1102,8 @@ tbody tr:hover td{background:var(--surface-2)}
     </div>
 
     <div style="margin-top:2.4rem;display:flex;gap:.85rem;flex-wrap:wrap;align-items:center">
-      <a class="btn btn-primary" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Pick Your Time</a>
-      <a class="btn btn-outline" href="https://forms.monday.com/forms/ae0bb9e0d1e9108337892f71021a017b?r=use1">Or Start With a Free Consultation</a>
+      <a class="btn btn-primary" href="#book">Pick Your Time</a>
+      <a class="btn btn-outline" href="#book">Or Start With a Free Consultation</a>
     </div>
   </div>
 </section>
@@ -1171,7 +1184,7 @@ tbody tr:hover td{background:var(--surface-2)}
 </section>
 
 <!-- ========== FINAL CTA ========== -->
-<section class="final">
+<section class="final" id="book">
   <div class="final-photo" style="background-image:url('https://kevinsparkssignaturepools.com/wp-content/uploads/2026/07/DSC00877-Enhanced-NR-Edit.png')"></div>
   <div class="final-veil"></div>
   <div class="wrap final-in">
@@ -1184,10 +1197,51 @@ tbody tr:hover td{background:var(--surface-2)}
           right models ready when you walk in. Bring the family. Bring the yard measurements.
           Bring nothing at all and we will still make it worth the trip.
         </p>
-        <div class="final-actions">
-          <a class="btn btn-primary" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
-          <a class="btn btn-ghost" href="https://forms.monday.com/forms/ae0bb9e0d1e9108337892f71021a017b?r=use1">Free Consultation</a>
-        </div>
+        <form class="lead" action="#" method="post" data-thanks="https://kevinsparkshottubs.com/thank-you" data-webhook="" novalidate>
+          <input type="hidden" name="page" value="hot-tubs">
+          <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term"><input type="hidden" name="fbclid"><input type="hidden" name="gclid"><input type="hidden" name="referrer">
+
+          <div class="f2">
+            <label class="fld"><span>First name</span><input name="first_name" autocomplete="given-name" required></label>
+            <label class="fld"><span>Last name</span><input name="last_name" autocomplete="family-name" required></label>
+          </div>
+          <div class="f2">
+            <label class="fld"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+            <label class="fld"><span>Phone</span><input type="tel" name="phone" autocomplete="tel" required></label>
+          </div>
+          <div class="f2">
+            <label class="fld"><span>Home ZIP</span><input name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}"></label>
+            <label class="fld"><span>When are you planning?</span>
+              <select name="timeline"><option value="">Choose one</option><option>As soon as possible</option><option>Within 3 months</option><option>3 to 12 months</option><option>Just looking for now</option></select></label>
+          </div>
+
+          <div class="fld"><span class="flabel">What are you most curious about?</span>
+            <div class="seg">
+              <input type="radio" name="interest" value="Hot tub" id="ht1" checked><label for="ht1">Hot tub</label>
+              <input type="radio" name="interest" value="Swim spa" id="ht2"><label for="ht2">Swim spa</label>
+              <input type="radio" name="interest" value="Pool" id="ht3"><label for="ht3">Pool</label>
+              <input type="radio" name="interest" value="Not sure" id="ht4"><label for="ht4">Not sure</label>
+            </div>
+          </div>
+
+          <label class="fld"><span>Any model in particular?</span>
+            <select name="model">
+              <option value="">Not sure yet</option>
+              <option>Alpha 1</option><option>GH500</option><option>GH550</option>
+              <option>Alpha 2</option><option>Millennial</option><option>Boomer</option>
+              <option>Silent</option><option>Gen X</option><option>Gen Z</option>
+            </select></label>
+
+          <button class="btn btn-primary" type="submit" style="width:100%">Schedule an Appointment</button>
+          <p class="fine">We will follow up by phone or email to confirm a time. No obligation, no spam, and we never share your information.</p>
+
+          <div class="done" aria-live="polite">
+            <span class="eyebrow" style="justify-content:center">You're on the list</span>
+            <h3 style="font-size:var(--step-2);text-transform:uppercase">We'll be in touch.</h3>
+            <span class="code">KS-1238-0000</span>
+            <p class="fine">Keep this reference. Want to move faster? Call 615.238.4144 and mention it.</p>
+          </div>
+        </form>
       </div>
 
       <div class="infobox">
@@ -1233,8 +1287,166 @@ tbody tr:hover td{background:var(--surface-2)}
 
 <div class="sticky-cta">
   <a class="btn btn-ghost" href="tel:615-238-4144">Call</a>
-  <a class="btn btn-primary" href="https://forms.monday.com/forms/embed/440b0eb996283bd2a45fd7acefaf1e15?r=use1">Schedule an Appointment</a>
+  <a class="btn btn-primary" href="#book">Schedule an Appointment</a>
 </div>
+
+<script>
+/* Shared behaviour: reveal, steam, water art, sticky bar, UTM capture, demo submit */
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Reveal: only elements below the first viewport get parked, so the page is readable at rest */
+  var rv = document.querySelectorAll('.rv');
+  if(!reduce && 'IntersectionObserver' in window){
+    var vh = window.innerHeight;
+    rv.forEach(function(el){ if(el.getBoundingClientRect().top > vh*0.92) el.classList.add('pre'); });
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.remove('pre'); e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    rv.forEach(function(el){ io.observe(el); });
+    /* Safety net: nothing stays hidden if the observer never fires */
+    setTimeout(function(){ rv.forEach(function(el){ el.classList.remove('pre'); el.classList.add('in'); }); }, 2500);
+  }
+
+  /* Steam in the hero: slow rising wisps, 104 degrees on a cool evening */
+  var sc = document.getElementById('steam');
+  if(sc && !reduce){
+    var ctx = sc.getContext('2d'), W, H, puffs=[];
+    function size(){ W = sc.width = sc.offsetWidth; H = sc.height = sc.offsetHeight; }
+    size(); window.addEventListener('resize', size);
+    for(var i=0;i<26;i++) puffs.push(mk(true));
+    function mk(init){ return { x: Math.random()*W, y: init? Math.random()*H : H+60, r: 60+Math.random()*140, v: .12+Math.random()*.25, a: 0, max: .05+Math.random()*.07, drift:(Math.random()-.5)*.25, life:0 }; }
+    function tick(){
+      ctx.clearRect(0,0,W,H);
+      puffs.forEach(function(p,i){
+        p.y -= p.v; p.x += p.drift + Math.sin(p.life/90)*.2; p.life++;
+        p.a = Math.min(p.max, p.a + .0006);
+        if(p.y < -p.r){ puffs[i] = mk(false); return; }
+        var g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);
+        g.addColorStop(0,'rgba(180,215,255,'+p.a+')'); g.addColorStop(1,'rgba(180,215,255,0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+      });
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+
+  /* Sticky bar appears once the hero CTA has scrolled away */
+  var bar=document.querySelector('.bar'), hero=document.querySelector('.hero');
+  if(bar && hero){
+    var onS=function(){ bar.classList.toggle('on', window.scrollY > hero.offsetHeight*0.85); };
+    window.addEventListener('scroll', onS, {passive:true}); onS();
+  }
+
+  /* Attribution: keep whatever Meta or the geofencing vendor appended on the URL */
+  var q=new URLSearchParams(location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(function(k){
+    var v=q.get(k); if(!v) return;
+    document.querySelectorAll('input[name="'+k+'"]').forEach(function(i){ i.value=v; });
+  });
+  var ref=document.querySelector('input[name="referrer"]'); if(ref) ref.value=document.referrer||'';
+
+  /* Option and model card links pre-select the form before the page scrolls to it */
+  document.querySelectorAll('[data-pick],[data-pick-model]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(a.dataset.pick){
+        var r=document.querySelector('input[name="interest"][value="'+a.dataset.pick+'"]');
+        if(r) r.checked=true;
+      }
+      if(a.dataset.pickModel){
+        var sel=document.querySelector('select[name="model"]');
+        if(sel) sel.value=a.dataset.pickModel;
+      }
+    });
+  });
+
+  /* Submit: POST the lead to the GoHighLevel inbound webhook, then hand off to the
+     thank-you page. GHL does not send CORS headers on hook endpoints, so a normal
+     fetch usually fails to READ the response even when the POST lands. We therefore
+     try a readable request first and fall back to an opaque no-cors send, which still
+     delivers the body. Nothing redirects until one of the two resolves. */
+  document.querySelectorAll('form.lead').forEach(function(f){
+    var btn = f.querySelector('button[type="submit"]');
+    var busy = false;
+
+    function collect(){
+      var d = {}, seen = {};
+      Array.prototype.forEach.call(f.elements, function(el){
+        if(!el.name || el.disabled) return;
+        if((el.type === 'radio' || el.type === 'checkbox') && !el.checked) return;
+        d[el.name] = el.value;
+        seen[el.name] = true;
+      });
+      /* GHL-style names for the standard contact fields so the workflow mapping is obvious */
+      return {
+        firstName: d.first_name || '', lastName: d.last_name || '',
+        email: d.email || '', phone: d.phone || '', postalCode: d.zip || '',
+        timeline: d.timeline || '', interest: d.interest || '',
+        visitDay: d.visit_day || '', model: d.model || '',
+        page: d.page || '', pageUrl: location.href,
+        code: 'KS-1238-' + Math.random().toString(36).slice(2,6).toUpperCase(),
+        submittedAt: new Date().toISOString(),
+        utmSource: d.utm_source || '', utmMedium: d.utm_medium || '',
+        utmCampaign: d.utm_campaign || '', utmContent: d.utm_content || '',
+        utmTerm: d.utm_term || '', fbclid: d.fbclid || '', gclid: d.gclid || '',
+        referrer: d.referrer || ''
+      };
+    }
+
+    function fail(msg){
+      busy = false;
+      if(btn){ btn.disabled = false; btn.textContent = btn.dataset.label || 'Submit'; }
+      var e = f.querySelector('.err');
+      if(!e){ e = document.createElement('p'); e.className = 'fine err'; e.setAttribute('role','alert');
+              e.style.color = '#F2A33C'; f.insertBefore(e, f.querySelector('.fine')); }
+      e.textContent = msg;
+    }
+
+    function done(payload){
+      var from = payload.page === 'nashville-home-show' ? 'event'
+               : payload.page === 'hot-tubs'            ? 'tubs'
+               : 'post';
+      var p = new URLSearchParams({
+        from: from,
+        name: payload.firstName, interest: payload.interest,
+        day: payload.visitDay, model: payload.model, code: payload.code
+      });
+      location.href = f.dataset.thanks + '?' + p.toString();
+    }
+
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(busy) return;
+      if(!f.checkValidity()){ f.reportValidity(); return; }
+
+      var hook = f.dataset.webhook || '';
+      var payload = collect();
+
+      /* No webhook configured yet: behave exactly as the review build always has */
+      if(!hook){ done(payload); return; }
+
+      busy = true;
+      if(btn){ btn.dataset.label = btn.textContent; btn.disabled = true; btn.textContent = 'Sending...'; }
+      var body = JSON.stringify(payload);
+
+      fetch(hook, { method:'POST', headers:{'Content-Type':'application/json'}, body: body })
+        .then(function(r){
+          if(!r.ok) throw new Error('http ' + r.status);
+          done(payload);
+        })
+        .catch(function(){
+          /* Opaque retry: we cannot read the result, but the body still reaches GHL */
+          fetch(hook, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: body })
+            .then(function(){ done(payload); })
+            .catch(function(){
+              fail('We could not send that. Please call 615.238.4144 and we will register you by phone.');
+            });
+        });
+    });
+  });
+})();
+
+</script>
 
 <script>
 (function(){

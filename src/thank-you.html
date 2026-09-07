@@ -23,9 +23,9 @@
 .pick h3{margin-top:.3rem}
 .pick p{color:var(--ink-2);margin-top:.4rem;font-size:.95rem}
 [data-when]{display:none}
-html[data-from="event"] [data-when~="event"],html[data-from="post"] [data-when~="post"]{display:revert}
-html[data-from="event"] .nx[data-when~="event"],html[data-from="post"] .nx[data-when~="post"]{display:grid}
-html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[data-when~="post"]{display:grid}
+html[data-from="event"] [data-when~="event"],html[data-from="post"] [data-when~="post"],html[data-from="tubs"] [data-when~="tubs"]{display:revert}
+html[data-from="event"] .nx[data-when~="event"],html[data-from="post"] .nx[data-when~="post"],html[data-from="tubs"] .nx[data-when~="tubs"]{display:grid}
+html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[data-when~="post"],html[data-from="tubs"] .pick[data-when~="tubs"]{display:grid}
 </style>
 
 <header class="top">
@@ -33,9 +33,10 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
     <a class="logo-link" href="{{url:site}}" aria-label="Kevin Sparks Signature Pools home"><img src="{{img:logo.webp}}" alt="Kevin Sparks Signature Pools"></a>
     <div class="top-meta">
       <span class="hide-m" data-when="event">Sept 11 to 13 · Music City Center</span>
-      <span class="hide-m" data-when="post">Murfreesboro showroom</span>
+      <span class="hide-m" data-when="post tubs">Murfreesboro showroom</span>
       <span class="pill" data-when="event">Booth 1238</span>
       <span class="pill" data-when="post">Booth 1238</span>
+      <span class="pill" data-when="tubs">Generation Hot Tubs</span>
       <a href="tel:6152384144" class="hide-m">615.238.4144</a>
     </div>
   </div>
@@ -48,22 +49,22 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
   <div class="wrap">
     <div>
       <span class="eyebrow" data-when="event">You're registered</span>
-      <span class="eyebrow" data-when="post">Got it</span>
+      <span class="eyebrow" data-when="post tubs">Got it</span>
       <h1 data-when="event">See you at <em>Booth 1238</em>, <span id="nm">friend</span>.</h1>
-      <h1 data-when="post">Thanks, <span id="nm2">friend</span>. <em>We'll be in touch</em> within one business day.</h1>
-      <p class="lede" data-when="event">Your backyard upgrade credit is reserved for the show. Bring the code below to Booth 1238 during show hours and talk to someone on our team to claim it. We texted it to you as well.</p>
-      <p class="lede" data-when="post">You are on the list. We will call or text to lock in a time, and if you would rather not wait, the phone number below rings the showroom directly.</p>
-      <div class="ty-code"><span data-when="event">Your credit reference</span><span data-when="post">Your reference</span><b id="code">KS-1238-0000</b></div>
+      <h1 data-when="post tubs">Thanks, <span id="nm2">friend</span>. <em>We'll be in touch</em> within one business day.</h1>
+      <p class="lede" data-when="event">Your backyard upgrade credit is reserved for the show. Bring the code below to Booth 1238 during show hours and talk to someone on our team to claim it. We emailed it to you as well.</p>
+      <p class="lede" data-when="post tubs">You are on the list. We will call or email to lock in a time, and if you would rather not wait, the phone number below rings the showroom directly.</p>
+      <div class="ty-code"><span data-when="event">Your credit reference</span><span data-when="post tubs">Your reference</span><b id="code">KS-1238-0000</b></div>
       <div class="hero-cta">
         <a class="btn btn-ember" data-when="event" id="cal" href="#" target="_blank" rel="noopener">Add it to my calendar</a>
         <a class="btn btn-ghost" data-when="event" href="https://www.google.com/maps/dir/?api=1&destination=Music+City+Center%2C+201+Rep.+John+Lewis+Way+S%2C+Nashville%2C+TN+37203" target="_blank" rel="noopener">Directions to Music City Center</a>
-        <a class="btn btn-ember" data-when="post" href="tel:6152384144">Call 615.238.4144 now</a>
-        <a class="btn btn-ghost" data-when="post" href="https://www.google.com/maps/dir/?api=1&destination=2349F+S+Church+St%2C+Murfreesboro%2C+TN+37130" target="_blank" rel="noopener">Directions to the showroom</a>
+        <a class="btn btn-ember" data-when="post tubs" href="tel:6152384144">Call 615.238.4144 now</a>
+        <a class="btn btn-ghost" data-when="post tubs" href="https://www.google.com/maps/dir/?api=1&destination=2349F+S+Church+St%2C+Murfreesboro%2C+TN+37130" target="_blank" rel="noopener">Directions to the showroom</a>
       </div>
     </div>
 
     <aside class="pass" aria-label="Details">
-      <div class="pass-head"><span data-when="event">Nashville Home Show 2026</span><span data-when="post">Kevin Sparks Signature Pools</span><span id="pass-right">Hall D</span></div>
+      <div class="pass-head"><span data-when="event">Nashville Home Show 2026</span><span data-when="post tubs">Kevin Sparks Signature Pools</span><span id="pass-right">Hall D</span></div>
       <div class="pass-body">
         <div class="pass-row" data-when="event">
           <span class="pass-k">Your day</span>
@@ -73,11 +74,11 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
           <span class="pass-k">Where</span>
           <span class="pass-v">Music City Center<small>201 Rep. John Lewis Way S, Nashville</small></span>
         </div>
-        <div class="pass-row" data-when="post">
+        <div class="pass-row" data-when="post tubs">
           <span class="pass-k">Next step</span>
           <span class="pass-v">About an hour<small>showroom visit, or a design consultation at your home</small></span>
         </div>
-        <div class="pass-row" data-when="post">
+        <div class="pass-row" data-when="post tubs">
           <span class="pass-k">Where</span>
           <span class="pass-v">Murfreesboro<small>2349F S Church St &middot; Mon to Fri 8 AM to 4:30 PM</small></span>
         </div>
@@ -88,8 +89,8 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
         <div class="pass-booth">
           <span data-when="event">Find us at<br>booth number</span>
           <b data-when="event">1238</b>
-          <span data-when="post">Showroom hours<br>Mon to Fri</span>
-          <b data-when="post" style="font-size:1.5rem">8 AM to 4:30 PM</b>
+          <span data-when="post tubs">Showroom hours<br>Mon to Fri</span>
+          <b data-when="post tubs" style="font-size:1.5rem">8 AM to 4:30 PM</b>
         </div>
       </div>
     </aside>
@@ -101,15 +102,15 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
     <div class="sec-head rv">
       <span class="eyebrow">What to do next</span>
       <h2 data-when="event">Three things that make the visit count.</h2>
-      <h2 data-when="post">While you wait for our call.</h2>
+      <h2 data-when="post tubs">While you wait for our call.</h2>
     </div>
     <div class="next">
       <div class="nx rv" data-when="event"><span class="k">Before you come</span><h3>Photograph the yard</h3><p>Where it would go, how we get it back there, the surface and where the power is. Four photos on your phone let us give you a real answer at the booth instead of a maybe.</p></div>
       <div class="nx rv" data-when="event"><span class="k">Tickets</span><h3>Buy online and save $2</h3><p>Adults are $8 online versus $10 at the door. Seniors 60 and up, kids 12 and under, and military and first responders with ID get in free. Friday and Saturday after 5 PM is $5.</p><a class="btn btn-cyan" href="https://www.nashvillefallhomeshow.com/" target="_blank" rel="noopener">Get tickets</a></div>
       <div class="nx rv" data-when="event"><span class="k">At the booth</span><h3>Bring whoever will use it</h3><p>Seat depth and jet placement are personal. Sit in the tubs, ask about the swim spa, and look at the pool display. Ask for the credit by name and we will have you on the list.</p></div>
-      <div class="nx rv" data-when="post"><span class="k">Photos</span><h3>Snap the space</h3><p>Where it goes, access to the yard, the surface, and where the power is. Text them to 615.238.4144 with your reference code and we will review them before your visit.</p></div>
-      <div class="nx rv" data-when="post"><span class="k">Measure</span><h3>Rough dimensions are plenty</h3><p>A tape measure and two numbers: the pad or patio size, and the narrowest gate or pathway on the way in. That decides which models fit before you drive over.</p></div>
-      <div class="nx rv" data-when="post"><span class="k">Or skip the wait</span><h3>Come by this week</h3><p>Monday to Friday, 8 AM to 4:30 PM, no appointment needed. Weekends by appointment. Mention your reference code and we will pull up what you told us.</p><a class="btn btn-cyan" href="https://www.google.com/maps/dir/?api=1&destination=2349F+S+Church+St%2C+Murfreesboro%2C+TN+37130" target="_blank" rel="noopener">Directions</a></div>
+      <div class="nx rv" data-when="post tubs"><span class="k">Photos</span><h3>Snap the space</h3><p>Where it goes, access to the yard, the surface, and where the power is. Text them to 615.238.4144 with your reference code and we will review them before your visit.</p></div>
+      <div class="nx rv" data-when="post tubs"><span class="k">Measure</span><h3>Rough dimensions are plenty</h3><p>A tape measure and two numbers: the pad or patio size, and the narrowest gate or pathway on the way in. That decides which models fit before you drive over.</p></div>
+      <div class="nx rv" data-when="post tubs"><span class="k">Or skip the wait</span><h3>Come by this week</h3><p>Monday to Friday, 8 AM to 4:30 PM, no appointment needed. Weekends by appointment. Mention your reference code and we will pull up what you told us.</p><a class="btn btn-cyan" href="https://www.google.com/maps/dir/?api=1&destination=2349F+S+Church+St%2C+Murfreesboro%2C+TN+37130" target="_blank" rel="noopener">Directions</a></div>
     </div>
     <div class="pick rv" id="pick" style="margin-top:1.5rem;display:none">
       <img id="pick-img" alt="" hidden>
@@ -137,14 +138,16 @@ html[data-from="event"] .pick[data-when~="event"],html[data-from="post"] .pick[d
 /*SHARED_JS*/
 (function(){
   var q=new URLSearchParams(location.search), root=document.documentElement;
-  var from = q.get('from')==='post' ? 'post' : 'event';
+  var f = q.get('from');
+  var from = (f==='post' || f==='tubs') ? f : 'event';
   root.setAttribute('data-from', from);
   var name=(q.get('name')||'').trim().split(' ')[0];
   if(name){ ['nm','nm2'].forEach(function(id){ document.getElementById(id).textContent=name; }); }
   else { document.getElementById('nm').textContent='we saved you a spot'; document.getElementById('nm2').textContent='you are on the list'; }
   var code=q.get('code'); if(code) document.getElementById('code').textContent=code;
   var interest=q.get('interest')||'Hot tub'; document.getElementById('int').textContent=interest;
-  document.getElementById('pass-right').textContent = from==='event' ? 'Hall D' : 'Booth 1238';
+  document.getElementById('pass-right').textContent =
+    from==='event' ? 'Hall D' : from==='tubs' ? 'Murfreesboro' : 'Booth 1238';
 
   /* Event: the day they picked drives the pass and the calendar link (Central time, CDT) */
   var days={ 'Friday, Sept 11':['Fri, Sept 11','10 AM to 7 PM','20260911T150000Z/20260911T170000Z'],

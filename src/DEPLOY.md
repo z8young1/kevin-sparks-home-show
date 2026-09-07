@@ -13,7 +13,7 @@ Three are for the Nashville Home Show, September 11 to 13, 2026. The fourth is t
 | `1-event-page.html` | `https://kevinsparkshottubs.com/nashville-home-show` | Show offer, has a form |
 | `2-post-show-page.html` | `https://kevinsparkshottubs.com/POST-nashville-home-show` | No offer, has a form |
 | `3-thank-you-page.html` | `https://kevinsparkshottubs.com/thank-you` | Both forms land here |
-| `4-hot-tubs-page.html` | `https://kevinsparkshottubs.com/hot-tubs` | **Confirm this path with Jeremy.** Evergreen, no form, see below |
+| `4-hot-tubs-page.html` | `https://kevinsparkshottubs.com/hot-tubs` | Evergreen, has a form. **Confirm this path with Jeremy.** |
 
 **preview-in-browser/** — the same four pages, but with every image baked in so they work offline. Double-click any of them to see the page in Chrome. Do not paste these into GHL, they are much larger files.
 
@@ -37,23 +37,9 @@ If you see gutters down the sides after publishing, open the page in Chrome, rig
 
 ---
 
-## The hot tub page works differently
-
-`4-hot-tubs-page.html` has **no form on it**. Every call to action links straight out to the client's existing Monday.com forms, the same ones already in use on their main site:
-
-- "Schedule an Appointment" → the Monday.com appointment form
-- "Free Consultation" → the Monday.com consultation form
-- "Call" → `tel:615-238-4144`
-
-So its leads arrive in Monday.com directly and never pass through GoHighLevel. That has one consequence worth raising with Jeremy before launch: **this page cannot send a confirmation text or email**, because nothing about it touches GHL. The Home Show pages can, because their forms post into GHL first.
-
-If you want that page on the same footing as the others, it needs its own embedded form pointed at the same webhook. That is a change to make deliberately, not something to bolt on during setup.
-
-Everything else about deploying it is identical: paste it into a Custom JS/HTML element the same way, and skip Step 2.
-
 ## Step 2: Connect the form to GoHighLevel
 
-Pages 1 and 2 only. Their forms are custom-built to match the design. They send their data to a **GHL inbound webhook**. Until you do this step, the forms still work and still forward people to the thank-you page, but nothing is saved anywhere.
+Pages 1, 2 and 4. Their forms are custom-built to match the design. They send their data to a **GHL inbound webhook**. Until you do this step, the forms still work and still forward people to the thank-you page, but nothing is saved anywhere.
 
 ### Create the webhook
 
@@ -63,7 +49,7 @@ Pages 1 and 2 only. Their forms are custom-built to match the design. They send 
 
 ### Put the URL into the pages
 
-In `1-event-page.html` and `2-post-show-page.html`, find this exact text:
+In `1-event-page.html`, `2-post-show-page.html` and `4-hot-tubs-page.html`, find this exact text:
 
 ```
 data-webhook=""
@@ -75,7 +61,9 @@ Paste the URL between the two quote marks so it reads:
 data-webhook="https://services.leadconnectorhq.com/hooks/YOUR-URL-HERE"
 ```
 
-It appears **once per file**. Save, then re-paste the updated file into GHL.
+It appears **once per file**, in all three. Save, then re-paste each updated file into GHL.
+
+All three post to the same webhook, so one workflow handles every lead. Tell them apart with the `page` field: `nashville-home-show`, `post-nashville-home-show`, or `hot-tubs`.
 
 ### What the webhook receives
 
@@ -89,8 +77,8 @@ Submit the form once yourself so GHL can capture a sample payload and let you ma
 | `timeline` | How soon they are planning |
 | `interest` | Hot tub, Swim spa, Pool, or Not sure |
 | `visitDay` | Which show day (event page only) |
+| `page` | `nashville-home-show`, `post-nashville-home-show`, or `hot-tubs` |
 | `model` | Which hot tub they picked, if any |
-| `page` | Which landing page it came from |
 | `pageUrl` | Full URL including any ad parameters |
 | `code` | The reference code shown on screen |
 | `submittedAt` | Timestamp |
@@ -101,7 +89,7 @@ Submit the form once yourself so GHL can capture a sample payload and let you ma
 ### Then build the rest of the workflow
 
 1. **Create or update the contact** from those fields.
-2. **Send the confirmation SMS and email.** The page tells people "we text your confirmation," so this is not optional. Include the `code` value in the message.
+2. **Send a confirmation email.** The pages promise a phone call or an email, never a text, so an email with the `code` value in it closes that loop. Do not add an SMS step unless the copy is changed to promise one.
 3. **Notify the team** so the booth knows a registration came in.
 
 Once that works, connect Make.com to this workflow to push each lead into Monday.com, and write a copy to a Google Sheet as a backup. If the Monday connection ever breaks mid-show, the sheet means nothing is lost.
@@ -110,9 +98,10 @@ Once that works, connect Make.com to this workflow to push each lead into Monday
 
 ## Step 3: Check it works
 
-- Submit each form once on a phone, not just a desktop.
-- Confirm the contact appears in GHL.
-- Confirm the confirmation text actually arrives.
+- Submit all three forms once on a phone, not just a desktop.
+- Confirm each contact appears in GHL with the right `page` value.
+- Confirm the confirmation email actually arrives.
+- On the hot tub page, click a model's "See It" button first and check that model rides along on the lead.
 - Confirm you land on the thank-you page afterward, and that it greets you by name.
 
 If the webhook is unreachable, the form shows an error and tells the person to call 615.238.4144. It will not silently swallow a lead.
@@ -130,5 +119,7 @@ If the webhook is unreachable, the form shows an error and tells the person to c
 - Page 2 (post-show) has **no offer on it at all**. It runs on the showroom visit instead.
 - Page 3 (thank-you) shows the credit only when someone arrives from page 1. Coming from page 2, no offer is mentioned.
 - Page 4 (hot tubs) is evergreen and mentions no show offer at all.
+
+**No page promises a text message.** Follow-up is by phone or email, and the copy says so. If that changes, the copy has to change with it.
 
 **The thank-you path** is set to `/thank-you`. If you use a different path in GHL, search both page files for `data-thanks=` and update the URL there.

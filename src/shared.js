@@ -53,10 +53,17 @@
   });
   var ref=document.querySelector('input[name="referrer"]'); if(ref) ref.value=document.referrer||'';
 
-  /* Option card links pre-select the interest in the form */
-  document.querySelectorAll('[data-pick]').forEach(function(a){
+  /* Option and model card links pre-select the form before the page scrolls to it */
+  document.querySelectorAll('[data-pick],[data-pick-model]').forEach(function(a){
     a.addEventListener('click', function(){
-      var r=document.querySelector('input[name="interest"][value="'+a.dataset.pick+'"]'); if(r) r.checked=true;
+      if(a.dataset.pick){
+        var r=document.querySelector('input[name="interest"][value="'+a.dataset.pick+'"]');
+        if(r) r.checked=true;
+      }
+      if(a.dataset.pickModel){
+        var sel=document.querySelector('select[name="model"]');
+        if(sel) sel.value=a.dataset.pickModel;
+      }
     });
   });
 
@@ -103,8 +110,11 @@
     }
 
     function done(payload){
+      var from = payload.page === 'nashville-home-show' ? 'event'
+               : payload.page === 'hot-tubs'            ? 'tubs'
+               : 'post';
       var p = new URLSearchParams({
-        from: payload.page === 'post-nashville-home-show' ? 'post' : 'event',
+        from: from,
         name: payload.firstName, interest: payload.interest,
         day: payload.visitDay, model: payload.model, code: payload.code
       });

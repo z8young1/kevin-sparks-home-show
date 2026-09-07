@@ -535,7 +535,7 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
       </div>
       <div class="f2">
         <label class="fld"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
-        <label class="fld"><span>Mobile (we text your confirmation)</span><input type="tel" name="phone" autocomplete="tel" required></label>
+        <label class="fld"><span>Mobile</span><input type="tel" name="phone" autocomplete="tel" required></label>
       </div>
       <div class="f2">
         <label class="fld"><span>Home ZIP</span><input name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}"></label>
@@ -553,12 +553,12 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
       <label class="fld"><span>Which day are you coming?</span>
         <select name="visit_day"><option value="">Not sure yet</option><option>Friday, Sept 11</option><option>Saturday, Sept 12</option><option>Sunday, Sept 13</option><option>I can't make the show</option></select></label>
       <button class="btn btn-ember" type="submit" style="width:100%">Register for my credit</button>
-      <p class="fine">Credit is available during the Nashville Home Show only, September 11 to 13, 2026, and must be claimed in person at Booth 1238. Applies to a qualifying purchase from Kevin Sparks Signature Pools, one per household, amount confirmed at your appointment. We will text and email your confirmation. No spam, and no sharing your info.</p>
+      <p class="fine">Credit is available during the Nashville Home Show only, September 11 to 13, 2026, and must be claimed in person at Booth 1238. Applies to a qualifying purchase from Kevin Sparks Signature Pools, one per household, amount confirmed at your appointment. We will follow up by phone or email. No spam, and no sharing your info.</p>
       <div class="done" aria-live="polite">
         <span class="eyebrow" style="justify-content:center">You're registered</span>
         <h3 style="font-size:var(--step-2)">See you at Booth 1238.</h3>
         <span class="code">KS-1238-0000</span>
-        <p class="fine">Bring this code to Booth 1238 during the show and talk to someone on our team to claim your credit. We texted it to you as well. Sunday closes at 5 PM, so come early.</p>
+        <p class="fine">Bring this code to Booth 1238 during the show and talk to someone on our team to claim your credit. We emailed it to you as well. Sunday closes at 5 PM, so come early.</p>
       </div>
     </form>
   </div>
@@ -637,10 +637,17 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
   });
   var ref=document.querySelector('input[name="referrer"]'); if(ref) ref.value=document.referrer||'';
 
-  /* Option card links pre-select the interest in the form */
-  document.querySelectorAll('[data-pick]').forEach(function(a){
+  /* Option and model card links pre-select the form before the page scrolls to it */
+  document.querySelectorAll('[data-pick],[data-pick-model]').forEach(function(a){
     a.addEventListener('click', function(){
-      var r=document.querySelector('input[name="interest"][value="'+a.dataset.pick+'"]'); if(r) r.checked=true;
+      if(a.dataset.pick){
+        var r=document.querySelector('input[name="interest"][value="'+a.dataset.pick+'"]');
+        if(r) r.checked=true;
+      }
+      if(a.dataset.pickModel){
+        var sel=document.querySelector('select[name="model"]');
+        if(sel) sel.value=a.dataset.pickModel;
+      }
     });
   });
 
@@ -687,8 +694,11 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
     }
 
     function done(payload){
+      var from = payload.page === 'nashville-home-show' ? 'event'
+               : payload.page === 'hot-tubs'            ? 'tubs'
+               : 'post';
       var p = new URLSearchParams({
-        from: payload.page === 'post-nashville-home-show' ? 'post' : 'event',
+        from: from,
         name: payload.firstName, interest: payload.interest,
         day: payload.visitDay, model: payload.model, code: payload.code
       });

@@ -27,11 +27,12 @@ URLS = {
     'event': f'{LP}/nashville-home-show',
     'post': f'{LP}/POST-nashville-home-show',
     'thanks': f'{LP}/thank-you',
+    'tubs': f'{LP}/hot-tubs',
     'webhook': GHL_WEBHOOK,
 }
 
 THANKS_ARTIFACT = 'https://claude.ai/code/artifact/b1b17ccb-f42e-4e98-a0fe-0fb5042047bb'
-PAGES = ['nashville-home-show', 'post-nashville-home-show', 'thank-you']
+PAGES = ['nashville-home-show', 'post-nashville-home-show', 'thank-you', 'hot-tubs']
 
 
 def data_uri(name):
