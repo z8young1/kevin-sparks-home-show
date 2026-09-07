@@ -1,21 +1,44 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kevin Sparks · Nashville Home Show pages</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=DM+Sans:wght@400;500&display=swap">
+<title>Kevin Sparks · landing pages</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
 body{margin:0;background:#0A1128;color:#EAF2FB;font-family:"DM Sans",Arial,sans-serif;min-height:100vh;display:grid;place-items:center;padding:2rem}
-main{max-width:640px;display:grid;gap:1.2rem}
+main{max-width:680px;display:grid;gap:1.1rem;width:100%}
 h1{font-family:Oswald,"Arial Narrow",sans-serif;text-transform:uppercase;font-size:2.2rem;margin:0;line-height:1.05}
+h2{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#3FB6F5;margin:.8rem 0 -.3rem;font-weight:500}
 p{margin:0;color:#94A9CA}
-a.card{display:grid;gap:.3rem;padding:1.3rem 1.5rem;border:1px solid rgba(234,242,251,.16);border-radius:10px;color:#fff;text-decoration:none;background:rgba(255,255,255,.04)}
+a.card{display:grid;gap:.3rem;padding:1.2rem 1.4rem;border:1px solid rgba(234,242,251,.16);border-radius:10px;color:#fff;text-decoration:none;background:rgba(255,255,255,.04)}
 a.card:hover{border-color:#F2A33C}
-a.card b{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:1.3rem;letter-spacing:.03em}
-a.card span{color:#94A9CA;font-size:.95rem}
-small{color:#5B6E8C;font-size:.8rem}
+a.card b{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:1.25rem;letter-spacing:.03em}
+a.card span{color:#94A9CA;font-size:.94rem}
+a.dl{border-color:#F2A33C;background:rgba(242,163,60,.1)}
+a.dl b{color:#F2A33C}
+code{font-family:"IBM Plex Mono",monospace;font-size:.85em;color:#EAF2FB}
+small{color:#5B6E8C;font-size:.8rem;line-height:1.5}
 </style></head><body><main>
-<h1>Nashville Home Show 2026<br>Booth 1238 landing pages</h1>
-<p>Kevin Sparks Signature Pools · Draft for partner review</p>
-<a class="card" href="nashville-home-show.html"><b>1. Event page</b><span>Meta and geofencing traffic before and during the show. Drives booth visits and credit pre-registration.</span></a>
-<a class="card" href="post-nashville-home-show.html"><b>2. Post-show retargeting page</b><span>30 days after the show. Pools, swim spas and hot tubs paths with the credit countdown.</span></a>
-<small>Forms show a demo confirmation until they are connected to the CRM.</small>
+
+<h1>Kevin Sparks Signature Pools<br>landing pages</h1>
+<p>Draft for partner review. All four are built to be pasted into GoHighLevel.</p>
+
+<a class="card dl" href="kevin-sparks-ghl-package.zip"><b>Download the deploy package</b><span>All four pages, offline previews, and step-by-step GoHighLevel and webhook instructions.</span></a>
+
+<h2>Nashville Home Show · Sept 11 to 13, 2026 · Booth 1238</h2>
+
+<a class="card" href="nashville-home-show.html"><b>1. Event page</b><span>Before and during the show. The $1,000 to $2,500 credit is stated as show days only, claimed in person at the booth. Goes live at <code>/nashville-home-show</code>.</span></a>
+
+<a class="card" href="post-nashville-home-show.html"><b>2. Post-show page</b><span>For people who visited the booth. Carries no offer, runs on the showroom visit instead. Goes live at <code>/POST-nashville-home-show</code>.</span></a>
+
+<a class="card" href="thank-you.html?from=event&amp;name=Dana&amp;interest=Hot+tub&amp;day=Saturday%2C+Sept+12&amp;model=Millennial&amp;code=KS-1238-DEMO"><b>3. Thank-you page</b><span>Where both forms land. Adapts to which page the visitor came from, so the credit only shows in the event flow. Goes live at <code>/thank-you</code>.</span></a>
+
+<h2>Evergreen</h2>
+
+<a class="card" href="hot-tubs.html"><b>4. Generation hot tubs page</b><span>Runs year round, not tied to the show. No embedded form: every call to action links out to the existing Monday.com forms. Intended path <code>/hot-tubs</code>.</span></a>
+
+<small>
+Forms on pages 1 and 2 show a demo confirmation until the GoHighLevel webhook URL is filled in.
+Page 4 sends nothing to GoHighLevel at all, so it cannot text a confirmation. Both points are
+covered in the README inside the download.
+</small>
+
 </main></body></html>

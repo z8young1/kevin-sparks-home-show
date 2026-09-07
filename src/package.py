@@ -43,7 +43,15 @@ with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED) as z:
             z.write(p, p.relative_to(stage))
 shutil.rmtree(stage)
 
+# Publish on GitHub Pages: the zip as a plain download link, and the hot tub page
+# alongside the three that build.py already copies there.
+docs = root / 'docs'
+docs.mkdir(exist_ok=True)
+shutil.copy(out, docs / out.name)
+shutil.copy(ht / 'hot-tubs.html', docs / 'hot-tubs.html')
+
 with zipfile.ZipFile(out) as z:
     for i in z.infolist():
         print(f'{i.file_size/1024:8.0f} KB  {i.filename}')
 print(f'\n{out.name}  {out.stat().st_size/1024:.0f} KB')
+print('download: https://z8young1.github.io/kevin-sparks-home-show/' + out.name)

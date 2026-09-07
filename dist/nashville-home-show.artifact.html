@@ -748,8 +748,9 @@ footer .mono{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
       document.querySelectorAll('.hours tr[data-day]').forEach(function(r){ r.classList.toggle('now', r.dataset.day===key); });
       return;
     } else {
-      lab.textContent='The show has wrapped'; box.innerHTML='<div><b>Credit</b><span>still good</span></div>';
-      var q=document.querySelector('.hero-cta .btn-ghost'); if(q){ q.textContent='Visit the showroom instead'; q.href='https://kevinsparkshottubs.com/post-nashville-home-show'; }
+      // The credit is show-days-only, so once the show closes it is gone, not "still good".
+      lab.textContent='The show has wrapped'; box.innerHTML='<div><b>Closed</b><span>see the showroom</span></div>';
+      var q=document.querySelector('.hero-cta .btn-ghost'); if(q){ q.textContent='Visit the showroom instead'; q.href='https://kevinsparkshottubs.com/POST-nashville-home-show'; }
       return;
     }
     setTimeout(tick,1000);

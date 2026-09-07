@@ -65,6 +65,27 @@ def check_absolute(html, label):
         sys.exit(1)
 
 
+def check_no_hardcoded_lp(html, label):
+    """Every link to our own landing pages must come from the URLS map.
+
+    check_absolute() only sees HTML attributes. A URL written inside a <script>
+    is invisible to it, which is exactly how a lowercased /post-nashville-home-show
+    once shipped in the after-show handler. Anything pointing at LP that is not a
+    value we generated is almost certainly hand-typed, so refuse it.
+    """
+    known = {v.rstrip('/') for v in URLS.values() if v}
+    stray = {
+        u.rstrip('/')
+        for u in re.findall(re.escape(LP) + r'[^\s"\'<>)]*', html)
+        if u.rstrip('/') not in known
+    }
+    if stray:
+        print(f'BUILD FAILED: hand-written landing-page URL in {label}:', file=sys.stderr)
+        for u in sorted(stray):
+            print(f'  {u}   (use a {{{{url:key}}}} token instead)', file=sys.stderr)
+        sys.exit(1)
+
+
 # ---------------------------------------------------------------- builds
 (out / 'dist').mkdir(exist_ok=True)
 
@@ -81,11 +102,13 @@ for page in PAGES:
     # and the thank-you handoff points at the published artifact instead of the live path
     art = apply_urls(html, {'thanks': THANKS_ARTIFACT})
     check_absolute(art, f'{page}.artifact.html')
+    check_no_hardcoded_lp(art, f'{page}.artifact.html')
     (out / 'dist' / f'{page}.artifact.html').write_text(art)
 
     # deployable version: a complete document
     body = apply_urls(html)
     check_absolute(body, f'{page}.html')
+    check_no_hardcoded_lp(body, f'{page}.html')
     full = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
             '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
             + body.split('<header', 1)[0] + '</head>\n<body>\n<header'
@@ -130,6 +153,7 @@ for page in PAGES:
     html = re.sub(r'\{\{img:([^}]+)\}\}', lambda m: LIVE.get(m.group(1)) or data_uri(m.group(1)), html)
     html = apply_urls(html)
     check_absolute(html, f'{page}.ghl-embed.html')
+    check_no_hardcoded_lp(html, f'{page}.ghl-embed.html')
     (out / 'dist' / f'{page}.ghl-embed.html').write_text(html)
     print(page, 'ghl-embed', f'{len(html)/1024:.0f} KB')
 
