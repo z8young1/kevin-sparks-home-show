@@ -5,3 +5,6 @@ kevin-sparks-ghl-package.zip
 .package/
 .pkgpreview/
 kevin-sparks-ghl-package/
+
+# Claude Code saves approved commands here, sometimes with keys in them
+.claude/settings.local.json
